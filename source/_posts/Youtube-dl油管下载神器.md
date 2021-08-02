@@ -25,23 +25,15 @@ description: Youtube-dl油管下载神器
 
 Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。
 
-
-
-
-
 - 登录[下载网址](https://www.gyan.dev/ffmpeg/builds/),在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。
 
  ![](https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png)
-
-
 
 - 解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。
 
     我的安装路径如下图所示：
 
 ![](https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png)
-
-
 
 - 定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。
 
@@ -68,7 +60,7 @@ Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、�
 
 如果你的可以正常访问YouTube，请按照这个步骤来：
 
-	pip install --upgrade youtube-dl
+	pip install youtube-dl
 
 如果你在国内需要翻墙，那么我们需要先确定一些事情。
 
@@ -104,7 +96,7 @@ Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、�
 
 注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，**请务必，将框选出来的三个文件都打开检查一遍！**
 
-	:set http_proxy=http://127.0.0.1:10087
+	:set http_proxy=http://127.0.0.1:8889
 	:set http_proxy=
 
 OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。
