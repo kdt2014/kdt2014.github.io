@@ -55,6 +55,10 @@ description: 德国Euserv免费的VPS安装Xray
 
 前提你得有一个自己的域名，没有的自己去买一个，或者找找免费的域名。然后参考这篇文章，设置一下[cloudflare](https://zhuanlan.zhihu.com/p/82909515)。
 
+在开始之前在cloudflare上增加一个新的记录，如下图所示，名称你可以自己取，内容就是Euserv上的IPV6地址，代理状态先不打开：
+
+![](https://i.loli.net/2021/08/08/q2M3X9LFlfij1em.png)
+
 这一部分我参考的[这篇文章](https://trojanv2ray.blogspot.com/2020/12/VPSEuservXray.html)。
 
 1. VPS设置IPV4访问。因为我们订购的那个免费主机是纯IPV6地址的，为了能访问Github下载文件，所以要设置VPS能访问IPV4地址。输入以下命令：
@@ -111,6 +115,8 @@ Cloudflare的CDN，目前只能使用websocket协议，XTLS不支持websocket协
 
 ![](https://i.loli.net/2021/08/08/ryMPJ1Y7xDTUwO9.png)
 ![](https://i.loli.net/2021/08/08/ldGCFqkUQyKi3En.png)
+
+打开代理，看看自己是不是能上网了。如果不能，回到cloudflare里，把我们刚刚增加的那个记录的代理打开。也就是点击小云朵，让他变黄色~~~
 
 # 致谢 #
 
