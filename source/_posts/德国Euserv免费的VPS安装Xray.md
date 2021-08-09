@@ -127,4 +127,4 @@ Cloudflare的CDN，目前只能使用websocket协议，XTLS不支持websocket协
 
 # 致谢 #
 
-本文属于自己参考多篇教程梳理总结的内容，建议配合[这个Youtube视频](https://www.youtube.com/watch?v=cfoh2j4fZcM)一起食用。		
+本文属于自己参考多篇教程梳理总结的内容，建议配合[这个Youtube视频](https://www.youtube.com/watch?v=cfoh2j4fZcM)一起食用。
