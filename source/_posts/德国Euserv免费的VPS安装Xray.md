@@ -59,7 +59,14 @@ description: 德国Euserv免费的VPS安装Xray
 
 ![](https://i.loli.net/2021/08/08/q2M3X9LFlfij1em.png)
 
-这一部分我参考的[这篇文章](https://trojanv2ray.blogspot.com/2020/12/VPSEuservXray.html)。
+
+**当然，当然，**如果你和我一样懒，一样的财力不雄厚，也可以不搞cloudflare,直接去[godaddy](https://sso.godaddy.com/account/create?realm=idp&path=%2Fproducts&app=account)上面注册一个域名，选最便宜的一年才8块钱，等到期了再8块钱注册一个呗，可以使用PayPal付款，paypal可以绑定银联的借记卡。注册好自己的域名之后：我的产品---网域---点击右上角的三角符号---管理DNS--点击底部的加入---增加一个AAAA记录，参考下图:
+
+![](https://i.loli.net/2021/08/09/AzuBxDEiQqP5yec.png)
+![](https://i.loli.net/2021/08/09/VtJNO1Lgbahv8s4.png)
+
+
+然后我们接着往下走，这一部分我参考的[这篇文章](https://trojanv2ray.blogspot.com/2020/12/VPSEuservXray.html)。
 
 1. VPS设置IPV4访问。因为我们订购的那个免费主机是纯IPV6地址的，为了能访问Github下载文件，所以要设置VPS能访问IPV4地址。输入以下命令：
 
@@ -121,8 +128,3 @@ Cloudflare的CDN，目前只能使用websocket协议，XTLS不支持websocket协
 # 致谢 #
 
 本文属于自己参考多篇教程梳理总结的内容，建议配合[这个Youtube视频](https://www.youtube.com/watch?v=cfoh2j4fZcM)一起食用。
-		
-
-		
-
-
