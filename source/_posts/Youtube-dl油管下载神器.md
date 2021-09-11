@@ -47,6 +47,8 @@ Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、�
 
 如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。
 
+- update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。
+
 - [Python官网](https://www.python.org/downloads/)下载最新的安装包
 ![](https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png)
 
@@ -58,7 +60,7 @@ Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、�
 
 ## 安装youtube-dl ##
 
-如果你的可以正常访问YouTube，请按照这个步骤来：
+如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：
 
 	pip install youtube-dl
 
