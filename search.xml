@@ -1,102 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Youtube-dl油管下载神器</title>
-    <url>/2021/08/02/Youtube-dl%E6%B2%B9%E7%AE%A1%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
-<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
-<li>安装ffmpeg</li>
-<li>安装Python</li>
-<li>安装youtube-dl</li>
-<li>下载</li>
-</ol>
-<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><p>Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。</p>
-<ul>
-<li>登录<a href="https://www.gyan.dev/ffmpeg/builds/">下载网址</a>,在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。</li>
-</ul>
-<p> <img src="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png"></p>
-<ul>
-<li><p>解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。</p>
-<p>  我的安装路径如下图所示：</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png"></p>
-<ul>
-<li><p>定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。</p>
-</li>
-<li><p>此电脑-属性-高级系统设置-环境变量-在系统变量里选中Path-编辑-新建，然后将刚刚复制的路径黏贴进去。之后点击确定-确定-确定。</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png"><br><img src="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png"><br><img src="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png"></p>
-<h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。</p>
-<ul>
-<li><p>update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。</p>
-</li>
-<li><p><a href="https://www.python.org/downloads/">Python官网</a>下载最新的安装包<br><img src="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png"></p>
-</li>
-<li><p>点击安装，<strong>记得勾选一开始界面最下面的“add to path”那个选择框</strong>，点击安装，等待安装完成，最后点击下方的解除长度限制“disable path length limit”（我因为为了写这篇博客卸载后重装的，所以截图中并没有这个选项）。</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png"><br><img src="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png"></p>
-<h2 id="安装youtube-dl"><a href="#安装youtube-dl" class="headerlink" title="安装youtube-dl"></a>安装youtube-dl</h2><p>如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：</p>
-<pre><code>pip install youtube-dl
-</code></pre>
-<p>如果你在国内需要翻墙，那么我们需要先确定一些事情。</p>
-<ul>
-<li>打开自己的代理软件，运行（务必运行代理）</li>
-<li>查看http代理的地址和端口，下图所示是Qv2ray，V2rayNG在软件界面最下方可以直接看到。</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png"></p>
-<p>然后打开电脑的cmd命令行界面，依次输入以下命令：</p>
-<pre><code>set http_proxy=http://127.0.0.1:8889 #一定记得把ip地址和端口改成自己代理软件中查到的
-pip install youtube-dl
-set http_proxy=
-pause
-</code></pre>
-<p>没有问题的话，就应该安装完成了。</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载这个文件夹，链接: <a href="https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw">https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw</a> 提取码: pjuw。</p>
-<p><img src="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png"></p>
-<p>里面包含上图所示的这些东西。</p>
-<ul>
-<li>如果你需要代理环境，请用记事本打开上图被圈出来的三个文件，然后将代理部分的ip和端口改成自己软件中显示的。这一步类似安装youtube-dl时我们做的事情。<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png"></p>
-<ul>
-<li>如果你不需要代理，那么同样打开这三个文件，将所以和set_proxy有关的语句都注释掉即可。</li>
-</ul>
-<p>注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></p>
-<pre><code>:set http_proxy=http://127.0.0.1:8889
-:set http_proxy=
-</code></pre>
-<p>OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。</p>
-<p>结束！！</p>
-<p>最后，感谢<a href="https://www.bilibili.com/video/BV1AB4y1F7nG?from=search&seid=13837731026935348595">团叽的OO的视频团叽的OO的视频</a>，本文教程属于该视频的文字总结版本。因为担心他的视频也许有一天会找不到，故此做一个文字备份。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>youtube-dl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Adobe family</title>
-    <url>/2021/09/11/adobe-family/</url>
-    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
-<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
-<p> 看他的置顶，可以找到你想要的东西。</p>
-<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>Adobe</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Qv2ray使用手册</title>
     <url>/2021/08/17/Qv2ray%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qv2ray是一个很好用的代理软件工具，界面美观，操作便捷。但是对于小白来说，第一次使用它的时候会遇到一些障碍，因此写了这篇文章用来介绍使用步骤。</p>
@@ -124,112 +28,24 @@ pause
 <p>全文完！</p>
 ]]></content>
       <tags>
-        <tag>工具</tag>
         <tag>网络</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
-    <title>双系统下重装Win10，ubuntu无法进入</title>
-    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
-<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
-<ol>
-<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
-</li>
-<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
-</li>
-<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
-</li>
-<li><p>打开命令行，输入以下命令：</p>
-<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
-</code></pre>
-</li>
-<li><p>再接着输入：</p>
-<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
-</code></pre>
-</li>
-</ol>
-<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
-<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+    <title>Adobe family</title>
+    <url>/2021/09/11/adobe-family/</url>
+    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
+<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
+<p> 看他的置顶，可以找到你想要的东西。</p>
+<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
 ]]></content>
       <categories>
-        <category>系统</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>系统</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将HEXO博客迁移到一台新的电脑</title>
-    <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>创建新的分支</li>
-<li>新电脑上使用hexo</li>
-<li>重要提示</li>
-</ul>
-<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
-<p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
-<p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
-<p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
-<p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
-<pre><code>.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-</code></pre>
-<p>如果你之前clone过theme中的主题文件，也要把主题中的.git删除。因为git是不能嵌套上传的！</p>
-<p>之后分别执行以下命令：</p>
-<pre><code>git add .
-git commit –m &quot;add branch&quot;
-git push 
-</code></pre>
-<p>这样我们就把本地的文件上传到GitHub了。</p>
-<h2 id="新电脑上使用hexo"><a href="#新电脑上使用hexo" class="headerlink" title="新电脑上使用hexo"></a>新电脑上使用hexo</h2><ul>
-<li><p>安装git，参考上一篇教程 <a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git">安装git</a></p>
-</li>
-<li><p>安装Node.js，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Node-js">安装Node.js</a></p>
-</li>
-<li><p>安装Hexo，这里我们不需要初始化了，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></p>
-</li>
-<li><p>同步到本地<br>在任意自己喜欢的文件夹下面执行：</p>
-<p>  git clone git@………………</p>
-</li>
-</ul>
-<p>然后进入到同步下来的文件夹内：</p>
-<pre><code>cd xxx.github.io
-npm install
-npm install hexo-deployer-git --save
-</code></pre>
-<ul>
-<li><p>生成部署</p>
-<pre><code>hexo g
-hexo d
-</code></pre>
-</li>
-</ul>
-<p>这样我们就在新电脑上设置完成了！</p>
-<h2 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h2><p>以后每次写完博客，一定要把源文件同步到GitHub上：</p>
-<pre><code>git add .
-git commit –m &quot;xxxx&quot;
-</code></pre>
-<p>   git push </p>
-<p>每次开始写新的博客之前，执行一下：</p>
-<pre><code>git pull
-</code></pre>
-<p>声明：本篇教程参考<a href="https://www.zhihu.com/question/21193762">知乎</a></p>
-]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-        <tag>教程</tag>
+        <tag>工具</tag>
+        <tag>Adobe</tag>
       </tags>
   </entry>
   <entry>
@@ -370,7 +186,7 @@ hexo d
 <p>hexo s #启动服务预览</p>
 <p>hexo d #部署</p>
 <p>hexo3连：</p>
-<pre><code>hexo g
+<pre><code>hexo clean
 hexo g
 hexo d
 </code></pre>
@@ -380,9 +196,193 @@ hexo d
         <category>网站</category>
       </categories>
       <tags>
-        <tag>记录</tag>
         <tag>网站</tag>
         <tag>hexo</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>双系统下重装Win10，ubuntu无法进入</title>
+    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
+<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
+<ol>
+<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
+</li>
+<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
+</li>
+<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
+</li>
+<li><p>打开命令行，输入以下命令：</p>
+<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
+</code></pre>
+</li>
+<li><p>再接着输入：</p>
+<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
+</code></pre>
+</li>
+</ol>
+<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
+<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>记录</tag>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Youtube-dl油管下载神器</title>
+    <url>/2021/08/02/Youtube-dl%E6%B2%B9%E7%AE%A1%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
+<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
+<li>安装ffmpeg</li>
+<li>安装Python</li>
+<li>安装youtube-dl</li>
+<li>下载</li>
+</ol>
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><p>Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。</p>
+<ul>
+<li>登录<a href="https://www.gyan.dev/ffmpeg/builds/">下载网址</a>,在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png"></p>
+<ul>
+<li><p>解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。</p>
+<p>  我的安装路径如下图所示：</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png"></p>
+<ul>
+<li><p>定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。</p>
+</li>
+<li><p>此电脑-属性-高级系统设置-环境变量-在系统变量里选中Path-编辑-新建，然后将刚刚复制的路径黏贴进去。之后点击确定-确定-确定。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png"><br><img src="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png"><br><img src="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png"></p>
+<h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。</p>
+<ul>
+<li><p>update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。</p>
+</li>
+<li><p><a href="https://www.python.org/downloads/">Python官网</a>下载最新的安装包<br><img src="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png"></p>
+</li>
+<li><p>点击安装，<strong>记得勾选一开始界面最下面的“add to path”那个选择框</strong>，点击安装，等待安装完成，最后点击下方的解除长度限制“disable path length limit”（我因为为了写这篇博客卸载后重装的，所以截图中并没有这个选项）。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png"><br><img src="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png"></p>
+<h2 id="安装youtube-dl"><a href="#安装youtube-dl" class="headerlink" title="安装youtube-dl"></a>安装youtube-dl</h2><p>如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：</p>
+<pre><code>pip install youtube-dl
+</code></pre>
+<p>如果你在国内需要翻墙，那么我们需要先确定一些事情。</p>
+<ul>
+<li>打开自己的代理软件，运行（务必运行代理）</li>
+<li>查看http代理的地址和端口，下图所示是Qv2ray，V2rayNG在软件界面最下方可以直接看到。</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png"></p>
+<p>然后打开电脑的cmd命令行界面，依次输入以下命令：</p>
+<pre><code>set http_proxy=http://127.0.0.1:8889 #一定记得把ip地址和端口改成自己代理软件中查到的
+pip install youtube-dl
+set http_proxy=
+pause
+</code></pre>
+<p>没有问题的话，就应该安装完成了。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载这个文件夹，链接: <a href="https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw">https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw</a> 提取码: pjuw。</p>
+<p><img src="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png"></p>
+<p>里面包含上图所示的这些东西。</p>
+<ul>
+<li>如果你需要代理环境，请用记事本打开上图被圈出来的三个文件，然后将代理部分的ip和端口改成自己软件中显示的。这一步类似安装youtube-dl时我们做的事情。<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png"></p>
+<ul>
+<li>如果你不需要代理，那么同样打开这三个文件，将所以和set_proxy有关的语句都注释掉即可。</li>
+</ul>
+<p>注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></p>
+<pre><code>:set http_proxy=http://127.0.0.1:8889
+:set http_proxy=
+</code></pre>
+<p>OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。</p>
+<p>结束！！</p>
+<p>最后，感谢<a href="https://www.bilibili.com/video/BV1AB4y1F7nG?from=search&seid=13837731026935348595">团叽的OO的视频团叽的OO的视频</a>，本文教程属于该视频的文字总结版本。因为担心他的视频也许有一天会找不到，故此做一个文字备份。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>youtube-dl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将HEXO博客迁移到一台新的电脑</title>
+    <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>创建新的分支</li>
+<li>新电脑上使用hexo</li>
+<li>重要提示</li>
+</ul>
+<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
+<p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
+<p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
+<p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
+<pre><code>.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+</code></pre>
+<p>如果你之前clone过theme中的主题文件，也要把主题中的.git删除。因为git是不能嵌套上传的！</p>
+<p>之后分别执行以下命令：</p>
+<pre><code>git add .
+git commit –m &quot;add branch&quot;
+git push 
+</code></pre>
+<p>这样我们就把本地的文件上传到GitHub了。</p>
+<h2 id="新电脑上使用hexo"><a href="#新电脑上使用hexo" class="headerlink" title="新电脑上使用hexo"></a>新电脑上使用hexo</h2><ul>
+<li><p>安装git，参考上一篇教程 <a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git">安装git</a></p>
+</li>
+<li><p>安装Node.js，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Node-js">安装Node.js</a></p>
+</li>
+<li><p>安装Hexo，这里我们不需要初始化了，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></p>
+</li>
+<li><p>同步到本地<br>在任意自己喜欢的文件夹下面执行：</p>
+<p>  git clone git@………………</p>
+</li>
+</ul>
+<p>然后进入到同步下来的文件夹内：</p>
+<pre><code>cd xxx.github.io
+npm install
+npm install hexo-deployer-git --save
+</code></pre>
+<ul>
+<li><p>生成部署</p>
+<pre><code>hexo g
+hexo d
+</code></pre>
+</li>
+</ul>
+<p>这样我们就在新电脑上设置完成了！</p>
+<h2 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h2><p>以后每次写完博客，一定要把源文件同步到GitHub上：</p>
+<pre><code>git add .
+git commit –m &quot;xxxx&quot;
+</code></pre>
+<p>   git push </p>
+<p>每次开始写新的博客之前，执行一下：</p>
+<pre><code>git pull
+</code></pre>
+<p>声明：本篇教程参考<a href="https://www.zhihu.com/question/21193762">知乎</a></p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -400,66 +400,6 @@ hexo d
       <tags>
         <tag>工具</tag>
         <tag>索引合集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘下载</title>
-    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
-<ul>
-<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
-</li>
-<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
-</li>
-</ul>
-<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
-<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>下载</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>让自己通过Hexo建立的博客被谷歌搜索到</title>
-    <url>/2021/08/14/%E8%AE%A9%E8%87%AA%E5%B7%B1%E9%80%9A%E8%BF%87Hexo%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%A2%AB%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般我们建立博客的目的就是分享一些东西，那么如何让我们的博客被更多的人看到呢？那当然是被搜索引擎收录后，能够被更多的人用关键词检索到。</p>
-<p>本文介绍如何让自己的博客被谷歌搜索引擎搜索到，如需知道如何被百度检索请参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988/">这篇文章</a></p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>本地配置</li>
-<li>谷歌搜索配置</li>
-</ul>
-<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>在博客安装根目录，也就是你平时运行 hexo g等命令的那一层目录，执行以下代码：</p>
-<pre><code>npm install hexo-generator-sitemap --save
-</code></pre>
-<p>安装完成后，在.deploy.git文件夹下能发现多了一个sitemap.xml的文件，以后我们每次运行hexo g这个命令时就会生成（更新）这个文件。</p>
-<p>打开博客的配置文件（博客安装根目录下）_config.yml，找到以下内容，并将URL更改为自己的网站地址。</p>
-<p><img src="https://i.loli.net/2021/08/14/ZmsoERqd1va8O7K.png"></p>
-<h2 id="谷歌搜索配置"><a href="#谷歌搜索配置" class="headerlink" title="谷歌搜索配置"></a>谷歌搜索配置</h2><p>首先打开<a href="https://search.google.com/search-console">谷歌搜索配置网站</a>，如果你没有谷歌账户，没关系注册一个。</p>
-<p>点击左上角的三角箭头，然后添加资源，如下图所示：</p>
-<p><img src="https://i.loli.net/2021/08/14/zmE2BfK5DcC3JWP.png"></p>
-<p>然后在下图中的位置填写你的网址，然后点击继续：</p>
-<p><img src="https://i.loli.net/2021/08/14/DNXbJk2P67YEVgh.png"></p>
-<p>在弹出以下界面后，点击“前往资源界面”。</p>
-<p><img src="https://i.loli.net/2021/08/14/F7i2wcDLsATgUPr.png"></p>
-<p>接下来的部分当时布置时我没有截图，只能凭记忆用语言描述以下，很简单的几步操作。</p>
-<p>这时的谷歌界面应该是告诉你去DNS服务商那里添加一条TXT记录，然后给了你一串可以复制的代码。</p>
-<p>这时打开你购买网址的服务商网站，在DNS解析那里添加一条TXT记录，然后将谷歌提供的内容粘贴进去，保存即可。如下图展示的是在cloudflare中添加TXT记录。</p>
-<p><img src="https://i.loli.net/2021/08/14/DbxK73CPE4qGtUw.png"></p>
-<p>之后在谷歌搜索的console界面就能就能看到我们的网址，然后点击站点地图，添加你自己的网址：<a href="https://yoursite/sitemap">https://yoursite/sitemap</a></p>
-<p><img src="https://i.loli.net/2021/08/14/KDyd6srqfuXw5Vk.png"></p>
-<p>然后就能看到谷歌提示，成功添加。如果你在执行这一步之前没有在配置文件_config.yml中修改url并在修改后执行 hexo g，hexo d，谷歌会报错的。这时你要删掉刚刚添加的站台地图网址，在完成以上动作后，重新添加就不会有报错了。</p>
-<p>然后等待谷歌更新，就能收录你的博客内容了。需要一些时间（maybe 几十分钟，maybe更长）。</p>
-]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -551,6 +491,66 @@ hexo d
         <tag>记录</tag>
         <tag>vps</tag>
         <tag>Xray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘下载</title>
+    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
+<ul>
+<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
+</li>
+<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
+</li>
+</ul>
+<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
+<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>让自己通过Hexo建立的博客被谷歌搜索到</title>
+    <url>/2021/08/14/%E8%AE%A9%E8%87%AA%E5%B7%B1%E9%80%9A%E8%BF%87Hexo%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%A2%AB%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般我们建立博客的目的就是分享一些东西，那么如何让我们的博客被更多的人看到呢？那当然是被搜索引擎收录后，能够被更多的人用关键词检索到。</p>
+<p>本文介绍如何让自己的博客被谷歌搜索引擎搜索到，如需知道如何被百度检索请参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988/">这篇文章</a></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>本地配置</li>
+<li>谷歌搜索配置</li>
+</ul>
+<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>在博客安装根目录，也就是你平时运行 hexo g等命令的那一层目录，执行以下代码：</p>
+<pre><code>npm install hexo-generator-sitemap --save
+</code></pre>
+<p>安装完成后，在.deploy.git文件夹下能发现多了一个sitemap.xml的文件，以后我们每次运行hexo g这个命令时就会生成（更新）这个文件。</p>
+<p>打开博客的配置文件（博客安装根目录下）_config.yml，找到以下内容，并将URL更改为自己的网站地址。</p>
+<p><img src="https://i.loli.net/2021/08/14/ZmsoERqd1va8O7K.png"></p>
+<h2 id="谷歌搜索配置"><a href="#谷歌搜索配置" class="headerlink" title="谷歌搜索配置"></a>谷歌搜索配置</h2><p>首先打开<a href="https://search.google.com/search-console">谷歌搜索配置网站</a>，如果你没有谷歌账户，没关系注册一个。</p>
+<p>点击左上角的三角箭头，然后添加资源，如下图所示：</p>
+<p><img src="https://i.loli.net/2021/08/14/zmE2BfK5DcC3JWP.png"></p>
+<p>然后在下图中的位置填写你的网址，然后点击继续：</p>
+<p><img src="https://i.loli.net/2021/08/14/DNXbJk2P67YEVgh.png"></p>
+<p>在弹出以下界面后，点击“前往资源界面”。</p>
+<p><img src="https://i.loli.net/2021/08/14/F7i2wcDLsATgUPr.png"></p>
+<p>接下来的部分当时布置时我没有截图，只能凭记忆用语言描述以下，很简单的几步操作。</p>
+<p>这时的谷歌界面应该是告诉你去DNS服务商那里添加一条TXT记录，然后给了你一串可以复制的代码。</p>
+<p>这时打开你购买网址的服务商网站，在DNS解析那里添加一条TXT记录，然后将谷歌提供的内容粘贴进去，保存即可。如下图展示的是在cloudflare中添加TXT记录。</p>
+<p><img src="https://i.loli.net/2021/08/14/DbxK73CPE4qGtUw.png"></p>
+<p>之后在谷歌搜索的console界面就能就能看到我们的网址，然后点击站点地图，添加你自己的网址：<a href="https://yoursite/sitemap">https://yoursite/sitemap</a></p>
+<p><img src="https://i.loli.net/2021/08/14/KDyd6srqfuXw5Vk.png"></p>
+<p>然后就能看到谷歌提示，成功添加。如果你在执行这一步之前没有在配置文件_config.yml中修改url并在修改后执行 hexo g，hexo d，谷歌会报错的。这时你要删掉刚刚添加的站台地图网址，在完成以上动作后，重新添加就不会有报错了。</p>
+<p>然后等待谷歌更新，就能收录你的博客内容了。需要一些时间（maybe 几十分钟，maybe更长）。</p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
