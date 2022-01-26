@@ -93,3 +93,5 @@ description: 将HEXO博客迁移到一台新的电脑
 每次开始写新的博客之前，执行一下：
 
     git pull
+
+声明：本篇教程参考[知乎](https://www.zhihu.com/question/21193762)
