@@ -81,6 +81,22 @@ pause
       </tags>
   </entry>
   <entry>
+    <title>Adobe family</title>
+    <url>/2021/09/11/adobe-family/</url>
+    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
+<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
+<p> 看他的置顶，可以找到你想要的东西。</p>
+<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>Adobe</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Qv2ray使用手册</title>
     <url>/2021/08/17/Qv2ray%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qv2ray是一个很好用的代理软件工具，界面美观，操作便捷。但是对于小白来说，第一次使用它的时候会遇到一些障碍，因此写了这篇文章用来介绍使用步骤。</p>
@@ -113,19 +129,107 @@ pause
       </tags>
   </entry>
   <entry>
-    <title>Adobe family</title>
-    <url>/2021/09/11/adobe-family/</url>
-    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
-<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
-<p> 看他的置顶，可以找到你想要的东西。</p>
-<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
+    <title>双系统下重装Win10，ubuntu无法进入</title>
+    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
+<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
+<ol>
+<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
+</li>
+<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
+</li>
+<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
+</li>
+<li><p>打开命令行，输入以下命令：</p>
+<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
+</code></pre>
+</li>
+<li><p>再接着输入：</p>
+<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
+</code></pre>
+</li>
+</ol>
+<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
+<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
 ]]></content>
       <categories>
-        <category>工具</category>
+        <category>系统</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>Adobe</tag>
+        <tag>系统</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将HEXO博客迁移到一台新的电脑</title>
+    <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>创建新的分支</li>
+<li>新电脑上使用hexo</li>
+<li>重要提示</li>
+</ul>
+<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
+<p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
+<p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
+<p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
+<pre><code>.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+</code></pre>
+<p>如果你之前clone过theme中的主题文件，也要把主题中的.git删除。因为git是不能嵌套上传的！</p>
+<p>之后分别执行以下命令：</p>
+<pre><code>git add .
+git commit –m &quot;add branch&quot;
+git push 
+</code></pre>
+<p>这样我们就把本地的文件上传到GitHub了。</p>
+<h2 id="新电脑上使用hexo"><a href="#新电脑上使用hexo" class="headerlink" title="新电脑上使用hexo"></a>新电脑上使用hexo</h2><ul>
+<li><p>安装git，参考上一篇教程 <a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git">安装git</a></p>
+</li>
+<li><p>安装Node.js，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Node-js">安装Node.js</a></p>
+</li>
+<li><p>安装Hexo，这里我们不需要初始化了，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></p>
+</li>
+<li><p>同步到本地<br>在任意自己喜欢的文件夹下面执行：</p>
+<p>  git clone git@………………</p>
+</li>
+</ul>
+<p>然后进入到同步下来的文件夹内：</p>
+<pre><code>cd xxx.github.io
+npm install
+npm install hexo-deployer-git --save
+</code></pre>
+<ul>
+<li><p>生成部署</p>
+<pre><code>hexo g
+hexo d
+</code></pre>
+</li>
+</ul>
+<p>这样我们就在新电脑上设置完成了！</p>
+<h2 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h2><p>以后每次写完博客，一定要把源文件同步到GitHub上：</p>
+<pre><code>git add .
+git commit –m &quot;xxxx&quot;
+</code></pre>
+<p>   git push </p>
+<p>每次开始写新的博客之前，执行一下：</p>
+<pre><code>git pull
+</code></pre>
+<p>声明：本篇教程参考<a href="https://www.zhihu.com/question/21193762">知乎</a></p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -276,112 +380,9 @@ hexo d
         <category>网站</category>
       </categories>
       <tags>
+        <tag>记录</tag>
         <tag>网站</tag>
         <tag>hexo</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>双系统下重装Win10，ubuntu无法进入</title>
-    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
-<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
-<ol>
-<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
-</li>
-<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
-</li>
-<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
-</li>
-<li><p>打开命令行，输入以下命令：</p>
-<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
-</code></pre>
-</li>
-<li><p>再接着输入：</p>
-<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
-</code></pre>
-</li>
-</ol>
-<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
-<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>记录</tag>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将HEXO博客迁移到一台新的电脑</title>
-    <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>创建新的分支</li>
-<li>新电脑上使用hexo</li>
-<li>重要提示</li>
-</ul>
-<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
-<p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
-<p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
-<p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
-<p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
-<pre><code>.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-</code></pre>
-<p>如果你之前clone过theme中的主题文件，也要把主题中的.git删除。因为git是不能嵌套上传的！</p>
-<p>之后分别执行以下命令：</p>
-<pre><code>git add .
-git commit –m &quot;add branch&quot;
-git push 
-</code></pre>
-<p>这样我们就把本地的文件上传到GitHub了。</p>
-<h2 id="新电脑上使用hexo"><a href="#新电脑上使用hexo" class="headerlink" title="新电脑上使用hexo"></a>新电脑上使用hexo</h2><ul>
-<li><p>安装git，参考上一篇教程 <a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git">安装git</a></p>
-</li>
-<li><p>安装Node.js，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Node-js">安装Node.js</a></p>
-</li>
-<li><p>安装Hexo，这里我们不需要初始化了，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></p>
-</li>
-<li><p>同步到本地<br>在任意自己喜欢的文件夹下面执行：</p>
-<p>  git clone git@………………</p>
-</li>
-</ul>
-<p>然后进入到同步下来的文件夹内：</p>
-<pre><code>cd xxx.github.io
-npm install
-npm install hexo-deployer-git --save
-</code></pre>
-<ul>
-<li><p>生成部署</p>
-<pre><code>hexo g
-hexo d
-</code></pre>
-</li>
-</ul>
-<p>这样我们就在新电脑上设置完成了！</p>
-<h2 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h2><p>以后每次写完博客，一定要把源文件同步到GitHub上：</p>
-<pre><code>git add .
-git commit –m &quot;xxxx&quot;
-</code></pre>
-<p>   git push </p>
-<p>每次开始写新的博客之前，执行一下：</p>
-<pre><code>git pull
-</code></pre>
-]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -399,6 +400,27 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>工具</tag>
         <tag>索引合集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘下载</title>
+    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
+<ul>
+<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
+</li>
+<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
+</li>
+</ul>
+<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
+<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>下载</tag>
       </tags>
   </entry>
   <entry>
@@ -529,27 +551,6 @@ git commit –m &quot;xxxx&quot;
         <tag>记录</tag>
         <tag>vps</tag>
         <tag>Xray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘下载</title>
-    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
-<ul>
-<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
-</li>
-<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
-</li>
-</ul>
-<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
-<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>下载</tag>
       </tags>
   </entry>
 </search>
