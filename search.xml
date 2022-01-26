@@ -169,16 +169,23 @@ pause
 <li>新电脑上使用hexo</li>
 <li>重要提示</li>
 </ul>
-<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/mLzQCqW7MZA6Fob.png"></p>
+<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
-<p>.DS_Store<br>Thumbs.db<br>db.json<br><em>.log<br>node_modules/<br>public/<br>.deploy</em>/</p>
+<pre><code>.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+</code></pre>
 <p>如果你之前clone过theme中的主题文件，也要把主题中的.git删除。因为git是不能嵌套上传的！</p>
 <p>之后分别执行以下命令：</p>
-<p>git add .<br>git commit –m “add branch”<br>git push </p>
+<p>  git add .<br>  git commit –m “add branch”<br>  git push </p>
 <p>这样我们就把本地的文件上传到GitHub了。</p>
 <h2 id="新电脑上使用hexo"><a href="#新电脑上使用hexo" class="headerlink" title="新电脑上使用hexo"></a>新电脑上使用hexo</h2><ul>
 <li><p>安装git，参考上一篇教程 <a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git">安装git</a></p>
@@ -188,20 +195,21 @@ pause
 <li><p>安装Hexo，这里我们不需要初始化了，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></p>
 </li>
 <li><p>同步到本地<br>在任意自己喜欢的文件夹下面执行：</p>
+<p>git clone git@………………</p>
 </li>
 </ul>
-<p>git clone git@………………</p>
 <p>然后进入到同步下来的文件夹内：</p>
-<p>cd xxx.github.io<br>npm install<br>npm install hexo-deployer-git –save</p>
+<p>  cd xxx.github.io<br>  npm install<br>  npm install hexo-deployer-git –save</p>
 <ul>
-<li>生成部署</li>
-</ul>
+<li><p>生成部署</p>
 <p>hexo g<br>hexo d</p>
+</li>
+</ul>
 <p>这样我们就在新电脑上设置完成了！</p>
 <h2 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h2><p>以后每次写完博客，一定要把源文件同步到GitHub上：</p>
-<p>git add .<br>git commit –m “xxxx”<br>git push </p>
+<p>  git add .<br>  git commit –m “xxxx”<br>  git push </p>
 <p>每次开始写新的博客之前，执行一下：</p>
-<p>git pull</p>
+<p>  git pull</p>
 ]]></content>
       <categories>
         <category>网站</category>
@@ -226,6 +234,97 @@ pause
       <tags>
         <tag>工具</tag>
         <tag>索引合集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>德国Euserv免费的VPS安装Xray</title>
+    <url>/2021/08/08/%E5%BE%B7%E5%9B%BDEuserv%E5%85%8D%E8%B4%B9%E7%9A%84VPS%E5%AE%89%E8%A3%85Xray/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>放假在家的时候，没有IPV6环境，想通过北邮人下载一些需要的资源，但是又不想花钱买vultr的VPS（因为我没有扶墙的需求）。所以就琢磨着白嫖，哈哈哈，白嫖使我快乐，后来就发现了Euserv这个德国的VPS。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>注册使用Euserv</li>
+<li>ssh登录到远程主机</li>
+<li>安装Xray</li>
+<li>使用Qv2ray</li>
+</ol>
+<h2 id="注册使用Euserv"><a href="#注册使用Euserv" class="headerlink" title="注册使用Euserv"></a>注册使用Euserv</h2><ol>
+<li>注册<a href="https://www.euserv.com/en/register.php">Euserv</a>,注册时，信息可以如实填写，在国内的同学账户验证可能需要2-3天。有一说一，到德国的延时是真的高，网页半天才刷出来~~</li>
+<li>账户注册验证完成后，在这个界面<a href="https://www.euserv.com/en/virtual-private-server/root-vserver/v2/vs2-free.php">vs2-free</a>订购一个免费的服务。这一步也是需要审核的，耐心等待，难道这就是德国人严谨的作风，interesting~</li>
+<li>再等个一天吧，审核通过。登录账户，login customer control panel。在Vserv中点击select，我们先点击reinstallation安装一个系统Debian10系统。系统装好后点击serverdata，就可以看到VPS的详细信息。包括远程登录使用的IP，root密码。<br><img src="https://i.loli.net/2021/08/08/hVRvz1ISgYLWJZ9.png"><br><img src="https://i.loli.net/2021/08/08/B8P6rSzxuMcnbjs.png"><br><img src="https://i.loli.net/2021/08/08/SsWkYDa9j2gHcBz.png"></li>
+</ol>
+<h2 id="ssh登录到远程主机"><a href="#ssh登录到远程主机" class="headerlink" title="ssh登录到远程主机"></a>ssh登录到远程主机</h2><p>因为我没有本地IPV6，所以只能给本地电脑添加IPV6隧道，然后再ssh连接到Euserv。如果你有本地IPV6，比如家里的宽度有，或者手机支持IPV6（国内电信联通移动这些运营商好像会提供），你可以直接远程连接。这里推荐<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>这款软件，免费且界面好看。比putty和Xshell都好用。</p>
+<p>本地电脑添加IPV6隧道：</p>
+<ol>
+<li><p>以管理员权限打开windows终端：在windows图标上右键，选择“windows终端（管理员）”</p>
+</li>
+<li><p>依次输入以下命令：</p>
+<pre><code> netsh interface teredo set state enterpriseclient server=default
+ netsh interface ipv6 reset
+ netsh interface teredo set state server=teredo.remlab.net
+</code></pre>
+</li>
+<li><p>打开MobaXterm，建立ssh连接。端口默认22，用户root，密码和ip可以在Euserv的serverdata中找到。</p>
+</li>
+<li><p>以后你可以通过以下命令关闭IPV6隧道（本教程中不需要执行这一条）：</p>
+<pre><code> netsh interface Teredo set state disable
+</code></pre>
+</li>
+</ol>
+<h2 id="安装Xray"><a href="#安装Xray" class="headerlink" title="安装Xray"></a>安装Xray</h2><p>前提你得有一个自己的域名，没有的自己去买一个，或者找找免费的域名。然后参考这篇文章，设置一下<a href="https://zhuanlan.zhihu.com/p/82909515">cloudflare</a>。</p>
+<p>在开始之前在cloudflare上增加一个新的记录，如下图所示，名称你可以自己取，内容就是Euserv上的IPV6地址，代理状态先不打开：</p>
+<p><img src="https://i.loli.net/2021/08/08/q2M3X9LFlfij1em.png"></p>
+<p><strong>当然，当然，</strong>如果你和我一样懒，一样的财力不雄厚，也可以不搞cloudflare,直接去<a href="https://sso.godaddy.com/account/create?realm=idp&path=/products&app=account">godaddy</a>上面注册一个域名，选最便宜的一年才8块钱，等到期了再8块钱注册一个呗，可以使用PayPal付款，paypal可以绑定银联的借记卡。注册好自己的域名之后：我的产品—网域—点击右上角的三角符号—管理DNS–点击底部的加入—增加一个AAAA记录，参考下图:</p>
+<p><img src="https://i.loli.net/2021/08/09/AzuBxDEiQqP5yec.png"><br><img src="https://i.loli.net/2021/08/09/VtJNO1Lgbahv8s4.png"></p>
+<p>然后我们接着往下走，这一部分我参考的<a href="https://trojanv2ray.blogspot.com/2020/12/VPSEuservXray.html">这篇文章</a>。</p>
+<ol>
+<li><p>VPS设置IPV4访问。因为我们订购的那个免费主机是纯IPV6地址的，为了能访问Github下载文件，所以要设置VPS能访问IPV4地址。输入以下命令：</p>
+<pre><code> echo -e &quot;nameserver 2001:67c:2b0::4•\nnameserver 2001:67c:2b0::6&quot; &gt; /etc/resolv.conf
+</code></pre>
+</li>
+<li><p>安装curl:</p>
+<pre><code> apt-get update -y &amp;&amp; apt-get install curl -y
+</code></pre>
+</li>
+<li><p>Xray一键安装代码:</p>
+<pre><code> bash &lt;(curl -sL https://s.hijk.art/xray.sh)
+</code></pre>
+</li>
+</ol>
+<p>Cloudflare的CDN，目前只能使用websocket协议，XTLS不支持websocket协议,所以我们选择7,VLESS+WS+TLS这一个选项。<br><img src="https://i.loli.net/2021/08/08/W31hYbA72FgzqfM.png"><br>安装的过程中<strong>BBR加速选项选择no</strong>，<strong>BBR加速选项选择no</strong>，<strong>BBR加速选项选择no</strong>，其余的可以都是默认。</p>
+<p>安装到最后会报错，证书没获取。没关系，我们输入以下命令获取证书：</p>
+<pre><code>    bash /root/.acme.sh/acme.sh --issue -d 域名 --debug --standalone --keylength ec-256 --listen-v6  
+</code></pre>
+<p><strong>记得把“域名”这两个字换成自己的域名</strong>。</p>
+<p>如果到最后能看到 your cert is in 某某路径，说明安装成功了，然后再次运行刚才的一键安装脚本，重新安装一遍。</p>
+<p>如果证书没有安装成功，试试下面的代码：</p>
+<pre><code>    apt-get install openssl cron socat curl   
+    apt-get -y install netcat   
+</code></pre>
+<p>安装成功后执行 source ~/.bashrc 以确保脚本所设置的命令别名生效。然后再运行获取证书的命令，如果成功，就运行Xray一键安装代码。</p>
+<p>我在安装证书的时候遇到了“tcp port 80 is alread used in nginx…”的错误，提示我先先关闭nginx。我使用下面的命令关闭：</p>
+<pre><code>    nginx -s quit  #此方式停止步骤是待nginx进程处理任务完毕进行停止
+</code></pre>
+<p>还有一些其他的命令放在这里(你不用输入的亲，我留着给自己以后参考）:</p>
+<pre><code>    1.start nginx  //启动nginx的命令。
+    2.nginx -s quit  //此方式停止步骤是待nginx进程处理任务完毕进行停止。
+    3.nginx -s stop  //此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。
+    4.nginx -s reload  //重新加载配置文件：当 nginx的配置文件 nginx.conf 修改后，要想让配置生效需要重启 nginx，使用-s reload不用先停止 nginx再启动 nginx 即可将配置信息在 nginx 中生效
+</code></pre>
+<p>4.Xray安装成功后，可以看到配置信息。</p>
+<h2 id="使用Qv2ray"><a href="#使用Qv2ray" class="headerlink" title="使用Qv2ray"></a>使用Qv2ray</h2><p>把我截图中的红框里的内容换成自己的，就OK了。</p>
+<p>主机和TLS下“服务器地址（SNI)”填写自己的域名。</p>
+<p>需要特别说明的一个就是请求头那里是 Host|你的域名。其他的就是正常使用Qv2ray的方法。</p>
+<p><img src="https://i.loli.net/2021/08/08/ryMPJ1Y7xDTUwO9.png"><br><img src="https://i.loli.net/2021/08/08/ldGCFqkUQyKi3En.png"></p>
+<p>打开代理，看看自己是不是能上网了。如果不能，回到cloudflare里，把我们刚刚增加的那个记录的代理打开。也就是点击小云朵，让他变黄色~~~</p>
+<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>本文属于自己参考多篇教程梳理总结的内容，建议配合<a href="https://www.youtube.com/watch?v=cfoh2j4fZcM">这个Youtube视频</a>一起食用。</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+        <tag>记录</tag>
+        <tag>vps</tag>
+        <tag>Xray</tag>
       </tags>
   </entry>
   <entry>
@@ -439,97 +538,6 @@ hexo d
       <tags>
         <tag>网站</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>德国Euserv免费的VPS安装Xray</title>
-    <url>/2021/08/08/%E5%BE%B7%E5%9B%BDEuserv%E5%85%8D%E8%B4%B9%E7%9A%84VPS%E5%AE%89%E8%A3%85Xray/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>放假在家的时候，没有IPV6环境，想通过北邮人下载一些需要的资源，但是又不想花钱买vultr的VPS（因为我没有扶墙的需求）。所以就琢磨着白嫖，哈哈哈，白嫖使我快乐，后来就发现了Euserv这个德国的VPS。</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
-<li>注册使用Euserv</li>
-<li>ssh登录到远程主机</li>
-<li>安装Xray</li>
-<li>使用Qv2ray</li>
-</ol>
-<h2 id="注册使用Euserv"><a href="#注册使用Euserv" class="headerlink" title="注册使用Euserv"></a>注册使用Euserv</h2><ol>
-<li>注册<a href="https://www.euserv.com/en/register.php">Euserv</a>,注册时，信息可以如实填写，在国内的同学账户验证可能需要2-3天。有一说一，到德国的延时是真的高，网页半天才刷出来~~</li>
-<li>账户注册验证完成后，在这个界面<a href="https://www.euserv.com/en/virtual-private-server/root-vserver/v2/vs2-free.php">vs2-free</a>订购一个免费的服务。这一步也是需要审核的，耐心等待，难道这就是德国人严谨的作风，interesting~</li>
-<li>再等个一天吧，审核通过。登录账户，login customer control panel。在Vserv中点击select，我们先点击reinstallation安装一个系统Debian10系统。系统装好后点击serverdata，就可以看到VPS的详细信息。包括远程登录使用的IP，root密码。<br><img src="https://i.loli.net/2021/08/08/hVRvz1ISgYLWJZ9.png"><br><img src="https://i.loli.net/2021/08/08/B8P6rSzxuMcnbjs.png"><br><img src="https://i.loli.net/2021/08/08/SsWkYDa9j2gHcBz.png"></li>
-</ol>
-<h2 id="ssh登录到远程主机"><a href="#ssh登录到远程主机" class="headerlink" title="ssh登录到远程主机"></a>ssh登录到远程主机</h2><p>因为我没有本地IPV6，所以只能给本地电脑添加IPV6隧道，然后再ssh连接到Euserv。如果你有本地IPV6，比如家里的宽度有，或者手机支持IPV6（国内电信联通移动这些运营商好像会提供），你可以直接远程连接。这里推荐<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>这款软件，免费且界面好看。比putty和Xshell都好用。</p>
-<p>本地电脑添加IPV6隧道：</p>
-<ol>
-<li><p>以管理员权限打开windows终端：在windows图标上右键，选择“windows终端（管理员）”</p>
-</li>
-<li><p>依次输入以下命令：</p>
-<pre><code> netsh interface teredo set state enterpriseclient server=default
- netsh interface ipv6 reset
- netsh interface teredo set state server=teredo.remlab.net
-</code></pre>
-</li>
-<li><p>打开MobaXterm，建立ssh连接。端口默认22，用户root，密码和ip可以在Euserv的serverdata中找到。</p>
-</li>
-<li><p>以后你可以通过以下命令关闭IPV6隧道（本教程中不需要执行这一条）：</p>
-<pre><code> netsh interface Teredo set state disable
-</code></pre>
-</li>
-</ol>
-<h2 id="安装Xray"><a href="#安装Xray" class="headerlink" title="安装Xray"></a>安装Xray</h2><p>前提你得有一个自己的域名，没有的自己去买一个，或者找找免费的域名。然后参考这篇文章，设置一下<a href="https://zhuanlan.zhihu.com/p/82909515">cloudflare</a>。</p>
-<p>在开始之前在cloudflare上增加一个新的记录，如下图所示，名称你可以自己取，内容就是Euserv上的IPV6地址，代理状态先不打开：</p>
-<p><img src="https://i.loli.net/2021/08/08/q2M3X9LFlfij1em.png"></p>
-<p><strong>当然，当然，</strong>如果你和我一样懒，一样的财力不雄厚，也可以不搞cloudflare,直接去<a href="https://sso.godaddy.com/account/create?realm=idp&path=/products&app=account">godaddy</a>上面注册一个域名，选最便宜的一年才8块钱，等到期了再8块钱注册一个呗，可以使用PayPal付款，paypal可以绑定银联的借记卡。注册好自己的域名之后：我的产品—网域—点击右上角的三角符号—管理DNS–点击底部的加入—增加一个AAAA记录，参考下图:</p>
-<p><img src="https://i.loli.net/2021/08/09/AzuBxDEiQqP5yec.png"><br><img src="https://i.loli.net/2021/08/09/VtJNO1Lgbahv8s4.png"></p>
-<p>然后我们接着往下走，这一部分我参考的<a href="https://trojanv2ray.blogspot.com/2020/12/VPSEuservXray.html">这篇文章</a>。</p>
-<ol>
-<li><p>VPS设置IPV4访问。因为我们订购的那个免费主机是纯IPV6地址的，为了能访问Github下载文件，所以要设置VPS能访问IPV4地址。输入以下命令：</p>
-<pre><code> echo -e &quot;nameserver 2001:67c:2b0::4•\nnameserver 2001:67c:2b0::6&quot; &gt; /etc/resolv.conf
-</code></pre>
-</li>
-<li><p>安装curl:</p>
-<pre><code> apt-get update -y &amp;&amp; apt-get install curl -y
-</code></pre>
-</li>
-<li><p>Xray一键安装代码:</p>
-<pre><code> bash &lt;(curl -sL https://s.hijk.art/xray.sh)
-</code></pre>
-</li>
-</ol>
-<p>Cloudflare的CDN，目前只能使用websocket协议，XTLS不支持websocket协议,所以我们选择7,VLESS+WS+TLS这一个选项。<br><img src="https://i.loli.net/2021/08/08/W31hYbA72FgzqfM.png"><br>安装的过程中<strong>BBR加速选项选择no</strong>，<strong>BBR加速选项选择no</strong>，<strong>BBR加速选项选择no</strong>，其余的可以都是默认。</p>
-<p>安装到最后会报错，证书没获取。没关系，我们输入以下命令获取证书：</p>
-<pre><code>    bash /root/.acme.sh/acme.sh --issue -d 域名 --debug --standalone --keylength ec-256 --listen-v6  
-</code></pre>
-<p><strong>记得把“域名”这两个字换成自己的域名</strong>。</p>
-<p>如果到最后能看到 your cert is in 某某路径，说明安装成功了，然后再次运行刚才的一键安装脚本，重新安装一遍。</p>
-<p>如果证书没有安装成功，试试下面的代码：</p>
-<pre><code>    apt-get install openssl cron socat curl   
-    apt-get -y install netcat   
-</code></pre>
-<p>安装成功后执行 source ~/.bashrc 以确保脚本所设置的命令别名生效。然后再运行获取证书的命令，如果成功，就运行Xray一键安装代码。</p>
-<p>我在安装证书的时候遇到了“tcp port 80 is alread used in nginx…”的错误，提示我先先关闭nginx。我使用下面的命令关闭：</p>
-<pre><code>    nginx -s quit  #此方式停止步骤是待nginx进程处理任务完毕进行停止
-</code></pre>
-<p>还有一些其他的命令放在这里(你不用输入的亲，我留着给自己以后参考）:</p>
-<pre><code>    1.start nginx  //启动nginx的命令。
-    2.nginx -s quit  //此方式停止步骤是待nginx进程处理任务完毕进行停止。
-    3.nginx -s stop  //此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。
-    4.nginx -s reload  //重新加载配置文件：当 nginx的配置文件 nginx.conf 修改后，要想让配置生效需要重启 nginx，使用-s reload不用先停止 nginx再启动 nginx 即可将配置信息在 nginx 中生效
-</code></pre>
-<p>4.Xray安装成功后，可以看到配置信息。</p>
-<h2 id="使用Qv2ray"><a href="#使用Qv2ray" class="headerlink" title="使用Qv2ray"></a>使用Qv2ray</h2><p>把我截图中的红框里的内容换成自己的，就OK了。</p>
-<p>主机和TLS下“服务器地址（SNI)”填写自己的域名。</p>
-<p>需要特别说明的一个就是请求头那里是 Host|你的域名。其他的就是正常使用Qv2ray的方法。</p>
-<p><img src="https://i.loli.net/2021/08/08/ryMPJ1Y7xDTUwO9.png"><br><img src="https://i.loli.net/2021/08/08/ldGCFqkUQyKi3En.png"></p>
-<p>打开代理，看看自己是不是能上网了。如果不能，回到cloudflare里，把我们刚刚增加的那个记录的代理打开。也就是点击小云朵，让他变黄色~~~</p>
-<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>本文属于自己参考多篇教程梳理总结的内容，建议配合<a href="https://www.youtube.com/watch?v=cfoh2j4fZcM">这个Youtube视频</a>一起食用。</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-        <tag>记录</tag>
-        <tag>vps</tag>
-        <tag>Xray</tag>
       </tags>
   </entry>
 </search>
