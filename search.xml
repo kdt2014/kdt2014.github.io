@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Qv2ray使用手册</title>
+    <url>/2021/08/17/Qv2ray%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qv2ray是一个很好用的代理软件工具，界面美观，操作便捷。但是对于小白来说，第一次使用它的时候会遇到一些障碍，因此写了这篇文章用来介绍使用步骤。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>Qv2ray的下载与安装</li>
+<li>内核的选择</li>
+<li>增加你的配置</li>
+</ol>
+<h2 id="Qv2ray的下载与安装"><a href="#Qv2ray的下载与安装" class="headerlink" title="Qv2ray的下载与安装"></a>Qv2ray的下载与安装</h2><p>很不幸的是，就在我写这篇文章的时候（2021.8.17），去GitHub上看了一眼，该软件因为开发者内部矛盾，永久停更了（最后更新日期2021.8.17），版本停留在了2.7.0。不过你仍然可以访问他们的<a href="https://github.com/Qv2ray/Qv2ray/releases">GitHub网站</a>下载自己需要的版本。为了以防万一，我下载了最后的版本，上传到百度云，你也可以通过百度云下载链接：<a href="https://pan.baidu.com/s/1WN19u_nsxwNBP_vrbwH6cw">https://pan.baidu.com/s/1WN19u_nsxwNBP_vrbwH6cw</a> ，提取码：4scj</p>
+<p>以Windows平台为例，下载.exe程序，然后安装，你可以选择自己喜欢的位置，或者像我一样，一路下一步。</p>
+<h2 id="内核的选择"><a href="#内核的选择" class="headerlink" title="内核的选择"></a>内核的选择</h2><p>如果你使用的是Project X下的v2ray-core，去<a href="https://github.com/v2ray/v2ray-core/releases">这个网址</a> 下载对应系统版本的内核。</p>
+<p>如果你使用的是Project X下的Xray-core, 那么首先你要做的就是去<a href="https://github.com/XTLS/Xray-core/releases/tag/v1.4.2">XTLS的GitHub网站</a>下载最新的内核。</p>
+<p>Xray-core完全兼容v2ray-core，所以为了更好的协议兼容性，强烈建议你更换为Xray-core。</p>
+<p>还是以windows平台位例，下载下图中Xray-windows-64.zip文件夹（如果你是32位系统请下载32位的版本），然后放到任何一个你喜欢的位置，解压得到一个新的文件夹Xray-windows-64。</p>
+<p><img src="https://i.loli.net/2021/08/17/ISizLFW587joXna.png"></p>
+<p>下面打开刚刚安装好的Qv2ray软件，然后参照下图进行内核的选择与替换，路径中出现的Xray-windows-64就是你刚刚解压得到的新文件夹。<br><img src="https://i.loli.net/2021/08/17/O3lA5sRbacUP9X1.png"></p>
+<h2 id="增加你的配置"><a href="#增加你的配置" class="headerlink" title="增加你的配置"></a>增加你的配置</h2><p>前两步完成后，就不需要变动了，以后使用我们只需要简单的增加配置文件即可。</p>
+<p>将你的配置链接直接黏贴到相应的框框里，然后点击确定，就完成了配置的导入，具体步骤见下图。</p>
+<p><img src="https://i.loli.net/2021/08/17/ul4MAL1ti2mzGDs.png"></p>
+<p>导入成功之后，在软件界面的左边就能看到你的服务了，直接双击该服务，就可以启动，当然你也可以点击软件界面上的三角符号来启动该服务，参见下图。</p>
+<p><img src="https://i.loli.net/2021/08/17/8nlmAyoXNzORFCw.png"></p>
+<p>如果你没有配置链接，你也可以点击新建，手动录入相关的配置信息。如果你看不懂这句话，说明你不是服务的拥有者，没有配置信息。</p>
+<p>本人不提供配置链接，请勿索要，谢谢。</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>本文只是简单的提供如何使用链接添加服务器，这也是最经常使用最简单的方式。如果你需要知道更多该软件的使用方法，请善用<a href="https://www.google.com/">谷歌</a>和<a href="https://www.baidu.com/">百度</a>。</p>
+<p>全文完！</p>
+]]></content>
+      <tags>
+        <tag>网络</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Youtube-dl油管下载神器</title>
+    <url>/2021/08/02/Youtube-dl%E6%B2%B9%E7%AE%A1%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
+<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
+<li>安装ffmpeg</li>
+<li>安装Python</li>
+<li>安装youtube-dl</li>
+<li>下载</li>
+</ol>
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><p>Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。</p>
+<ul>
+<li>登录<a href="https://www.gyan.dev/ffmpeg/builds/">下载网址</a>,在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png"></p>
+<ul>
+<li><p>解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。</p>
+<p>  我的安装路径如下图所示：</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png"></p>
+<ul>
+<li><p>定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。</p>
+</li>
+<li><p>此电脑-属性-高级系统设置-环境变量-在系统变量里选中Path-编辑-新建，然后将刚刚复制的路径黏贴进去。之后点击确定-确定-确定。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png"><br><img src="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png"><br><img src="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png"></p>
+<h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。</p>
+<ul>
+<li><p>update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。</p>
+</li>
+<li><p><a href="https://www.python.org/downloads/">Python官网</a>下载最新的安装包<br><img src="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png"></p>
+</li>
+<li><p>点击安装，<strong>记得勾选一开始界面最下面的“add to path”那个选择框</strong>，点击安装，等待安装完成，最后点击下方的解除长度限制“disable path length limit”（我因为为了写这篇博客卸载后重装的，所以截图中并没有这个选项）。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png"><br><img src="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png"></p>
+<h2 id="安装youtube-dl"><a href="#安装youtube-dl" class="headerlink" title="安装youtube-dl"></a>安装youtube-dl</h2><p>如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：</p>
+<pre><code>pip install youtube-dl
+</code></pre>
+<p>如果你在国内需要翻墙，那么我们需要先确定一些事情。</p>
+<ul>
+<li>打开自己的代理软件，运行（务必运行代理）</li>
+<li>查看http代理的地址和端口，下图所示是Qv2ray，V2rayNG在软件界面最下方可以直接看到。</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png"></p>
+<p>然后打开电脑的cmd命令行界面，依次输入以下命令：</p>
+<pre><code>set http_proxy=http://127.0.0.1:8889 #一定记得把ip地址和端口改成自己代理软件中查到的
+pip install youtube-dl
+set http_proxy=
+pause
+</code></pre>
+<p>没有问题的话，就应该安装完成了。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载这个文件夹，链接: <a href="https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw">https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw</a> 提取码: pjuw。</p>
+<p><img src="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png"></p>
+<p>里面包含上图所示的这些东西。</p>
+<ul>
+<li>如果你需要代理环境，请用记事本打开上图被圈出来的三个文件，然后将代理部分的ip和端口改成自己软件中显示的。这一步类似安装youtube-dl时我们做的事情。<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png"></p>
+<ul>
+<li>如果你不需要代理，那么同样打开这三个文件，将所以和set_proxy有关的语句都注释掉即可。</li>
+</ul>
+<p>注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></p>
+<pre><code>:set http_proxy=http://127.0.0.1:8889
+:set http_proxy=
+</code></pre>
+<p>OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。</p>
+<p>结束！！</p>
+<p>最后，感谢<a href="https://www.bilibili.com/video/BV1AB4y1F7nG?from=search&seid=13837731026935348595">团叽的OO的视频团叽的OO的视频</a>，本文教程属于该视频的文字总结版本。因为担心他的视频也许有一天会找不到，故此做一个文字备份。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>youtube-dl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Adobe family</title>
+    <url>/2021/09/11/adobe-family/</url>
+    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
+<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
+<p> 看他的置顶，可以找到你想要的东西。</p>
+<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>Adobe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>双系统下重装Win10，ubuntu无法进入</title>
+    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
+<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
+<ol>
+<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
+</li>
+<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
+</li>
+<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
+</li>
+<li><p>打开命令行，输入以下命令：</p>
+<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
+</code></pre>
+</li>
+<li><p>再接着输入：</p>
+<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
+</code></pre>
+</li>
+</ol>
+<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
+<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将HEXO博客迁移到一台新的电脑</title>
+    <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>创建新的分支</li>
+<li>新电脑上使用hexo</li>
+<li>重要提示</li>
+</ul>
+<h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/mLzQCqW7MZA6Fob.png"></p>
+<p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
+<p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
+<p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
+<p>.DS_Store<br>Thumbs.db<br>db.json<br><em>.log<br>node_modules/<br>public/<br>.deploy</em>/</p>
+<p>如果你之前clone过theme中的主题文件，也要把主题中的.git删除。因为git是不能嵌套上传的！</p>
+<p>之后分别执行以下命令：</p>
+<p>git add .<br>git commit –m “add branch”<br>git push </p>
+<p>这样我们就把本地的文件上传到GitHub了。</p>
+<h2 id="新电脑上使用hexo"><a href="#新电脑上使用hexo" class="headerlink" title="新电脑上使用hexo"></a>新电脑上使用hexo</h2><ul>
+<li><p>安装git，参考上一篇教程 <a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git">安装git</a></p>
+</li>
+<li><p>安装Node.js，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Node-js">安装Node.js</a></p>
+</li>
+<li><p>安装Hexo，这里我们不需要初始化了，参考<a href="https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></p>
+</li>
+<li><p>同步到本地<br>在任意自己喜欢的文件夹下面执行：</p>
+</li>
+</ul>
+<p>git clone git@………………</p>
+<p>然后进入到同步下来的文件夹内：</p>
+<p>cd xxx.github.io<br>npm install<br>npm install hexo-deployer-git –save</p>
+<ul>
+<li>生成部署</li>
+</ul>
+<p>hexo g<br>hexo d</p>
+<p>这样我们就在新电脑上设置完成了！</p>
+<h2 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h2><p>以后每次写完博客，一定要把源文件同步到GitHub上：</p>
+<p>git add .<br>git commit –m “xxxx”<br>git push </p>
+<p>每次开始写新的博客之前，执行一下：</p>
+<p>git pull</p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建记录</title>
+    <url>/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很早就有搭建博客记录生活的想法了，以前看过有人使用WordPress搭建，但是自己尝试了一遍没有成功，所以就一直搁置至今。</p>
+<p>最近偶然间看到了有人使用GitHub+Hexo搭建博客，更加的方便易管理，而且自己已经有一个域名了。所以说干就干，下面是整个过程的记录。</p>
+<h1 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h1><ol>
+<li>注册GitHub，并新建一个仓库</li>
+<li>安装git</li>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+<li>发布第一篇博文</li>
+<li>注册域名，并在GitHub上绑定个性化域名</li>
+<li>安装网站美化主题</li>
+<li>hexo指令简介</li>
+</ol>
+<h2 id="注册GitHub，并新建一个仓库"><a href="#注册GitHub，并新建一个仓库" class="headerlink" title="注册GitHub，并新建一个仓库"></a>注册GitHub，并新建一个仓库</h2><p> <a href="https://github.com/">GitHub</a>是全球最大的开源社区，在这里你能认识很多有趣的人，并从大佬那里学习很多知识。注册完成后点击屏幕右上角的“+”，然后点击New repository新建一个仓库，仓库的名称为：用户名.github.io，用户名就是你注册时给自己取的名字。Descritopns那里可以填写my personal website，或者其他任何你自己想写的内容。然后保持其他选项默认，点击底部的绿色按钮Create repository即可。<br><img src="https://i.loli.net/2021/07/27/v8oBsiDPux4yGf2.png"></p>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>从<a href="https://git-scm.com/download/win">git</a>官网下载对应的版本安装。有时间可以看看<a href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰</a>老师的git详细教程。这里我们暂时不需要学习很多指令，先把网站搭起来再慢慢学习。</p>
+<p>在电脑硬盘里新建一个名为Hexo的文件夹，你可以放在任何你想放的位置。进入我们刚建立的空文件夹，鼠标右键，选择git bash here。<br><img src="https://i.loli.net/2021/07/27/i5wYpmKHF41rgfD.png"></p>
+<p>然后输入以下指令</p>
+<pre><code>git config --global user.name &quot;GitHub用户名&quot;  #记得替换双引号中的内容
+git config --global user.email &quot;GitHub注册邮箱&quot;
+</code></pre>
+<p>接着生成ssh秘钥，这样GitHub就能够认识我们的电脑，方便以后的操作。</p>
+<pre><code>ssh-keygen -t rsa -C &quot;GitHub注册邮箱&quot;  #记得替换双引号中的内容
+</code></pre>
+<p>操作过程中一路回车即可。</p>
+<p>按照下图中的路径找到id_rsa.pub这个文件，用记事本打开，然后全选复制内容。打开github的<a href="https://github.com/settings/keys">setting keys界面</a>，点击绿色的new SSH key按钮，将刚才复制的内容粘贴到key的框中，title一栏可以随意填写，不过我建议你填写正在使用的电脑名称，方便我们知道这是那台设备的ssh key。最后点击下方的 add ssh key即可。</p>
+<p><img src="https://i.loli.net/2021/07/27/9rjqGPLkCbUmouW.png"></p>
+<p>接着我们输入以下指令来验证是否成功添加了SSH:</p>
+<pre><code>ssh git@github.com
+</code></pre>
+<p>如果出现以下截图，说明成功：<br><img src="https://i.loli.net/2021/07/27/FcAXR2Uy8edh7nr.png"></p>
+<p>第一次设置的时候可能并不会直接出现这个界面，会有一段较长的文字显示，但是最后的文字是一样的，当时设置时忘记截图了。</p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p><a href="https://nodejs.org/en/download/">Node.js下载网站</a></p>
+<p>从上面的网站下载对应的版本，执行安装即可。windows版本下载的.msi软件包和.exe程序一样，直接双击就能安装。没什么好说的，一路下一步，印象里安装前的最后一步问你是否勾选“自动安装依赖”之类的，我勾选了。</p>
+<p>测试是否安装成功，打开命令行界面，输入：</p>
+<pre><code>node -v
+</code></pre>
+<p>如果输出了版本号，说明安装成功。</p>
+<p>我们在安装node.js时，也会同时安装npm，类似的，在命令行输入：</p>
+<pre><code>npm -v
+</code></pre>
+<p>如果输出版本号，则安装成功。</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>进入刚刚我们建立的Hexo文件夹内，按住shift键的同时点击鼠标右键，选择<strong>“在windows终端打开”</strong>，此步操作的目的是在你建立的博客文件夹目录下执行操作。</p>
+<p>执行以下命令安装hexo：</p>
+<pre><code>npm install -g hexo-cli 
+</code></pre>
+<p>耐心等待安装完成，印象中会在某个地方停顿好久，可以按一下回车键或者空格键，一定要等到程序完全安装结束。接着初始化博客：</p>
+<pre><code>hexo init blog
+</code></pre>
+<h2 id="发布第一篇博文"><a href="#发布第一篇博文" class="headerlink" title="发布第一篇博文"></a>发布第一篇博文</h2><p>下面就是激动人心的时刻了，发布我们的第一篇博文，跟着命令来吧：</p>
+<pre><code>hexo new my first bolg
+hexo g
+hexo s
+</code></pre>
+<p>完成这些操作后，复制以下地址到浏览器地址栏：</p>
+<pre><code>localhost:4000
+</code></pre>
+<p>就看到我们在博客中添加了一条标题为 my first blog的内容啦。同时在本地hexo/source/_posts目录下看到一个my first blog.md的文件。这个就是我们博客的内容了，可以通过Markdown编辑软件打开，编辑我们想要发布的内容。我使用的是<a href="http://markdownpad.com/">MarkdownPad2</a>，关于Markdown的语法，你可以参考这个<a href="https://www.appinn.com/markdown/">十分钟学会Markdown</a>。</p>
+<p>注意，这里只是本地预览，我们还需要一些操作将hexo生成的网页真正的发布到互联网上，这里我们是借助github来实现。</p>
+<p>在hexo文件夹下找到_config.yml，如下图所示，用文本编辑软件打开。这里安利一下<a href="https://code.visualstudio.com/">vs code</a>，微软良心产品，各平台通用，不仅能编程，做个文本编辑器也是好用的。如果你实在不想安装软件，好吧，右键，选择用记事本打开。</p>
+<p><img src="https://i.loli.net/2021/07/27/WQ1BUgvT7a3cGsI.png"></p>
+<p>找到下面代码的部分，将repo那部分改成自己的地址：</p>
+<pre><code>deploy:
+      type: git
+      repo: https://github.com/你的ID/你的ID.github.io.git
+      branch: master
+</code></pre>
+<p>养成良好习惯，随手保存，Ctrl+S保平安。</p>
+<p>接着安装git部署插件：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre>
+<p>现在我们的博客已经和github建立了联系，而且可以方便的使用git将内容上传到github的仓库里了。</p>
+<p>下面就让我们来验证一下吧，跟着下面的命令走：</p>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre>
+<p>网站现在已经成功的部署到互联网上啦，下面我们来访问这个网站：</p>
+<pre><code>你的ID.github.io
+</code></pre>
+<p>如果不出意外的话，现在你的博客已经成功上线啦！</p>
+<h2 id="安装网站美化主题"><a href="#安装网站美化主题" class="headerlink" title="安装网站美化主题"></a>安装网站美化主题</h2><p>默认的博客界面较为简陋，但是开放的互联网为我们提供了各式各样的美化主题，你可以访问<a href="https://hexo.io/themes/">hexo官方主题网站</a>寻找自己喜欢的样式。</p>
+<p>我使用的NexT主题，你完全可以按照<a href="https://theme-next.js.org/docs/getting-started/">官方说明文档getting-started</a>来一步步安装，使用，个性化这个主题，当然也可以参照这里的中文记录。</p>
+<p>在正式的操作开始前，先介绍两个概念，这对接下来的操作很重要：</p>
+<p><strong>Hexo使用的主要配置文件有两个，都叫做_config.yml</strong></p>
+<ol>
+<li>第一个是在站点根目录下，其中包含Hexo的配置。</li>
+<li>第二个是在主题根目录下，它由NexT提供，包含了主题的配置。</li>
+</ol>
+<p>我们称第一个文件为<strong>网站配置文件</strong>，第二个文件为<strong>主题配置文件</strong>。</p>
+<p>好的，概念介绍完毕，继续我们的操作。</p>
+<p>在hexo目录中打开命令行（我们已经对这个操作很熟悉了，实际上本篇博客的所有操作都是在这个目录中进行的），然后输入以下指令：</p>
+<pre><code>git clone https://github.com/next-theme/hexo-theme-next themes/next
+</code></pre>
+<p>打开网站配置文件，将主题设定为next</p>
+<p><img src="https://i.loli.net/2021/07/27/aSgh1df38biv4Nu.png"></p>
+<p>现在我们已经成功的安装并且开启了nex主题，那就来检验一下吧：</p>
+<pre><code>hexo clean
+hexo g
+hexo s
+</code></pre>
+<p>在本地浏览器地址栏输入：</p>
+<pre><code>localhost:4000
+</code></pre>
+<p>可以看到我们的网站已经换了一个主题，好看多了。</p>
+<p>你还可以打开主题配置文件，选择next主题提供的不同样式：</p>
+<p><img src="https://i.loli.net/2021/07/27/yeG6FIUQznsWfuh.png"></p>
+<p>还有更多的网站个性化设置，善用搜索，也许以后我也会慢慢更新。</p>
+<h2 id="个性化域名"><a href="#个性化域名" class="headerlink" title="个性化域名"></a>个性化域名</h2><p>这个步骤并不是非做不可，但是对于那些想要彰显个性的同学，我们可以设置属于自己的个性化域名。</p>
+<p>首先，你需要有一个属于自己的域名，国内可以去<a href="https://www.alibabacloud.com/zh/domain?utm_key=se_1006854129&utm_content=se_1006854129&gclid=Cj0KCQjw3f6HBhDHARIsAD_i3D8ivJ6aXXy9IXNUr0l1EoWpV5vrNNHlA1ogFasGGEvd7ecMGF_kDHUaAuFBEALw_wcB">阿里云域名</a>注册一个自己喜欢的自定义域名，选便宜的买就行，土豪随意。我是在国外的<a href="https://hk.godaddy.com/offers/godaddy?isc=gofhlhk02&countryview=1&currencyType=HKD&gclid=Cj0KCQjw3f6HBhDHARIsAD_i3D9myp_cB1Bq_PqnheVnwliYTwt-v8_2LQGzfYYIwYi5k8lBY1rCjzMaApD6EALw_wcB&gclsrc=aw.ds">godaddy</a>上购买的域名，接下来的设置展示也是以godaddy为例。</p>
+<p>在域名提供商的DNS管理界面，增加4条A记录，记录名称@，值为4个IP地址，你也可以参考github的官方文档<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Configuring an apex domain</a>来查找这4个IP地址：</p>
+<pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre>
+<p>设置好之后的界面类似下面这样：</p>
+<p><img src="https://i.loli.net/2021/07/27/3LOBN59tRThAybl.png"></p>
+<p>接着添加一条CNAME记录，名称为:www，值为:你的id.github.io。</p>
+<p><img src="https://i.loli.net/2021/07/27/i3HjSoe8aRBZGsn.png"></p>
+<p>然后登录GitHub，进入刚建立的仓库，点击settings，点击左边列表中选择pages，设置Custom domain，输入你的个性化域名，如下图所示：</p>
+<p><img src="https://i.loli.net/2021/07/27/PIOiw2rLA1m6xUf.png"></p>
+<p>最后一步，在本地的hexo/source文件目录下，新建一个名称为CNAME文件，里面输入你的个性化域名，并将文件保存为所有文件类型。<strong>注意不是保存为txt，是保存为所有文件类型。</strong></p>
+<p><img src="https://i.loli.net/2021/07/27/jnu48GlADyBLPRz.png"></p>
+<p>好的，大功告成，现在让我们来验证一下吧，依次输入一下命令：</p>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre>
+<p>这时候在浏览器地址栏输入自己的个性化域名即可开心的浏览自己的博客啦。</p>
+<h2 id="hexo指令简介"><a href="#hexo指令简介" class="headerlink" title="hexo指令简介"></a>hexo指令简介</h2><p>命令简写</p>
+<p>hexo n “blog” #新建文章</p>
+<p>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p>
+<p>hexo g #生成</p>
+<p>hexo s #启动服务预览</p>
+<p>hexo d #部署</p>
+<p>hexo3连：</p>
+<pre><code>hexo g
+hexo g
+hexo d
+</code></pre>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>想搭建一个个人博客很快，半天时间就足够了。但是如果你想要它好看，符合自己的需求，还是需要花点功夫慢慢的拾到。不过最重要的一点不要忘记，我们建立博客的初衷是分享自己的内容，这才是最重要的。</p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>记录</tag>
+        <tag>网站</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘下载</title>
+    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
+<ul>
+<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
+</li>
+<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
+</li>
+</ul>
+<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
+<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>让自己通过Hexo建立的博客被谷歌搜索到</title>
+    <url>/2021/08/14/%E8%AE%A9%E8%87%AA%E5%B7%B1%E9%80%9A%E8%BF%87Hexo%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%A2%AB%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般我们建立博客的目的就是分享一些东西，那么如何让我们的博客被更多的人看到呢？那当然是被搜索引擎收录后，能够被更多的人用关键词检索到。</p>
+<p>本文介绍如何让自己的博客被谷歌搜索引擎搜索到，如需知道如何被百度检索请参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988/">这篇文章</a></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>本地配置</li>
+<li>谷歌搜索配置</li>
+</ul>
+<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>在博客安装根目录，也就是你平时运行 hexo g等命令的那一层目录，执行以下代码：</p>
+<pre><code>npm install hexo-generator-sitemap --save
+</code></pre>
+<p>安装完成后，在.deploy.git文件夹下能发现多了一个sitemap.xml的文件，以后我们每次运行hexo g这个命令时就会生成（更新）这个文件。</p>
+<p>打开博客的配置文件（博客安装根目录下）_config.yml，找到以下内容，并将URL更改为自己的网站地址。</p>
+<p><img src="https://i.loli.net/2021/08/14/ZmsoERqd1va8O7K.png"></p>
+<h2 id="谷歌搜索配置"><a href="#谷歌搜索配置" class="headerlink" title="谷歌搜索配置"></a>谷歌搜索配置</h2><p>首先打开<a href="https://search.google.com/search-console">谷歌搜索配置网站</a>，如果你没有谷歌账户，没关系注册一个。</p>
+<p>点击左上角的三角箭头，然后添加资源，如下图所示：</p>
+<p><img src="https://i.loli.net/2021/08/14/zmE2BfK5DcC3JWP.png"></p>
+<p>然后在下图中的位置填写你的网址，然后点击继续：</p>
+<p><img src="https://i.loli.net/2021/08/14/DNXbJk2P67YEVgh.png"></p>
+<p>在弹出以下界面后，点击“前往资源界面”。</p>
+<p><img src="https://i.loli.net/2021/08/14/F7i2wcDLsATgUPr.png"></p>
+<p>接下来的部分当时布置时我没有截图，只能凭记忆用语言描述以下，很简单的几步操作。</p>
+<p>这时的谷歌界面应该是告诉你去DNS服务商那里添加一条TXT记录，然后给了你一串可以复制的代码。</p>
+<p>这时打开你购买网址的服务商网站，在DNS解析那里添加一条TXT记录，然后将谷歌提供的内容粘贴进去，保存即可。如下图展示的是在cloudflare中添加TXT记录。</p>
+<p><img src="https://i.loli.net/2021/08/14/DbxK73CPE4qGtUw.png"></p>
+<p>之后在谷歌搜索的console界面就能就能看到我们的网址，然后点击站点地图，添加你自己的网址：<a href="https://yoursite/sitemap">https://yoursite/sitemap</a></p>
+<p><img src="https://i.loli.net/2021/08/14/KDyd6srqfuXw5Vk.png"></p>
+<p>然后就能看到谷歌提示，成功添加。如果你在执行这一步之前没有在配置文件_config.yml中修改url并在修改后执行 hexo g，hexo d，谷歌会报错的。这时你要删掉刚刚添加的站台地图网址，在完成以上动作后，重新添加就不会有报错了。</p>
+<p>然后等待谷歌更新，就能收录你的博客内容了。需要一些时间（maybe 几十分钟，maybe更长）。</p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>德国Euserv免费的VPS安装Xray</title>
+    <url>/2021/08/08/%E5%BE%B7%E5%9B%BDEuserv%E5%85%8D%E8%B4%B9%E7%9A%84VPS%E5%AE%89%E8%A3%85Xray/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>放假在家的时候，没有IPV6环境，想通过北邮人下载一些需要的资源，但是又不想花钱买vultr的VPS（因为我没有扶墙的需求）。所以就琢磨着白嫖，哈哈哈，白嫖使我快乐，后来就发现了Euserv这个德国的VPS。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>注册使用Euserv</li>
+<li>ssh登录到远程主机</li>
+<li>安装Xray</li>
+<li>使用Qv2ray</li>
+</ol>
+<h2 id="注册使用Euserv"><a href="#注册使用Euserv" class="headerlink" title="注册使用Euserv"></a>注册使用Euserv</h2><ol>
+<li>注册<a href="https://www.euserv.com/en/register.php">Euserv</a>,注册时，信息可以如实填写，在国内的同学账户验证可能需要2-3天。有一说一，到德国的延时是真的高，网页半天才刷出来~~</li>
+<li>账户注册验证完成后，在这个界面<a href="https://www.euserv.com/en/virtual-private-server/root-vserver/v2/vs2-free.php">vs2-free</a>订购一个免费的服务。这一步也是需要审核的，耐心等待，难道这就是德国人严谨的作风，interesting~</li>
+<li>再等个一天吧，审核通过。登录账户，login customer control panel。在Vserv中点击select，我们先点击reinstallation安装一个系统Debian10系统。系统装好后点击serverdata，就可以看到VPS的详细信息。包括远程登录使用的IP，root密码。<br><img src="https://i.loli.net/2021/08/08/hVRvz1ISgYLWJZ9.png"><br><img src="https://i.loli.net/2021/08/08/B8P6rSzxuMcnbjs.png"><br><img src="https://i.loli.net/2021/08/08/SsWkYDa9j2gHcBz.png"></li>
+</ol>
+<h2 id="ssh登录到远程主机"><a href="#ssh登录到远程主机" class="headerlink" title="ssh登录到远程主机"></a>ssh登录到远程主机</h2><p>因为我没有本地IPV6，所以只能给本地电脑添加IPV6隧道，然后再ssh连接到Euserv。如果你有本地IPV6，比如家里的宽度有，或者手机支持IPV6（国内电信联通移动这些运营商好像会提供），你可以直接远程连接。这里推荐<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>这款软件，免费且界面好看。比putty和Xshell都好用。</p>
+<p>本地电脑添加IPV6隧道：</p>
+<ol>
+<li><p>以管理员权限打开windows终端：在windows图标上右键，选择“windows终端（管理员）”</p>
+</li>
+<li><p>依次输入以下命令：</p>
+<pre><code> netsh interface teredo set state enterpriseclient server=default
+ netsh interface ipv6 reset
+ netsh interface teredo set state server=teredo.remlab.net
+</code></pre>
+</li>
+<li><p>打开MobaXterm，建立ssh连接。端口默认22，用户root，密码和ip可以在Euserv的serverdata中找到。</p>
+</li>
+<li><p>以后你可以通过以下命令关闭IPV6隧道（本教程中不需要执行这一条）：</p>
+<pre><code> netsh interface Teredo set state disable
+</code></pre>
+</li>
+</ol>
+<h2 id="安装Xray"><a href="#安装Xray" class="headerlink" title="安装Xray"></a>安装Xray</h2><p>前提你得有一个自己的域名，没有的自己去买一个，或者找找免费的域名。然后参考这篇文章，设置一下<a href="https://zhuanlan.zhihu.com/p/82909515">cloudflare</a>。</p>
+<p>在开始之前在cloudflare上增加一个新的记录，如下图所示，名称你可以自己取，内容就是Euserv上的IPV6地址，代理状态先不打开：</p>
+<p><img src="https://i.loli.net/2021/08/08/q2M3X9LFlfij1em.png"></p>
+<p><strong>当然，当然，</strong>如果你和我一样懒，一样的财力不雄厚，也可以不搞cloudflare,直接去<a href="https://sso.godaddy.com/account/create?realm=idp&path=/products&app=account">godaddy</a>上面注册一个域名，选最便宜的一年才8块钱，等到期了再8块钱注册一个呗，可以使用PayPal付款，paypal可以绑定银联的借记卡。注册好自己的域名之后：我的产品—网域—点击右上角的三角符号—管理DNS–点击底部的加入—增加一个AAAA记录，参考下图:</p>
+<p><img src="https://i.loli.net/2021/08/09/AzuBxDEiQqP5yec.png"><br><img src="https://i.loli.net/2021/08/09/VtJNO1Lgbahv8s4.png"></p>
+<p>然后我们接着往下走，这一部分我参考的<a href="https://trojanv2ray.blogspot.com/2020/12/VPSEuservXray.html">这篇文章</a>。</p>
+<ol>
+<li><p>VPS设置IPV4访问。因为我们订购的那个免费主机是纯IPV6地址的，为了能访问Github下载文件，所以要设置VPS能访问IPV4地址。输入以下命令：</p>
+<pre><code> echo -e &quot;nameserver 2001:67c:2b0::4•\nnameserver 2001:67c:2b0::6&quot; &gt; /etc/resolv.conf
+</code></pre>
+</li>
+<li><p>安装curl:</p>
+<pre><code> apt-get update -y &amp;&amp; apt-get install curl -y
+</code></pre>
+</li>
+<li><p>Xray一键安装代码:</p>
+<pre><code> bash &lt;(curl -sL https://s.hijk.art/xray.sh)
+</code></pre>
+</li>
+</ol>
+<p>Cloudflare的CDN，目前只能使用websocket协议，XTLS不支持websocket协议,所以我们选择7,VLESS+WS+TLS这一个选项。<br><img src="https://i.loli.net/2021/08/08/W31hYbA72FgzqfM.png"><br>安装的过程中<strong>BBR加速选项选择no</strong>，<strong>BBR加速选项选择no</strong>，<strong>BBR加速选项选择no</strong>，其余的可以都是默认。</p>
+<p>安装到最后会报错，证书没获取。没关系，我们输入以下命令获取证书：</p>
+<pre><code>    bash /root/.acme.sh/acme.sh --issue -d 域名 --debug --standalone --keylength ec-256 --listen-v6  
+</code></pre>
+<p><strong>记得把“域名”这两个字换成自己的域名</strong>。</p>
+<p>如果到最后能看到 your cert is in 某某路径，说明安装成功了，然后再次运行刚才的一键安装脚本，重新安装一遍。</p>
+<p>如果证书没有安装成功，试试下面的代码：</p>
+<pre><code>    apt-get install openssl cron socat curl   
+    apt-get -y install netcat   
+</code></pre>
+<p>安装成功后执行 source ~/.bashrc 以确保脚本所设置的命令别名生效。然后再运行获取证书的命令，如果成功，就运行Xray一键安装代码。</p>
+<p>我在安装证书的时候遇到了“tcp port 80 is alread used in nginx…”的错误，提示我先先关闭nginx。我使用下面的命令关闭：</p>
+<pre><code>    nginx -s quit  #此方式停止步骤是待nginx进程处理任务完毕进行停止
+</code></pre>
+<p>还有一些其他的命令放在这里(你不用输入的亲，我留着给自己以后参考）:</p>
+<pre><code>    1.start nginx  //启动nginx的命令。
+    2.nginx -s quit  //此方式停止步骤是待nginx进程处理任务完毕进行停止。
+    3.nginx -s stop  //此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。
+    4.nginx -s reload  //重新加载配置文件：当 nginx的配置文件 nginx.conf 修改后，要想让配置生效需要重启 nginx，使用-s reload不用先停止 nginx再启动 nginx 即可将配置信息在 nginx 中生效
+</code></pre>
+<p>4.Xray安装成功后，可以看到配置信息。</p>
+<h2 id="使用Qv2ray"><a href="#使用Qv2ray" class="headerlink" title="使用Qv2ray"></a>使用Qv2ray</h2><p>把我截图中的红框里的内容换成自己的，就OK了。</p>
+<p>主机和TLS下“服务器地址（SNI)”填写自己的域名。</p>
+<p>需要特别说明的一个就是请求头那里是 Host|你的域名。其他的就是正常使用Qv2ray的方法。</p>
+<p><img src="https://i.loli.net/2021/08/08/ryMPJ1Y7xDTUwO9.png"><br><img src="https://i.loli.net/2021/08/08/ldGCFqkUQyKi3En.png"></p>
+<p>打开代理，看看自己是不是能上网了。如果不能，回到cloudflare里，把我们刚刚增加的那个记录的代理打开。也就是点击小云朵，让他变黄色~~~</p>
+<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>本文属于自己参考多篇教程梳理总结的内容，建议配合<a href="https://www.youtube.com/watch?v=cfoh2j4fZcM">这个Youtube视频</a>一起食用。</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+        <tag>记录</tag>
+        <tag>vps</tag>
+        <tag>Xray</tag>
+      </tags>
+  </entry>
+</search>
