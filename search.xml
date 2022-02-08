@@ -33,19 +33,83 @@
       </tags>
   </entry>
   <entry>
-    <title>Adobe family</title>
-    <url>/2021/09/11/adobe-family/</url>
-    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
-<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
-<p> 看他的置顶，可以找到你想要的东西。</p>
-<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
+    <title>Youtube-dl油管下载神器</title>
+    <url>/2021/08/02/Youtube-dl%E6%B2%B9%E7%AE%A1%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
+<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
+<li>安装ffmpeg</li>
+<li>安装Python</li>
+<li>安装youtube-dl</li>
+<li>下载</li>
+</ol>
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><p>Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。</p>
+<ul>
+<li>登录<a href="https://www.gyan.dev/ffmpeg/builds/">下载网址</a>,在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png"></p>
+<ul>
+<li><p>解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。</p>
+<p>  我的安装路径如下图所示：</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png"></p>
+<ul>
+<li><p>定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。</p>
+</li>
+<li><p>此电脑-属性-高级系统设置-环境变量-在系统变量里选中Path-编辑-新建，然后将刚刚复制的路径黏贴进去。之后点击确定-确定-确定。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png"><br><img src="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png"><br><img src="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png"></p>
+<h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。</p>
+<ul>
+<li><p>update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。</p>
+</li>
+<li><p><a href="https://www.python.org/downloads/">Python官网</a>下载最新的安装包<br><img src="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png"></p>
+</li>
+<li><p>点击安装，<strong>记得勾选一开始界面最下面的“add to path”那个选择框</strong>，点击安装，等待安装完成，最后点击下方的解除长度限制“disable path length limit”（我因为为了写这篇博客卸载后重装的，所以截图中并没有这个选项）。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png"><br><img src="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png"></p>
+<h2 id="安装youtube-dl"><a href="#安装youtube-dl" class="headerlink" title="安装youtube-dl"></a>安装youtube-dl</h2><p>如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：</p>
+<pre><code>pip install youtube-dl
+</code></pre>
+<p>如果你在国内需要翻墙，那么我们需要先确定一些事情。</p>
+<ul>
+<li>打开自己的代理软件，运行（务必运行代理）</li>
+<li>查看http代理的地址和端口，下图所示是Qv2ray，V2rayNG在软件界面最下方可以直接看到。</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png"></p>
+<p>然后打开电脑的cmd命令行界面，依次输入以下命令：</p>
+<pre><code>set http_proxy=http://127.0.0.1:8889 #一定记得把ip地址和端口改成自己代理软件中查到的
+pip install youtube-dl
+set http_proxy=
+pause
+</code></pre>
+<p>没有问题的话，就应该安装完成了。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载这个文件夹，链接: <a href="https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw">https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw</a> 提取码: pjuw。</p>
+<p><img src="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png"></p>
+<p>里面包含上图所示的这些东西。</p>
+<ul>
+<li>如果你需要代理环境，请用记事本打开上图被圈出来的三个文件，然后将代理部分的ip和端口改成自己软件中显示的。这一步类似安装youtube-dl时我们做的事情。<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png"></p>
+<ul>
+<li>如果你不需要代理，那么同样打开这三个文件，将所以和set_proxy有关的语句都注释掉即可。</li>
+</ul>
+<p>注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></p>
+<pre><code>:set http_proxy=http://127.0.0.1:8889
+:set http_proxy=
+</code></pre>
+<p>OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。</p>
+<p>结束！！</p>
+<p>最后，感谢<a href="https://www.bilibili.com/video/BV1AB4y1F7nG?from=search&seid=13837731026935348595">团叽的OO的视频团叽的OO的视频</a>，本文教程属于该视频的文字总结版本。因为担心他的视频也许有一天会找不到，故此做一个文字备份。</p>
 ]]></content>
       <categories>
         <category>工具</category>
       </categories>
       <tags>
         <tag>工具</tag>
-        <tag>Adobe</tag>
+        <tag>youtube-dl</tag>
       </tags>
   </entry>
   <entry>
@@ -234,83 +298,19 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>Youtube-dl油管下载神器</title>
-    <url>/2021/08/02/Youtube-dl%E6%B2%B9%E7%AE%A1%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
-<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
-<li>安装ffmpeg</li>
-<li>安装Python</li>
-<li>安装youtube-dl</li>
-<li>下载</li>
-</ol>
-<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><p>Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。</p>
-<ul>
-<li>登录<a href="https://www.gyan.dev/ffmpeg/builds/">下载网址</a>,在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。</li>
-</ul>
-<p> <img src="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png"></p>
-<ul>
-<li><p>解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。</p>
-<p>  我的安装路径如下图所示：</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png"></p>
-<ul>
-<li><p>定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。</p>
-</li>
-<li><p>此电脑-属性-高级系统设置-环境变量-在系统变量里选中Path-编辑-新建，然后将刚刚复制的路径黏贴进去。之后点击确定-确定-确定。</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png"><br><img src="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png"><br><img src="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png"></p>
-<h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。</p>
-<ul>
-<li><p>update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。</p>
-</li>
-<li><p><a href="https://www.python.org/downloads/">Python官网</a>下载最新的安装包<br><img src="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png"></p>
-</li>
-<li><p>点击安装，<strong>记得勾选一开始界面最下面的“add to path”那个选择框</strong>，点击安装，等待安装完成，最后点击下方的解除长度限制“disable path length limit”（我因为为了写这篇博客卸载后重装的，所以截图中并没有这个选项）。</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png"><br><img src="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png"></p>
-<h2 id="安装youtube-dl"><a href="#安装youtube-dl" class="headerlink" title="安装youtube-dl"></a>安装youtube-dl</h2><p>如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：</p>
-<pre><code>pip install youtube-dl
-</code></pre>
-<p>如果你在国内需要翻墙，那么我们需要先确定一些事情。</p>
-<ul>
-<li>打开自己的代理软件，运行（务必运行代理）</li>
-<li>查看http代理的地址和端口，下图所示是Qv2ray，V2rayNG在软件界面最下方可以直接看到。</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png"></p>
-<p>然后打开电脑的cmd命令行界面，依次输入以下命令：</p>
-<pre><code>set http_proxy=http://127.0.0.1:8889 #一定记得把ip地址和端口改成自己代理软件中查到的
-pip install youtube-dl
-set http_proxy=
-pause
-</code></pre>
-<p>没有问题的话，就应该安装完成了。</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载这个文件夹，链接: <a href="https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw">https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw</a> 提取码: pjuw。</p>
-<p><img src="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png"></p>
-<p>里面包含上图所示的这些东西。</p>
-<ul>
-<li>如果你需要代理环境，请用记事本打开上图被圈出来的三个文件，然后将代理部分的ip和端口改成自己软件中显示的。这一步类似安装youtube-dl时我们做的事情。<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png"></p>
-<ul>
-<li>如果你不需要代理，那么同样打开这三个文件，将所以和set_proxy有关的语句都注释掉即可。</li>
-</ul>
-<p>注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></p>
-<pre><code>:set http_proxy=http://127.0.0.1:8889
-:set http_proxy=
-</code></pre>
-<p>OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。</p>
-<p>结束！！</p>
-<p>最后，感谢<a href="https://www.bilibili.com/video/BV1AB4y1F7nG?from=search&seid=13837731026935348595">团叽的OO的视频团叽的OO的视频</a>，本文教程属于该视频的文字总结版本。因为担心他的视频也许有一天会找不到，故此做一个文字备份。</p>
+    <title>Adobe family</title>
+    <url>/2021/09/11/adobe-family/</url>
+    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
+<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
+<p> 看他的置顶，可以找到你想要的东西。</p>
+<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
 ]]></content>
       <categories>
         <category>工具</category>
       </categories>
       <tags>
         <tag>工具</tag>
-        <tag>youtube-dl</tag>
+        <tag>Adobe</tag>
       </tags>
   </entry>
   <entry>
@@ -324,7 +324,7 @@ pause
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -386,20 +386,44 @@ git commit –m &quot;xxxx&quot;
       </tags>
   </entry>
   <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
+    <title>如何在IPV4网络环境中使用IPV6网络</title>
+    <url>/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多校园网pt用户在毕业后没有了IPV6网络，就再也无法顺畅的访问便利的资源站了。即使家里有运营商提供的IPV6地址，但是由于pt站疯了国内的V6 IP，同样没法正常访问。幸运的是，目前国外的IPV6地址还是可以使用的。下面将介绍如果在只有IPV4网络的情况下访问IPV6网站。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>注册IPV6服务器代理商</li>
+<li>建立网络服务</li>
+<li>本地网络代理设置</li>
 </ul>
+<h2 id="注册IPV6服务器代理商"><a href="#注册IPV6服务器代理商" class="headerlink" title="注册IPV6服务器代理商"></a>注册IPV6服务器代理商</h2><p>这一步理论上你可以使用任何一家的服务，只要他们提供IPV6 地址，我使用的是<a href="https://www.vultr.com/?ref=9050063-8H">vultr</a>，使用我提供的链接可以得到100刀用于<strong>首月</strong>的测试，之后就需要你自己付费了，相当于免费用一个月。之后我选择的是最便宜的一个月6刀的服务，几个人合伙使用，妥妥的够用，甚至一半都用不了。<br>按照下图步骤开一个新的实例，一定记得勾选 Enable IPV6：</p>
+<p><img src="https://s2.loli.net/2022/02/08/YNl97eXfcOBGkHj.png"><br><img src="https://s2.loli.net/2022/02/08/MCukRh9SKjFf4sb.png"><br><img src="https://s2.loli.net/2022/02/08/S6zRvl1EoAGqej9.png"><br><img src="https://s2.loli.net/2022/02/08/h7iQL4nOvSM6f9d.png"></p>
+<p>然后稍等一两分钟，就可以看到新部署的实例了。</p>
+<p>点击一下实例，就能够看到详情了，下图是我新开实例的信息，最重要的三点信息，IP, username，password，这些信息在我们远程连接服务器的过程中需要使用。</p>
+<p><img src="https://s2.loli.net/2022/02/08/IvYqsiyDQMVzjap.png"></p>
+<h2 id="建立网络服务"><a href="#建立网络服务" class="headerlink" title="建立网络服务"></a>建立网络服务</h2><ul>
+<li><p>使用<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>作为远程 ssh登录工具，良心免费软件，强烈推荐。</p>
+</li>
+<li><p>按照以下步骤输入 IPV4 地址，并且点击OK<br><img src="https://s2.loli.net/2022/02/08/dtQEihBKo4YeRrM.png"></p>
+</li>
+<li><p>在新的界面，login的用户名 root,回车，密码直接在网站上复制，然后回到mobaxterm的界面右键，自己选择一种操作模式，将密码复制进去，回车。<br><img src="https://s2.loli.net/2022/02/08/lxyJ9oMGh2snwPk.png"></p>
+</li>
+<li><p>看到这个界面，我们就成功的连接到了远程服务器<br><img src="https://s2.loli.net/2022/02/08/5Q4GqULpfwsMx1E.png"></p>
+</li>
+<li><p>服务器部署<br>这一步你可以参考<a href="https://www.jamesdailylife.com/v2ray-vless-tcp-xtls">我是教程</a>使用一键脚本部署，部署的命令：<br>  <a href="https://www.jamesdailylife.com/v2ray-vless-tcp-xtls">https://www.jamesdailylife.com/v2ray-vless-tcp-xtls</a><br>  wget -P /root -N –no-check-certificate “<a href="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot;">https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot;</a> &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</p>
+</li>
+</ul>
+<p>需要注意的是，你需要一个域名，我的是在<a href="https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core">狗爹</a>注册的，找个最便宜的就行，一年也就10刀出头，或者你自己搜索找一些免费的域名。</p>
+<h2 id="本地网络代理设置"><a href="#本地网络代理设置" class="headerlink" title="本地网络代理设置"></a>本地网络代理设置</h2><ul>
+<li>代理客户端<br>你可以使用<a href="https://github.com/2dust/v2rayN/releases">V2rayN</a>,下载最新版本，这里我们只需下载V2rayN<br><img src="https://s2.loli.net/2022/02/08/mjC6zKedVNHO3SA.png"></li>
+</ul>
+<p>然后打开软件，点击检查更新，Xray-core。这时候软件会自动下载一些东西。<br>等待自动下载完毕，点击设置–v2rayN设置-Core类型-Xray-core。<br><img src="https://s2.loli.net/2022/02/08/JBlzZDvyL4uw1gU.png"></p>
+<p>然后导入刚刚“服务器部署”那一步得到的配置链接<br><img src="https://s2.loli.net/2022/02/08/w8PS97D6lvicHIE.png"><br>然后就能看到类似的配置出现在软件界面<br><img src="https://s2.loli.net/2022/02/08/xvVoUOYqGIKwDl9.png"></p>
 ]]></content>
       <categories>
-        <category>工具</category>
+        <category>网络</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
+        <tag>网络</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -491,6 +515,23 @@ git commit –m &quot;xxxx&quot;
         <tag>记录</tag>
         <tag>vps</tag>
         <tag>Xray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
