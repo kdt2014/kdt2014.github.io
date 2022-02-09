@@ -113,6 +113,19 @@ pause
       </tags>
   </entry>
   <entry>
+    <title>utorrent代理设置</title>
+    <url>/2022/02/09/utorrent%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>参照下图</p>
+<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Adobe family</title>
     <url>/2021/09/11/adobe-family/</url>
     <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
@@ -282,19 +295,6 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>utorrent代理设置</title>
-    <url>/2022/02/09/utorrent%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>参照下图</p>
-<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>双系统下重装Win10，ubuntu无法进入</title>
     <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
     <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
@@ -381,7 +381,6 @@ hexo d
 <p>然后导入刚刚“服务器部署”那一步得到的配置链接，先复制一下链接，然后导入<br><img src="https://s2.loli.net/2022/02/08/w8PS97D6lvicHIE.png"><br>然后就能看到类似的配置出现在软件界面<br><img src="https://s2.loli.net/2022/02/08/xvVoUOYqGIKwDl9.png"></p>
 <p>然后在系统右下角找到软件，并右键–路由–全局；系统代理–自动配置系统代理；<br><img src="https://s2.loli.net/2022/02/09/3oOWzh5ydDQEslq.png"></p>
 <p>到这里，代理客户端我们就配置好了。<br>这时候，打开浏览器，<a href="http://test-ipv6.com/">测试一下IPV6</a>,一切顺利的话，会看到下图中的内容。<br><img src="https://s2.loli.net/2022/02/09/qG7NCXF8tZlmwKU.png"></p>
-<p>顺带一提，这样配置好之后，你也可以登录<a href="https://www.google.com/?gws_rd=ssl">这个网站</a>。</p>
 <ul>
 <li>utorrent 设置<br>参照下图</li>
 </ul>
@@ -421,7 +420,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -480,6 +479,23 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>网站</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
@@ -592,23 +608,6 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>工具</tag>
         <tag>下载</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
