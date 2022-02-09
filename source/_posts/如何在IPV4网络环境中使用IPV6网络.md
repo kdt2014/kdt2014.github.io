@@ -91,8 +91,6 @@ description: 如何在IPV4网络环境中使用IPV6网络
 这时候，打开浏览器，[测试一下IPV6](http://test-ipv6.com/),一切顺利的话，会看到下图中的内容。
 ![](https://s2.loli.net/2022/02/09/qG7NCXF8tZlmwKU.png)
 
-顺带一提，这样配置好之后，你也可以登录[这个网站](https://www.google.com/?gws_rd=ssl)。
-
 - utorrent 设置
 参照下图
 
