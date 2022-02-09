@@ -253,10 +253,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-02-08 21:39:43 / 修改时间：22:50:28" itemprop="dateCreated datePublished" datetime="2022-02-08T21:39:43+08:00">2022-02-08</time>
+      <time title="创建时间：2022-02-08 21:39:43" itemprop="dateCreated datePublished" datetime="2022-02-08T21:39:43+08:00">2022-02-08</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-02-09 16:16:50" itemprop="dateModified" datetime="2022-02-09T16:16:50+08:00">2022-02-09</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -275,7 +281,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -293,36 +299,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多校园网pt用户在毕业后没有了IPV6网络，就再也无法顺畅的访问便利的资源站了。即使家里有运营商提供的IPV6地址，但是由于pt站疯了国内的V6 IP，同样没法正常访问。幸运的是，目前国外的IPV6地址还是可以使用的。下面将介绍如果在只有IPV4网络的情况下访问IPV6网站。</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>注册IPV6服务器代理商</li>
-<li>建立网络服务</li>
-<li>本地网络代理设置</li>
-</ul>
-<h2 id="注册IPV6服务器代理商"><a href="#注册IPV6服务器代理商" class="headerlink" title="注册IPV6服务器代理商"></a>注册IPV6服务器代理商</h2><p>这一步理论上你可以使用任何一家的服务，只要他们提供IPV6 地址，我使用的是<a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=9050063-8H">vultr</a>，使用我提供的链接可以得到100刀用于<strong>首月</strong>的测试，之后就需要你自己付费了，相当于免费用一个月。之后我选择的是最便宜的一个月6刀的服务，几个人合伙使用，妥妥的够用，甚至一半都用不了。<br>按照下图步骤开一个新的实例，一定记得勾选 Enable IPV6：</p>
-<p><img src="https://s2.loli.net/2022/02/08/YNl97eXfcOBGkHj.png"><br><img src="https://s2.loli.net/2022/02/08/MCukRh9SKjFf4sb.png"><br><img src="https://s2.loli.net/2022/02/08/S6zRvl1EoAGqej9.png"><br><img src="https://s2.loli.net/2022/02/08/h7iQL4nOvSM6f9d.png"></p>
-<p>然后稍等一两分钟，就可以看到新部署的实例了。</p>
-<p>点击一下实例，就能够看到详情了，下图是我新开实例的信息，最重要的三点信息，IP, username，password，这些信息在我们远程连接服务器的过程中需要使用。</p>
-<p><img src="https://s2.loli.net/2022/02/08/IvYqsiyDQMVzjap.png"></p>
-<h2 id="建立网络服务"><a href="#建立网络服务" class="headerlink" title="建立网络服务"></a>建立网络服务</h2><ul>
-<li><p>使用<a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">MobaXterm</a>作为远程 ssh登录工具，良心免费软件，强烈推荐。</p>
-</li>
-<li><p>按照以下步骤输入 IPV4 地址，并且点击OK<br><img src="https://s2.loli.net/2022/02/08/dtQEihBKo4YeRrM.png"></p>
-</li>
-<li><p>在新的界面，login的用户名 root,回车，密码直接在网站上复制，然后回到mobaxterm的界面右键，自己选择一种操作模式，将密码复制进去，回车。<br><img src="https://s2.loli.net/2022/02/08/lxyJ9oMGh2snwPk.png"></p>
-</li>
-<li><p>看到这个界面，我们就成功的连接到了远程服务器<br><img src="https://s2.loli.net/2022/02/08/5Q4GqULpfwsMx1E.png"></p>
-</li>
-<li><p>服务器部署<br>这一步你可以参考<a target="_blank" rel="noopener" href="https://www.jamesdailylife.com/v2ray-vless-tcp-xtls">我是教程</a>使用一键脚本部署，部署的命令：<br>  <a target="_blank" rel="noopener" href="https://www.jamesdailylife.com/v2ray-vless-tcp-xtls">https://www.jamesdailylife.com/v2ray-vless-tcp-xtls</a><br>  wget -P /root -N –no-check-certificate “<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot;">https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot;</a> &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</p>
-</li>
-</ul>
-<p>需要注意的是，你需要一个域名，我的是在<a target="_blank" rel="noopener" href="https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core">狗爹</a>注册的，找个最便宜的就行，一年也就10刀出头，或者你自己搜索找一些免费的域名。</p>
-<h2 id="本地网络代理设置"><a href="#本地网络代理设置" class="headerlink" title="本地网络代理设置"></a>本地网络代理设置</h2><ul>
-<li>代理客户端<br>你可以使用<a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases">V2rayN</a>,下载最新版本，这里我们只需下载V2rayN<br><img src="https://s2.loli.net/2022/02/08/mjC6zKedVNHO3SA.png"></li>
-</ul>
-<p>然后打开软件，点击检查更新，Xray-core。这时候软件会自动下载一些东西。<br>等待自动下载完毕，点击设置–v2rayN设置-Core类型-Xray-core。<br><img src="https://s2.loli.net/2022/02/08/JBlzZDvyL4uw1gU.png"></p>
-<p>然后导入刚刚“服务器部署”那一步得到的配置链接<br><img src="https://s2.loli.net/2022/02/08/w8PS97D6lvicHIE.png"><br>然后就能看到类似的配置出现在软件界面<br><img src="https://s2.loli.net/2022/02/08/xvVoUOYqGIKwDl9.png"></p>
-
+          <p>如何在IPV4网络环境中使用IPV6网络</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
