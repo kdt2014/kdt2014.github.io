@@ -60,7 +60,7 @@ description: 如何在IPV4网络环境中使用IPV6网络
 - 2.任意组合安装
 - 1.Xray-core
 - 0.VLESS+TLS/XTLS+TCP
-- 输入一个你的域名，参考我
+- 输入一个你的域名，[如何在godaddy上注册并使用一个域名](https://www.gongsunqi.xyz/2022/02/09/%E5%A6%82%E4%BD%95%E5%9C%A8godaddy%E4%B8%8A%E6%B3%A8%E5%86%8C%E5%B9%B6%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D/)
 - UUID，这一步直接回车，会自动生成的
 - 然后系统就会自动安装，直到你看到下图
 ![](https://s2.loli.net/2022/02/09/QvkwNUfCYqKEH6G.png)
@@ -68,7 +68,7 @@ description: 如何在IPV4网络环境中使用IPV6网络
 这里就是我们服务器的配置信息了，通用格式下面那几行 vless开头的一长串信息就是配置链接，下面需要用到。**请复制并保存起来！**
 
 
-需要注意的是，你需要一个域名，我的是在[狗爹](https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core)注册的，找个最便宜的就行，一年也就10刀出头，或者你自己搜索找一些免费的域名。
+需要注意的是，你需要一个域名，我的是在[狗爹](https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core)注册的，找个最便宜的就行，一年也就几块钱，或者你自己搜索找一些免费的域名。
 
 ## 本地网络代理设置
 - 代理客户端
