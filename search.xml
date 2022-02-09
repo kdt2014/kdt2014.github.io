@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Qv2ray使用手册</title>
+    <url>/2021/08/17/Qv2ray%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qv2ray是一个很好用的代理软件工具，界面美观，操作便捷。但是对于小白来说，第一次使用它的时候会遇到一些障碍，因此写了这篇文章用来介绍使用步骤。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>Qv2ray的下载与安装</li>
+<li>内核的选择</li>
+<li>增加你的配置</li>
+</ol>
+<h2 id="Qv2ray的下载与安装"><a href="#Qv2ray的下载与安装" class="headerlink" title="Qv2ray的下载与安装"></a>Qv2ray的下载与安装</h2><p>很不幸的是，就在我写这篇文章的时候（2021.8.17），去GitHub上看了一眼，该软件因为开发者内部矛盾，永久停更了（最后更新日期2021.8.17），版本停留在了2.7.0。不过你仍然可以访问他们的<a href="https://github.com/Qv2ray/Qv2ray/releases">GitHub网站</a>下载自己需要的版本。为了以防万一，我下载了最后的版本，上传到百度云，你也可以通过百度云下载链接：<a href="https://pan.baidu.com/s/1WN19u_nsxwNBP_vrbwH6cw">https://pan.baidu.com/s/1WN19u_nsxwNBP_vrbwH6cw</a> ，提取码：4scj</p>
+<p>以Windows平台为例，下载.exe程序，然后安装，你可以选择自己喜欢的位置，或者像我一样，一路下一步。</p>
+<h2 id="内核的选择"><a href="#内核的选择" class="headerlink" title="内核的选择"></a>内核的选择</h2><p>如果你使用的是Project X下的v2ray-core，去<a href="https://github.com/v2ray/v2ray-core/releases">这个网址</a> 下载对应系统版本的内核。</p>
+<p>如果你使用的是Project X下的Xray-core, 那么首先你要做的就是去<a href="https://github.com/XTLS/Xray-core/releases/tag/v1.4.2">XTLS的GitHub网站</a>下载最新的内核。</p>
+<p>Xray-core完全兼容v2ray-core，所以为了更好的协议兼容性，强烈建议你更换为Xray-core。</p>
+<p>还是以windows平台位例，下载下图中Xray-windows-64.zip文件夹（如果你是32位系统请下载32位的版本），然后放到任何一个你喜欢的位置，解压得到一个新的文件夹Xray-windows-64。</p>
+<p><img src="https://i.loli.net/2021/08/17/ISizLFW587joXna.png"></p>
+<p>下面打开刚刚安装好的Qv2ray软件，然后参照下图进行内核的选择与替换，路径中出现的Xray-windows-64就是你刚刚解压得到的新文件夹。<br><img src="https://i.loli.net/2021/08/17/O3lA5sRbacUP9X1.png"></p>
+<h2 id="增加你的配置"><a href="#增加你的配置" class="headerlink" title="增加你的配置"></a>增加你的配置</h2><p>前两步完成后，就不需要变动了，以后使用我们只需要简单的增加配置文件即可。</p>
+<p>将你的配置链接直接黏贴到相应的框框里，然后点击确定，就完成了配置的导入，具体步骤见下图。</p>
+<p><img src="https://i.loli.net/2021/08/17/ul4MAL1ti2mzGDs.png"></p>
+<p>导入成功之后，在软件界面的左边就能看到你的服务了，直接双击该服务，就可以启动，当然你也可以点击软件界面上的三角符号来启动该服务，参见下图。</p>
+<p><img src="https://i.loli.net/2021/08/17/8nlmAyoXNzORFCw.png"></p>
+<p>如果你没有配置链接，你也可以点击新建，手动录入相关的配置信息。如果你看不懂这句话，说明你不是服务的拥有者，没有配置信息。</p>
+<p>本人不提供配置链接，请勿索要，谢谢。</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>本文只是简单的提供如何使用链接添加服务器，这也是最经常使用最简单的方式。如果你需要知道更多该软件的使用方法，请善用<a href="https://www.google.com/">谷歌</a>和<a href="https://www.baidu.com/">百度</a>。</p>
+<p>全文完！</p>
+]]></content>
+      <tags>
+        <tag>网络</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Youtube-dl油管下载神器</title>
     <url>/2021/08/02/Youtube-dl%E6%B2%B9%E7%AE%A1%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
@@ -250,6 +282,76 @@ hexo d
       </tags>
   </entry>
   <entry>
+    <title>如何在IPV4网络环境中使用IPV6网络</title>
+    <url>/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多校园网pt用户在毕业后没有了IPV6网络，就再也无法顺畅的访问便利的资源站了。即使家里有运营商提供的IPV6地址，但是pt站ban了国内的V6 IP，同样没法正常访问。幸运的是，目前国外的IPV6地址可以使用。下面将介绍如何在只有IPV4网络的情况下访问IPV6网站。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>注册IPV6服务器代理商</li>
+<li>建立网络服务</li>
+<li>本地网络代理设置</li>
+</ul>
+<h2 id="注册IPV6服务器代理商"><a href="#注册IPV6服务器代理商" class="headerlink" title="注册IPV6服务器代理商"></a>注册IPV6服务器代理商</h2><p>这一步理论上你可以使用任何一家的服务，只要他们提供IPV6 地址，我使用的是<a href="https://www.vultr.com/?ref=9050063-8H">vultr</a>，使用我提供的链接可以得到100刀用于<strong>首月</strong>的测试，之后就需要你自己付费了，相当于免费用一个月。我选择的是最便宜的一个月6刀的服务，每个月1T流量，几个人合伙使用，妥妥的够用，甚至一半都用不了。<br>按照下图步骤开一个新的实例，一定记得勾选 Enable IPV6：</p>
+<p><img src="https://s2.loli.net/2022/02/08/YNl97eXfcOBGkHj.png"><br><img src="https://s2.loli.net/2022/02/08/MCukRh9SKjFf4sb.png"><br><img src="https://s2.loli.net/2022/02/08/S6zRvl1EoAGqej9.png"><br><img src="https://s2.loli.net/2022/02/08/h7iQL4nOvSM6f9d.png"></p>
+<p>然后稍等一两分钟，就可以看到新部署的实例了。</p>
+<p>点击一下实例，就能够看到详情了，下图是我新开实例的信息，最重要的三点信息，IP, username，password，这些信息在我们远程连接服务器的过程中需要使用。</p>
+<p><img src="https://s2.loli.net/2022/02/08/IvYqsiyDQMVzjap.png"></p>
+<p><strong>友情提示：</strong>图中我选择的是东京的机房，实践告诉我，该机房很多ip已经被ban了，你需要来<a href="https://port.ping.pe/">port.ping.pe</a>测试，输入的格式为ip:443，例如 45.12.113.12:443。<br>如果全部地区尤其是中国地区能ping通，那么就保留并使用这个ip，如果ping不通，那就再开一个实例，重复以上动作，直到找到一个能用的IP，然后再删除之前不能用的实例。</p>
+<p>如果你发现ip不能用，删除实例，再申请，你会发现系统给你分配的ip还是刚才那个。当然你可以根据自己的网络状况，选择其他地区的机房，记得在<a href="https://ping.pe/">ping.pe</a>上测试一下延时丢包。</p>
+<h2 id="建立网络服务"><a href="#建立网络服务" class="headerlink" title="建立网络服务"></a>建立网络服务</h2><ul>
+<li><p>使用<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>作为远程 ssh登录工具，良心免费软件，强烈推荐。</p>
+</li>
+<li><p>按照以下步骤输入 IPV4 地址，并且点击OK<br><img src="https://s2.loli.net/2022/02/08/dtQEihBKo4YeRrM.png"></p>
+</li>
+<li><p>在新的界面，login的用户名 root，回车，密码直接在网站上复制，然后回到mobaxterm的界面右键，自己选择一种操作模式，将密码复制进去，回车。<br><img src="https://s2.loli.net/2022/02/08/lxyJ9oMGh2snwPk.png"></p>
+</li>
+<li><p>看到这个界面，我们就成功的连接到了远程服务器<br><img src="https://s2.loli.net/2022/02/08/5Q4GqULpfwsMx1E.png"></p>
+</li>
+<li><p>服务器部署<br>这一步你可以参考<a href="https://www.jamesdailylife.com/v2ray-vless-tcp-xtls">我是教程</a>了解更详细的信息。先执行以下命令：     </p>
+<pre><code>apt install wget curl -y
+</code></pre>
+<p>然后再执行：</p>
+<pre><code>wget -P /root -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh
+</code></pre>
+<p><img src="https://s2.loli.net/2022/02/09/5LerG1s7UXZdNaS.png"><br>按以下顺序选择执行命令：</p>
+</li>
+<li><p>2.任意组合安装</p>
+</li>
+<li><p>1.Xray-core</p>
+</li>
+<li><p>0.VLESS+TLS/XTLS+TCP</p>
+</li>
+<li><p>输入一个你的域名，参考我</p>
+</li>
+<li><p>UUID，这一步直接回车，会自动生成的</p>
+</li>
+<li><p>然后系统就会自动安装，直到你看到下图<br><img src="https://s2.loli.net/2022/02/09/QvkwNUfCYqKEH6G.png"></p>
+</li>
+</ul>
+<p>这里就是我们服务器的配置信息了，通用格式下面那几行 vless开头的一长串信息就是配置链接，下面需要用到。<strong>请复制并保存起来！</strong></p>
+<p>需要注意的是，你需要一个域名，我的是在<a href="https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core">狗爹</a>注册的，找个最便宜的就行，一年也就10刀出头，或者你自己搜索找一些免费的域名。</p>
+<h2 id="本地网络代理设置"><a href="#本地网络代理设置" class="headerlink" title="本地网络代理设置"></a>本地网络代理设置</h2><ul>
+<li>代理客户端<br>你可以使用<a href="https://github.com/2dust/v2rayN/releases">V2rayN</a>,下载最新版本，这里我们只需下载V2rayN<br><img src="https://s2.loli.net/2022/02/08/mjC6zKedVNHO3SA.png"></li>
+</ul>
+<p>然后打开软件，点击检查更新，Xray-core。这时候软件会自动下载一些东西。<br>等待自动下载完毕，点击设置–v2rayN设置-Core类型-Xray-core。<br><img src="https://s2.loli.net/2022/02/08/JBlzZDvyL4uw1gU.png"></p>
+<p>然后导入刚刚“服务器部署”那一步得到的配置链接，先复制一下链接，然后导入<br><img src="https://s2.loli.net/2022/02/08/w8PS97D6lvicHIE.png"><br>然后就能看到类似的配置出现在软件界面<br><img src="https://s2.loli.net/2022/02/08/xvVoUOYqGIKwDl9.png"></p>
+<p>然后在系统右下角找到软件，并右键–路由–全局；系统代理–自动配置系统代理；<br><img src="https://s2.loli.net/2022/02/09/3oOWzh5ydDQEslq.png"></p>
+<p>到这里，代理客户端我们就配置好了。<br>这时候，打开浏览器，<a href="http://test-ipv6.com/">测试一下IPV6</a>,一切顺利的话，会看到下图中的内容。<br><img src="https://s2.loli.net/2022/02/09/qG7NCXF8tZlmwKU.png"></p>
+<p>顺带一提，这样配置好之后，你也可以登录<a href="https://www.google.com/?gws_rd=ssl">这个网站</a>。</p>
+<ul>
+<li>utorrent 设置<br>参照下图</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
+<p>这个时候我们就可以按照正常的流程下载使用pt了。</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>双系统下重装Win10，ubuntu无法进入</title>
     <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
     <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
@@ -282,75 +384,6 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>如何在IPV4网络环境中使用IPV6网络</title>
-    <url>/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多校园网pt用户在毕业后没有了IPV6网络，就再也无法顺畅的访问便利的资源站了。即使家里有运营商提供的IPV6地址，但是pt站ban了国内的V6 IP，同样没法正常访问。幸运的是，目前国外的IPV6地址可以使用。下面将介绍如何在只有IPV4网络的情况下访问IPV6网站。</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>注册IPV6服务器代理商</li>
-<li>建立网络服务</li>
-<li>本地网络代理设置</li>
-</ul>
-<h2 id="注册IPV6服务器代理商"><a href="#注册IPV6服务器代理商" class="headerlink" title="注册IPV6服务器代理商"></a>注册IPV6服务器代理商</h2><p>这一步理论上你可以使用任何一家的服务，只要他们提供IPV6 地址，我使用的是<a href="https://www.vultr.com/?ref=9050063-8H">vultr</a>，使用我提供的链接可以得到100刀用于<strong>首月</strong>的测试，之后就需要你自己付费了，相当于免费用一个月。我选择的是最便宜的一个月6刀的服务，每个月1T流量，几个人合伙使用，妥妥的够用，甚至一半都用不了。<br>按照下图步骤开一个新的实例，一定记得勾选 Enable IPV6：</p>
-<p><img src="https://s2.loli.net/2022/02/08/YNl97eXfcOBGkHj.png"><br><img src="https://s2.loli.net/2022/02/08/MCukRh9SKjFf4sb.png"><br><img src="https://s2.loli.net/2022/02/08/S6zRvl1EoAGqej9.png"><br><img src="https://s2.loli.net/2022/02/08/h7iQL4nOvSM6f9d.png"></p>
-<p>然后稍等一两分钟，就可以看到新部署的实例了。</p>
-<p>点击一下实例，就能够看到详情了，下图是我新开实例的信息，最重要的三点信息，IP, username，password，这些信息在我们远程连接服务器的过程中需要使用。</p>
-<p><img src="https://s2.loli.net/2022/02/08/IvYqsiyDQMVzjap.png"></p>
-<p><strong>友情提示：</strong>图中我选择的是东京的机房，实践告诉我，该机房很多ip已经被ban了，你需要来<a href="port.ping.pe">这里测试一下</a>，输入的格式为ip:443，例如 45.12.113.12:443。<br>如果全部地区尤其是中国地区能ping通，那么就保留并使用这个ip，如果ping不通，那就再开一个实例，重复以上动作，直到找到一个能用的IP，然后再删除之前不能用的实例。如果你发现ip不能用，删除实例，再申请，你会发现系统给你分配的ip还是刚才那个。当然你可以根据自己的网络状况，选择其他地区的机房，记得在<a href="https://ping.pe/">ping.pe</a>上测试一下延时丢包。</p>
-<h2 id="建立网络服务"><a href="#建立网络服务" class="headerlink" title="建立网络服务"></a>建立网络服务</h2><ul>
-<li><p>使用<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>作为远程 ssh登录工具，良心免费软件，强烈推荐。</p>
-</li>
-<li><p>按照以下步骤输入 IPV4 地址，并且点击OK<br><img src="https://s2.loli.net/2022/02/08/dtQEihBKo4YeRrM.png"></p>
-</li>
-<li><p>在新的界面，login的用户名 root,回车，密码直接在网站上复制，然后回到mobaxterm的界面右键，自己选择一种操作模式，将密码复制进去，回车。<br><img src="https://s2.loli.net/2022/02/08/lxyJ9oMGh2snwPk.png"></p>
-</li>
-<li><p>看到这个界面，我们就成功的连接到了远程服务器<br><img src="https://s2.loli.net/2022/02/08/5Q4GqULpfwsMx1E.png"></p>
-</li>
-<li><p>服务器部署<br>这一步你可以参考<a href="https://www.jamesdailylife.com/v2ray-vless-tcp-xtls">我是教程</a>使用一键脚本部署，先执行以下命令：     </p>
-<pre><code>apt install wget curl -y
-</code></pre>
-<p>然后再执行：</p>
-<pre><code>wget -P /root -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh
-</code></pre>
-<p><img src="https://s2.loli.net/2022/02/09/5LerG1s7UXZdNaS.png"><br>按以下顺序选择执行命令：</p>
-</li>
-<li><p>2.任意组合安装</p>
-</li>
-<li><p>1.Xray-core</p>
-</li>
-<li><p>0.VLESS+TLS/XTLS+TCP</p>
-</li>
-<li><p>输入一个你的域名，参考我</p>
-</li>
-<li><p>UUID，这一步直接回车，会自动生成的</p>
-</li>
-<li><p>然后系统就会自动安装，直到你看到下图<br><img src="https://s2.loli.net/2022/02/09/NIZbaKeWOXRh5sU.png"></p>
-</li>
-</ul>
-<p>这里就是我们服务器的配置信息了，通用格式下面那几行 vless开头的一长串信息就是配置链接，下面需要用到。<strong>请复制并保存起来！</strong></p>
-<p>需要注意的是，你需要一个域名，我的是在<a href="https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core">狗爹</a>注册的，找个最便宜的就行，一年也就10刀出头，或者你自己搜索找一些免费的域名。</p>
-<h2 id="本地网络代理设置"><a href="#本地网络代理设置" class="headerlink" title="本地网络代理设置"></a>本地网络代理设置</h2><ul>
-<li>代理客户端<br>你可以使用<a href="https://github.com/2dust/v2rayN/releases">V2rayN</a>,下载最新版本，这里我们只需下载V2rayN<br><img src="https://s2.loli.net/2022/02/08/mjC6zKedVNHO3SA.png"></li>
-</ul>
-<p>然后打开软件，点击检查更新，Xray-core。这时候软件会自动下载一些东西。<br>等待自动下载完毕，点击设置–v2rayN设置-Core类型-Xray-core。<br><img src="https://s2.loli.net/2022/02/08/JBlzZDvyL4uw1gU.png"></p>
-<p>然后导入刚刚“服务器部署”那一步得到的配置链接<br><img src="https://s2.loli.net/2022/02/08/w8PS97D6lvicHIE.png"><br>然后就能看到类似的配置出现在软件界面<br><img src="https://s2.loli.net/2022/02/08/xvVoUOYqGIKwDl9.png"></p>
-<p>然后在系统右下角找到软件，并右键–路由–全局；系统代理–自动配置系统代理；<br><img src="https://s2.loli.net/2022/02/09/3oOWzh5ydDQEslq.png"></p>
-<p>到这里，代理客户端我们就配置好了。<br>这时候，打开浏览器，<a href="http://test-ipv6.com/">测试一下IPV6</a>,一切顺利的话，会看到下图中的内容。<br><img src="https://s2.loli.net/2022/02/09/qG7NCXF8tZlmwKU.png"></p>
-<p>顺带一提，这样配置好之后，你也可以登录<a href="https://www.google.com/?gws_rd=ssl">这个网站</a>。</p>
-<ul>
-<li>utorrent 设置<br>参照下图</li>
-</ul>
-<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
-<p>这个时候我们就可以按照正常的流程下载使用pt了。</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>将HEXO博客迁移到一台新的电脑</title>
     <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
@@ -361,7 +394,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -524,31 +557,10 @@ git commit –m &quot;xxxx&quot;
         <category>网络</category>
       </categories>
       <tags>
-        <tag>记录</tag>
         <tag>网络</tag>
+        <tag>记录</tag>
         <tag>vps</tag>
         <tag>Xray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘下载</title>
-    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
-<ul>
-<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
-</li>
-<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
-</li>
-</ul>
-<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
-<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>下载</tag>
       </tags>
   </entry>
   <entry>
@@ -591,35 +603,24 @@ git commit –m &quot;xxxx&quot;
       </tags>
   </entry>
   <entry>
-    <title>Qv2ray使用手册</title>
-    <url>/2021/08/17/Qv2ray%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qv2ray是一个很好用的代理软件工具，界面美观，操作便捷。但是对于小白来说，第一次使用它的时候会遇到一些障碍，因此写了这篇文章用来介绍使用步骤。</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
-<li>Qv2ray的下载与安装</li>
-<li>内核的选择</li>
-<li>增加你的配置</li>
-</ol>
-<h2 id="Qv2ray的下载与安装"><a href="#Qv2ray的下载与安装" class="headerlink" title="Qv2ray的下载与安装"></a>Qv2ray的下载与安装</h2><p>很不幸的是，就在我写这篇文章的时候（2021.8.17），去GitHub上看了一眼，该软件因为开发者内部矛盾，永久停更了（最后更新日期2021.8.17），版本停留在了2.7.0。不过你仍然可以访问他们的<a href="https://github.com/Qv2ray/Qv2ray/releases">GitHub网站</a>下载自己需要的版本。为了以防万一，我下载了最后的版本，上传到百度云，你也可以通过百度云下载链接：<a href="https://pan.baidu.com/s/1WN19u_nsxwNBP_vrbwH6cw">https://pan.baidu.com/s/1WN19u_nsxwNBP_vrbwH6cw</a> ，提取码：4scj</p>
-<p>以Windows平台为例，下载.exe程序，然后安装，你可以选择自己喜欢的位置，或者像我一样，一路下一步。</p>
-<h2 id="内核的选择"><a href="#内核的选择" class="headerlink" title="内核的选择"></a>内核的选择</h2><p>如果你使用的是Project X下的v2ray-core，去<a href="https://github.com/v2ray/v2ray-core/releases">这个网址</a> 下载对应系统版本的内核。</p>
-<p>如果你使用的是Project X下的Xray-core, 那么首先你要做的就是去<a href="https://github.com/XTLS/Xray-core/releases/tag/v1.4.2">XTLS的GitHub网站</a>下载最新的内核。</p>
-<p>Xray-core完全兼容v2ray-core，所以为了更好的协议兼容性，强烈建议你更换为Xray-core。</p>
-<p>还是以windows平台位例，下载下图中Xray-windows-64.zip文件夹（如果你是32位系统请下载32位的版本），然后放到任何一个你喜欢的位置，解压得到一个新的文件夹Xray-windows-64。</p>
-<p><img src="https://i.loli.net/2021/08/17/ISizLFW587joXna.png"></p>
-<p>下面打开刚刚安装好的Qv2ray软件，然后参照下图进行内核的选择与替换，路径中出现的Xray-windows-64就是你刚刚解压得到的新文件夹。<br><img src="https://i.loli.net/2021/08/17/O3lA5sRbacUP9X1.png"></p>
-<h2 id="增加你的配置"><a href="#增加你的配置" class="headerlink" title="增加你的配置"></a>增加你的配置</h2><p>前两步完成后，就不需要变动了，以后使用我们只需要简单的增加配置文件即可。</p>
-<p>将你的配置链接直接黏贴到相应的框框里，然后点击确定，就完成了配置的导入，具体步骤见下图。</p>
-<p><img src="https://i.loli.net/2021/08/17/ul4MAL1ti2mzGDs.png"></p>
-<p>导入成功之后，在软件界面的左边就能看到你的服务了，直接双击该服务，就可以启动，当然你也可以点击软件界面上的三角符号来启动该服务，参见下图。</p>
-<p><img src="https://i.loli.net/2021/08/17/8nlmAyoXNzORFCw.png"></p>
-<p>如果你没有配置链接，你也可以点击新建，手动录入相关的配置信息。如果你看不懂这句话，说明你不是服务的拥有者，没有配置信息。</p>
-<p>本人不提供配置链接，请勿索要，谢谢。</p>
-<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>本文只是简单的提供如何使用链接添加服务器，这也是最经常使用最简单的方式。如果你需要知道更多该软件的使用方法，请善用<a href="https://www.google.com/">谷歌</a>和<a href="https://www.baidu.com/">百度</a>。</p>
-<p>全文完！</p>
+    <title>百度网盘下载</title>
+    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
+<ul>
+<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
+</li>
+<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
+</li>
+</ul>
+<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
+<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
 ]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
       <tags>
         <tag>工具</tag>
-        <tag>网络</tag>
+        <tag>下载</tag>
       </tags>
   </entry>
 </search>
