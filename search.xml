@@ -113,19 +113,6 @@ pause
       </tags>
   </entry>
   <entry>
-    <title>utorrent代理设置</title>
-    <url>/2022/02/09/utorrent%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>参照下图</p>
-<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Adobe family</title>
     <url>/2021/09/11/adobe-family/</url>
     <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
@@ -139,6 +126,19 @@ pause
       <tags>
         <tag>工具</tag>
         <tag>Adobe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>utorrent代理设置</title>
+    <url>/2022/02/09/utorrent%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>参照下图</p>
+<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -295,38 +295,6 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>双系统下重装Win10，ubuntu无法进入</title>
-    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
-<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
-<ol>
-<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
-</li>
-<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
-</li>
-<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
-</li>
-<li><p>打开命令行，输入以下命令：</p>
-<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
-</code></pre>
-</li>
-<li><p>再接着输入：</p>
-<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
-</code></pre>
-</li>
-</ol>
-<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
-<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>记录</tag>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何在IPV4网络环境中使用IPV6网络</title>
     <url>/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多校园网pt用户在毕业后没有了IPV6网络，就再也无法顺畅的访问便利的资源站了。即使家里有运营商提供的IPV6地址，但是pt站ban了国内的V6 IP，同样没法正常访问。幸运的是，目前国外的IPV6地址可以使用。下面将介绍如何在只有IPV4网络的情况下访问IPV6网站。</p>
@@ -396,6 +364,38 @@ hexo d
       </tags>
   </entry>
   <entry>
+    <title>双系统下重装Win10，ubuntu无法进入</title>
+    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
+<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
+<ol>
+<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
+</li>
+<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
+</li>
+<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
+</li>
+<li><p>打开命令行，输入以下命令：</p>
+<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
+</code></pre>
+</li>
+<li><p>再接着输入：</p>
+<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
+</code></pre>
+</li>
+</ol>
+<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
+<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>记录</tag>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何在godaddy上注册并使用一个域名</title>
     <url>/2022/02/09/%E5%A6%82%E4%BD%95%E5%9C%A8godaddy%E4%B8%8A%E6%B3%A8%E5%86%8C%E5%B9%B6%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<p>首先登录<a href="https://hk.godaddy.com/offers/domains/godaddy-b">godaddy</a>网站注册一个自己的账户，然后搜索一个自己喜欢的域名，找个最便宜的付款买了。<br><img src="https://s2.loli.net/2022/02/09/eqiBTaJd4Mp93kl.png"></p>
@@ -420,7 +420,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -479,23 +479,6 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>网站</tag>
         <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
@@ -608,6 +591,23 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>工具</tag>
         <tag>下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
