@@ -113,6 +113,38 @@ pause
       </tags>
   </entry>
   <entry>
+    <title>双系统下重装Win10，ubuntu无法进入</title>
+    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
+<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
+<ol>
+<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
+</li>
+<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
+</li>
+<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
+</li>
+<li><p>打开命令行，输入以下命令：</p>
+<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
+</code></pre>
+</li>
+<li><p>再接着输入：</p>
+<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
+</code></pre>
+</li>
+</ol>
+<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
+<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Adobe family</title>
     <url>/2021/09/11/adobe-family/</url>
     <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
@@ -276,9 +308,9 @@ hexo d
         <category>网站</category>
       </categories>
       <tags>
+        <tag>记录</tag>
         <tag>网站</tag>
         <tag>hexo</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -328,7 +360,7 @@ hexo d
 </li>
 </ul>
 <p>这里就是我们服务器的配置信息了，通用格式下面那几行 vless开头的一长串信息就是配置链接，下面需要用到。<strong>请复制并保存起来！</strong></p>
-<p>需要注意的是，你需要一个域名，我的是在<a href="https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core">狗爹</a>注册的，找个最便宜的就行，一年也就10刀出头，或者你自己搜索找一些免费的域名。</p>
+<p>需要注意的是，你需要一个域名，我的是在<a href="https://hk.godaddy.com/offers/godaddy?isc=gofhlbhk06&countryview=1&currencyType=HKD&cdtl=c_31722013.g_2972073157.k_kwd-30997737601:loc-200.a_.d_c&msclkid=2d3287737b29148cb308e57100c03be0&utm_source=bing&utm_medium=cpc&utm_campaign=zh-hk_corp-core_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%20Core">狗爹</a>注册的，找个最便宜的就行，一年也就几块钱，或者你自己搜索找一些免费的域名。</p>
 <h2 id="本地网络代理设置"><a href="#本地网络代理设置" class="headerlink" title="本地网络代理设置"></a>本地网络代理设置</h2><ul>
 <li>代理客户端<br>你可以使用<a href="https://github.com/2dust/v2rayN/releases">V2rayN</a>,下载最新版本，这里我们只需下载V2rayN<br><img src="https://s2.loli.net/2022/02/08/mjC6zKedVNHO3SA.png"></li>
 </ul>
@@ -352,35 +384,17 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>双系统下重装Win10，ubuntu无法进入</title>
-    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
-<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
-<ol>
-<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
-</li>
-<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
-</li>
-<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
-</li>
-<li><p>打开命令行，输入以下命令：</p>
-<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
-</code></pre>
-</li>
-<li><p>再接着输入：</p>
-<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
-</code></pre>
-</li>
-</ol>
-<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
-<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+    <title>如何在godaddy上注册并使用一个域名</title>
+    <url>/2022/02/09/%E5%A6%82%E4%BD%95%E5%9C%A8godaddy%E4%B8%8A%E6%B3%A8%E5%86%8C%E5%B9%B6%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<p>首先登录<a href="https://hk.godaddy.com/offers/domains/godaddy-b">godaddy</a>网站注册一个自己的账户，然后搜索一个自己喜欢的域名，找个最便宜的付款买了。<br><img src="https://s2.loli.net/2022/02/09/eqiBTaJd4Mp93kl.png"></p>
+<p>然后我的产品-管理DNS<br><img src="https://s2.loli.net/2022/02/09/fP9sSEtkbA8FMZp.png"></p>
+<p>新增<br><img src="https://s2.loli.net/2022/02/09/qSLrA1o5OpWskHu.png"><br>类型-A; 名称-随你取，假设我们取anyname；内容值-你服务器的IP地址；TTL-1h<br>假设你的域名是yoursite.xyz<br>这样设置好之后，你服务器的ip地址就和anyname.yoursite.xyz建立了映射关系，你在命令行窗口 ping anyname.yoursite.xyz 就显示出你的服务器ip。</p>
 ]]></content>
       <categories>
-        <category>系统</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>记录</tag>
-        <tag>系统</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -394,7 +408,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -453,23 +467,6 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>网站</tag>
         <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
@@ -564,6 +561,44 @@ git commit –m &quot;xxxx&quot;
       </tags>
   </entry>
   <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘下载</title>
+    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
+<ul>
+<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
+</li>
+<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
+</li>
+</ul>
+<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
+<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>下载</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>让自己通过Hexo建立的博客被谷歌搜索到</title>
     <url>/2021/08/14/%E8%AE%A9%E8%87%AA%E5%B7%B1%E9%80%9A%E8%BF%87Hexo%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%A2%AB%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般我们建立博客的目的就是分享一些东西，那么如何让我们的博客被更多的人看到呢？那当然是被搜索引擎收录后，能够被更多的人用关键词检索到。</p>
@@ -600,27 +635,6 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>网站</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘下载</title>
-    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
-<ul>
-<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
-</li>
-<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
-</li>
-</ul>
-<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
-<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>下载</tag>
       </tags>
   </entry>
 </search>
