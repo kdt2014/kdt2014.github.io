@@ -303,12 +303,12 @@ hexo d
 <li>建立网络服务</li>
 <li>本地网络代理设置</li>
 </ul>
-<h2 id="注册IPV6服务器代理商"><a href="#注册IPV6服务器代理商" class="headerlink" title="注册IPV6服务器代理商"></a>注册IPV6服务器代理商</h2><p>这一步理论上你可以使用任何一家的服务，只要他们提供IPV6 地址，我使用的是<a href="https://www.vultr.com/?ref=9050063-8H">vultr</a>，使用我提供的链接可以得到100刀用于<strong>首月</strong>的测试，之后就需要你自己付费了，相当于免费用一个月。我选择的是最便宜的一个月6刀的服务，每个月1T流量，几个人合伙使用，妥妥的够用，甚至一半都用不了。<br>按照下图步骤开一个新的实例，一定记得勾选 Enable IPV6：</p>
+<h2 id="注册IPV6服务器代理商"><a href="#注册IPV6服务器代理商" class="headerlink" title="注册IPV6服务器代理商"></a>注册IPV6服务器代理商</h2><p>这一步理论上你可以使用任何一家的服务，只要他们提供IPV6 地址，我使用的是<a href="https://www.vultr.com/?ref=9050063-8H">vultr</a>，使用前面那个链接注册新用户，并首次充值10美元，可以得到100美元额外奖励用于<strong>首月</strong>的测试，之后就需要你自己付费了，相当于免费用一个月。我选择的是最便宜的一个月6刀的服务，每个月1T流量，几个人合伙使用，妥妥的够用，甚至一半都用不了。<br>按照下图步骤开一个新的实例，一定记得勾选 Enable IPV6：</p>
 <p><img src="https://s2.loli.net/2022/02/08/YNl97eXfcOBGkHj.png"><br><img src="https://s2.loli.net/2022/02/08/MCukRh9SKjFf4sb.png"><br><img src="https://s2.loli.net/2022/02/08/S6zRvl1EoAGqej9.png"><br><img src="https://s2.loli.net/2022/02/08/h7iQL4nOvSM6f9d.png"></p>
 <p>然后稍等一两分钟，就可以看到新部署的实例了。</p>
 <p>点击一下实例，就能够看到详情了，下图是我新开实例的信息，最重要的三点信息，IP, username，password，这些信息在我们远程连接服务器的过程中需要使用。</p>
 <p><img src="https://s2.loli.net/2022/02/08/IvYqsiyDQMVzjap.png"></p>
-<p><strong>友情提示：</strong>图中我选择的是东京的机房，实践告诉我，该机房很多ip已经被ban了，你需要来<a href="https://port.ping.pe/">port.ping.pe</a>测试，输入的格式为ip:443，例如 45.12.113.12:443。<br>如果全部地区尤其是中国地区能ping通，那么就保留并使用这个ip，如果ping不通，那就再开一个实例，重复以上动作，直到找到一个能用的IP，然后再删除之前不能用的实例。</p>
+<p><strong>友情提示：</strong>图中我选择的是东京的机房，实践告诉我，该机房很多ip已经被ban了，你需要来<a href="https://port.ping.pe/">port.ping.pe</a>测试，输入的格式为ip:443，例如 45.12.113.12:443。<br>如果全部地区尤其是中国地区能ping通，那么就保留并使用这个ip，如果ping不通，那就再开一个实例，重复以上动作，直到找到一个能用的IP，然后再删除之前不能用的实例。另外，也可以试一试美国的机房，东京，洛杉矶和新加坡机房的ip被ban的比较多。</p>
 <p>如果你发现ip不能用，删除实例，再申请，你会发现系统给你分配的ip还是刚才那个。当然你可以根据自己的网络状况，选择其他地区的机房，记得在<a href="https://ping.pe/">ping.pe</a>上测试一下延时丢包。</p>
 <h2 id="建立网络服务"><a href="#建立网络服务" class="headerlink" title="建立网络服务"></a>建立网络服务</h2><ul>
 <li><p>使用<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>作为远程 ssh登录工具，良心免费软件，强烈推荐。</p>
@@ -420,7 +420,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -479,6 +479,44 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>网站</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘下载</title>
+    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
+<ul>
+<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
+</li>
+<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
+</li>
+</ul>
+<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
+<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>下载</tag>
       </tags>
   </entry>
   <entry>
@@ -570,44 +608,6 @@ git commit –m &quot;xxxx&quot;
         <tag>记录</tag>
         <tag>vps</tag>
         <tag>Xray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘下载</title>
-    <url>/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。</p>
-<ul>
-<li><p>首先安装油猴插件，<a href="https://www.tampermonkey.net/">tampermonkey</a>。点击前面的链接就可以进入官网，在浏览器上安装插件。</p>
-</li>
-<li><p>插件安装好了之后进入<a href="https://greasyfork.org/zh-CN">greasyfork</a>，安装我们需要的小程序。在搜索框中输入“百度网盘”，找到作者为“软件小妹妹”的那一个小程序。点进去，然后按照作者的说明一步一步来就行。</p>
-</li>
-</ul>
-<p>亲测可以快速下载，速度大概在5-6MB/S，虽然没有开会员那种几十M的速度，但是也比不开会员100KB/s强太多了。</p>
-<p>这篇文章是给我自己用的，因为自己换电脑的时候总是要半天才想起来怎么设置。如果对你也有用，那我也很开心。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>下载</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
