@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://gongsunqi.xyz/tags/index.html</loc>
+    <loc>http://gongsunqi.xyz/categories/index.html</loc>
     
     <lastmod>2022-01-26</lastmod>
     
   </url>
   
   <url>
-    <loc>http://gongsunqi.xyz/categories/index.html</loc>
+    <loc>http://gongsunqi.xyz/tags/index.html</loc>
     
     <lastmod>2022-01-26</lastmod>
     
@@ -144,14 +144,14 @@
   </url>
   
   <url>
-    <loc>http://gongsunqi.xyz/tags/Adobe/</loc>
+    <loc>http://gongsunqi.xyz/tags/ssh/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://gongsunqi.xyz/tags/ssh/</loc>
+    <loc>http://gongsunqi.xyz/tags/Adobe/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

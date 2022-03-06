@@ -113,22 +113,6 @@ pause
       </tags>
   </entry>
   <entry>
-    <title>Adobe family</title>
-    <url>/2021/09/11/adobe-family/</url>
-    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
-<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
-<p> 看他的置顶，可以找到你想要的东西。</p>
-<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>Adobe</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>frp内网穿透教程，ssh远程连接</title>
     <url>/2022/03/06/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有时候我们需要从公网中远程连接自己的设备（SSH，远程桌面，远程文件等)，虽然诸如teamviewer和向日葵等可以较为方便的实现连接操作，但是网络不稳定，操作卡顿的现象却让我们十分难受。</p>
@@ -263,10 +247,6 @@ remote_port = 7002
 <h2 id="一些解释-1"><a href="#一些解释-1" class="headerlink" title="一些解释"></a>一些解释</h2></li>
 </ul>
 <ol>
-<li>“remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。</li>
-<li>“type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。</li>
-<li>“local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。</li>
-<li>“remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。</li>
 <li>“[xxx]”表示一个规则名称，自己定义，便于查询即可。</li>
 <li>“type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。</li>
 <li>“local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。</li>
@@ -289,6 +269,22 @@ remote_port = 7002
       <tags>
         <tag>网络</tag>
         <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Adobe family</title>
+    <url>/2021/09/11/adobe-family/</url>
+    <content><![CDATA[<p> 微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心</p>
+<p> 大佬<a href="https://weibo.com/u/1112829033">vposy微博</a></p>
+<p> 看他的置顶，可以找到你想要的东西。</p>
+<p> 另外参考我的<a href="https://www.gongsunqi.xyz/2021/09/11/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">另一篇文章</a>，对你也会有帮助。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>Adobe</tag>
       </tags>
   </entry>
   <entry>
@@ -573,6 +569,23 @@ hexo d
       </tags>
   </entry>
   <entry>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>将HEXO博客迁移到一台新的电脑</title>
     <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
@@ -583,7 +596,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -642,23 +655,6 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>网站</tag>
         <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
