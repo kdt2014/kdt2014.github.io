@@ -129,25 +129,12 @@ pause
       </tags>
   </entry>
   <entry>
-    <title>utorrent代理设置</title>
-    <url>/2022/02/09/utorrent%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>参照下图</p>
-<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>frp内网穿透教程，ssh远程连接</title>
     <url>/2022/03/06/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有时候我们需要从公网中远程连接自己的设备（SSH，远程桌面，远程文件等)，虽然诸如teamviewer和向日葵等可以较为方便的实现连接操作，但是网络不稳定，操作卡顿的现象却让我们十分难受。</p>
 <p><a href="https://github.com/fatedier/frp/blob/master/README_zh.md">frp</a>内网穿透可以帮助我们实现自己的需求，它是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。具体介绍请点开前面的链接查看官方文档。</p>
 <p>先简单看一下技术原理，参见下图[1]：</p>
-<p><img src="https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png"></p>
+<p><img src="https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png" alt="frp实现原理"></p>
 <p>图中VPS即是frps(service)，待远程连接的电脑就是frpc(client)。</p>
 <p>我们需要借助一台VPS(虚拟主机)来完成中转任务。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
@@ -161,7 +148,7 @@ pause
 <li><p>下载<a href="https://github.com/fatedier/frp/releases">frp</a>到vps，执行以下命令：</p>
 <pre><code>wget https://github.com/fatedier/frp/releases/download/v0.39.1/frp_0.39.1_linux_amd64.tar.gz
 </code></pre>
-<p>ps:本教程更新时frp最新时0.39.1，请点击前方连接到官网下载最新版</p>
+<p>ps:本教程更新时frp最新版本是V0.39.1，请点击前方连接到官网下载最新版</p>
 </li>
 <li><p>解压:</p>
 <pre><code> tar -zxvf frp_0.39.1.0_linux_amd64.tar.gz
@@ -224,7 +211,7 @@ vhost_https_port = 10443
 </code></pre>
 </li>
 </ul>
-<p>这时访问x.x.x.x:7500 (x.x.x.x是你的VPS提供的IP) 并使用自己设置的用户名密码登录，即可看到仪表板界面。<br><img src="https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png"></p>
+<p>这时访问x.x.x.x:7500 (x.x.x.x是你的VPS提供的IP) 并使用自己设置的用户名密码登录，即可看到仪表板界面。<br><img src="https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png" alt="控制面板"></p>
 <h1 id="服务器端后台运行"><a href="#服务器端后台运行" class="headerlink" title="服务器端后台运行"></a>服务器端后台运行</h1><p>如果此时我们关闭terminal，刚才运行的frps会自动结束，这时我们就需要把它挂在后台：</p>
 <pre><code>  nohup ./frps -c frps.ini &amp;
 </code></pre>
@@ -243,6 +230,16 @@ type = tcp
 local_ip = 127.0.0.1           
 local_port = 22
 remote_port = 6000 
+[ssh2]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 50000
+remote_port = 50000
+[ssh3]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 50001
+remote_port = 50002
 [rdp]
 type = tcp
 local_ip = 127.0.0.1           
@@ -254,7 +251,7 @@ local_ip = 127.0.0.1
 local_port = 445
 remote_port = 7002
 </code></pre>
-<p>其中common字段下的三项是我们早先在服务器端设置的内容。<br>如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。 </p>
+<p>其中common字段下的三项是我们早先在服务器端设置的内容。<br>如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。<br>如果需要一个服务器给多台设备提供frp服务，可以使用以上设置多个ssh。</p>
 </li>
 <li><p>运行服务</p>
 <pre><code>./frpc -c frpc.ini
@@ -267,6 +264,10 @@ remote_port = 7002
 </ul>
 <ol>
 <li>“remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。</li>
+<li>“type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。</li>
+<li>“local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。</li>
+<li>“remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。</li>
+<li>“[xxx]”表示一个规则名称，自己定义，便于查询即可。</li>
 <li>“type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。</li>
 <li>“local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。</li>
 <li>“remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。</li>
@@ -288,6 +289,19 @@ remote_port = 7002
       <tags>
         <tag>网络</tag>
         <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>utorrent代理设置</title>
+    <url>/2022/02/09/utorrent%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>参照下图</p>
+<p><img src="https://s2.loli.net/2022/02/09/sGulEeCWLF76X9n.png"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -444,6 +458,38 @@ hexo d
       </tags>
   </entry>
   <entry>
+    <title>双系统下重装Win10，ubuntu无法进入</title>
+    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
+<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
+<ol>
+<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
+</li>
+<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
+</li>
+<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
+</li>
+<li><p>打开命令行，输入以下命令：</p>
+<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
+</code></pre>
+</li>
+<li><p>再接着输入：</p>
+<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
+</code></pre>
+</li>
+</ol>
+<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
+<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>记录</tag>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何在IPV4网络环境中使用IPV6网络</title>
     <url>/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多校园网pt用户在毕业后没有了IPV6网络，就再也无法顺畅的访问便利的资源站了。即使家里有运营商提供的IPV6地址，但是pt站ban了国内的V6 IP，同样没法正常访问。幸运的是，目前国外的IPV6地址可以使用。下面将介绍如何在只有IPV4网络的情况下访问IPV6网站。</p>
@@ -513,38 +559,6 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>双系统下重装Win10，ubuntu无法进入</title>
-    <url>/2021/08/05/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%87%8D%E8%A3%85Win10%EF%BC%8Cubuntu%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<p>自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。</p>
-<p>前段时间因为修改注册表之前没备份，把电脑搞坏了，就重装了win10。然后悲剧了，系统引导里没有了ubuntu。网上找遍各种方法，最终找到了使用ubuntu安装U盘引导修复的方法。</p>
-<ol>
-<li><p>使用<a href="http://rufus.ie/zh/">rufus</a>+U盘制作<a href="https://ubuntu.com/download/desktop">Ubuntu</a>的系统安装盘。我制作的时候选择的分区类型是GPT，不是默认的MBR,这个具体要看你是如何安装的系统。</p>
-</li>
-<li><p>插入做好的Ubuntu系统盘，重启电脑，进入BIOS设置，选择U盘作为第一启动项</p>
-</li>
-<li><p>进入后，选择试用Ubuntu，然后记得一定给系统联网 </p>
-</li>
-<li><p>打开命令行，输入以下命令：</p>
-<pre><code> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update  
-</code></pre>
-</li>
-<li><p>再接着输入：</p>
-<pre><code> sudo apt-get install -y boot-repair &amp;&amp; boot-repair  
-</code></pre>
-</li>
-</ol>
-<p>耐心等待，在弹出来的对话框中选择第一个“Recommended repair”，接着它可能会提示你什么，点yes即可。稍等片刻，修复完毕。重启电脑，拔掉U盘，就能看到那个熟悉的系统选择界面了。</p>
-<p>本文参考：<a href="https://blog.csdn.net/weixin_42718092/article/details/88794952">https://blog.csdn.net/weixin_42718092/article/details/88794952</a></p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>记录</tag>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何在godaddy上注册并使用一个域名</title>
     <url>/2022/02/09/%E5%A6%82%E4%BD%95%E5%9C%A8godaddy%E4%B8%8A%E6%B3%A8%E5%86%8C%E5%B9%B6%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<p>首先登录<a href="https://hk.godaddy.com/offers/domains/godaddy-b">godaddy</a>网站注册一个自己的账户，然后搜索一个自己喜欢的域名，找个最便宜的付款买了。<br><img src="https://s2.loli.net/2022/02/09/eqiBTaJd4Mp93kl.png"></p>
@@ -559,23 +573,6 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>工具合集</title>
-    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<ul>
-<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
-<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
-<li>未完待续…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>索引合集</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>将HEXO博客迁移到一台新的电脑</title>
     <url>/2022/01/25/%E5%B0%86HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84%E7%94%B5%E8%84%91/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一台电脑上部署好了自己的博客，但是我们有时候会需要在其他电脑上更新，比如我在实验室的台式机和自己的笔记本上都有更新博客的需求。<br>这篇内容将帮助我们解决这个需求！</p>
@@ -586,7 +583,7 @@ hexo d
 </ul>
 <h2 id="创建新的分支"><a href="#创建新的分支" class="headerlink" title="创建新的分支"></a>创建新的分支</h2><p>首先创建一个hexo分支，如图所示<br><img src="https://s2.loli.net/2022/01/26/Aewlq74MVgtPbo6.png"></p>
 <p>然后在setting中将hexo设置为默认分支，这样以后的数据就会同步到这个分支中<br><img src="https://s2.loli.net/2022/01/26/LDWwNoQInAe9t61.png"></p>
-<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
+<p>接下来我们在本地任意目录下，将刚才这个分支clone下来<br>使用git bash打开，输入以下命令：<br>  git clone <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:xxxx/xxxx.github.io.git  记得换成自己的地址</p>
 <p>将克隆下来的文件除了.git文件夹之外的所有文件都删除。电脑开启显示隐藏文件就能看到.git.</p>
 <p>将之前写的博客源文件全部否复制过来，除了.deploy_git。</p>
 <p>需要注意的是，复制过来的文件需要有一个名为.gitignore的文件，如果没有的话，自建一个，里面的内容填写下面所示：</p>
@@ -648,42 +645,20 @@ git commit –m &quot;xxxx&quot;
       </tags>
   </entry>
   <entry>
-    <title>让自己通过Hexo建立的博客被谷歌搜索到</title>
-    <url>/2021/08/14/%E8%AE%A9%E8%87%AA%E5%B7%B1%E9%80%9A%E8%BF%87Hexo%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%A2%AB%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般我们建立博客的目的就是分享一些东西，那么如何让我们的博客被更多的人看到呢？那当然是被搜索引擎收录后，能够被更多的人用关键词检索到。</p>
-<p>本文介绍如何让自己的博客被谷歌搜索引擎搜索到，如需知道如何被百度检索请参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988/">这篇文章</a></p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>本地配置</li>
-<li>谷歌搜索配置</li>
+    <title>工具合集</title>
+    <url>/2021/09/11/%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<ul>
+<li>图床工具 <a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></li>
+<li>网页视频下载工具Cococut，可以下载大部分网页上的视频，直接在Chrome或者edge的浏览器插件商店搜索即可找到安装。</li>
+<li>未完待续…</li>
 </ul>
-<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>在博客安装根目录，也就是你平时运行 hexo g等命令的那一层目录，执行以下代码：</p>
-<pre><code>npm install hexo-generator-sitemap --save
-</code></pre>
-<p>安装完成后，在.deploy.git文件夹下能发现多了一个sitemap.xml的文件，以后我们每次运行hexo g这个命令时就会生成（更新）这个文件。</p>
-<p>打开博客的配置文件（博客安装根目录下）_config.yml，找到以下内容，并将URL更改为自己的网站地址。</p>
-<p><img src="https://i.loli.net/2021/08/14/ZmsoERqd1va8O7K.png"></p>
-<h2 id="谷歌搜索配置"><a href="#谷歌搜索配置" class="headerlink" title="谷歌搜索配置"></a>谷歌搜索配置</h2><p>首先打开<a href="https://search.google.com/search-console">谷歌搜索配置网站</a>，如果你没有谷歌账户，没关系注册一个。</p>
-<p>点击左上角的三角箭头，然后添加资源，如下图所示：</p>
-<p><img src="https://i.loli.net/2021/08/14/zmE2BfK5DcC3JWP.png"></p>
-<p>然后在下图中的位置填写你的网址，然后点击继续：</p>
-<p><img src="https://i.loli.net/2021/08/14/DNXbJk2P67YEVgh.png"></p>
-<p>在弹出以下界面后，点击“前往资源界面”。</p>
-<p><img src="https://i.loli.net/2021/08/14/F7i2wcDLsATgUPr.png"></p>
-<p>接下来的部分当时布置时我没有截图，只能凭记忆用语言描述以下，很简单的几步操作。</p>
-<p>这时的谷歌界面应该是告诉你去DNS服务商那里添加一条TXT记录，然后给了你一串可以复制的代码。</p>
-<p>这时打开你购买网址的服务商网站，在DNS解析那里添加一条TXT记录，然后将谷歌提供的内容粘贴进去，保存即可。如下图展示的是在cloudflare中添加TXT记录。</p>
-<p><img src="https://i.loli.net/2021/08/14/DbxK73CPE4qGtUw.png"></p>
-<p>之后在谷歌搜索的console界面就能就能看到我们的网址，然后点击站点地图，添加你自己的网址：<a href="https://yoursite/sitemap">https://yoursite/sitemap</a></p>
-<p><img src="https://i.loli.net/2021/08/14/KDyd6srqfuXw5Vk.png"></p>
-<p>然后就能看到谷歌提示，成功添加。如果你在执行这一步之前没有在配置文件_config.yml中修改url并在修改后执行 hexo g，hexo d，谷歌会报错的。这时你要删掉刚刚添加的站台地图网址，在完成以上动作后，重新添加就不会有报错了。</p>
-<p>然后等待谷歌更新，就能收录你的博客内容了。需要一些时间（maybe 几十分钟，maybe更长）。</p>
 ]]></content>
       <categories>
-        <category>网站</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>网站</tag>
-        <tag>hexo</tag>
+        <tag>工具</tag>
+        <tag>索引合集</tag>
       </tags>
   </entry>
   <entry>
@@ -796,6 +771,45 @@ git commit –m &quot;xxxx&quot;
       <tags>
         <tag>工具</tag>
         <tag>下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>让自己通过Hexo建立的博客被谷歌搜索到</title>
+    <url>/2021/08/14/%E8%AE%A9%E8%87%AA%E5%B7%B1%E9%80%9A%E8%BF%87Hexo%E5%BB%BA%E7%AB%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%A2%AB%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般我们建立博客的目的就是分享一些东西，那么如何让我们的博客被更多的人看到呢？那当然是被搜索引擎收录后，能够被更多的人用关键词检索到。</p>
+<p>本文介绍如何让自己的博客被谷歌搜索引擎搜索到，如需知道如何被百度检索请参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988/">这篇文章</a></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>本地配置</li>
+<li>谷歌搜索配置</li>
+</ul>
+<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>在博客安装根目录，也就是你平时运行 hexo g等命令的那一层目录，执行以下代码：</p>
+<pre><code>npm install hexo-generator-sitemap --save
+</code></pre>
+<p>安装完成后，在.deploy.git文件夹下能发现多了一个sitemap.xml的文件，以后我们每次运行hexo g这个命令时就会生成（更新）这个文件。</p>
+<p>打开博客的配置文件（博客安装根目录下）_config.yml，找到以下内容，并将URL更改为自己的网站地址。</p>
+<p><img src="https://i.loli.net/2021/08/14/ZmsoERqd1va8O7K.png"></p>
+<h2 id="谷歌搜索配置"><a href="#谷歌搜索配置" class="headerlink" title="谷歌搜索配置"></a>谷歌搜索配置</h2><p>首先打开<a href="https://search.google.com/search-console">谷歌搜索配置网站</a>，如果你没有谷歌账户，没关系注册一个。</p>
+<p>点击左上角的三角箭头，然后添加资源，如下图所示：</p>
+<p><img src="https://i.loli.net/2021/08/14/zmE2BfK5DcC3JWP.png"></p>
+<p>然后在下图中的位置填写你的网址，然后点击继续：</p>
+<p><img src="https://i.loli.net/2021/08/14/DNXbJk2P67YEVgh.png"></p>
+<p>在弹出以下界面后，点击“前往资源界面”。</p>
+<p><img src="https://i.loli.net/2021/08/14/F7i2wcDLsATgUPr.png"></p>
+<p>接下来的部分当时布置时我没有截图，只能凭记忆用语言描述以下，很简单的几步操作。</p>
+<p>这时的谷歌界面应该是告诉你去DNS服务商那里添加一条TXT记录，然后给了你一串可以复制的代码。</p>
+<p>这时打开你购买网址的服务商网站，在DNS解析那里添加一条TXT记录，然后将谷歌提供的内容粘贴进去，保存即可。如下图展示的是在cloudflare中添加TXT记录。</p>
+<p><img src="https://i.loli.net/2021/08/14/DbxK73CPE4qGtUw.png"></p>
+<p>之后在谷歌搜索的console界面就能就能看到我们的网址，然后点击站点地图，添加你自己的网址：<a href="https://yoursite/sitemap">https://yoursite/sitemap</a></p>
+<p><img src="https://i.loli.net/2021/08/14/KDyd6srqfuXw5Vk.png"></p>
+<p>然后就能看到谷歌提示，成功添加。如果你在执行这一步之前没有在配置文件_config.yml中修改url并在修改后执行 hexo g，hexo d，谷歌会报错的。这时你要删掉刚刚添加的站台地图网址，在完成以上动作后，重新添加就不会有报错了。</p>
+<p>然后等待谷歌更新，就能收录你的博客内容了。需要一些时间（maybe 几十分钟，maybe更长）。</p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
