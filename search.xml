@@ -254,14 +254,14 @@ local_ip = 127.0.0.1
 local_port = 445
 remote_port = 7002
 </code></pre>
-</li>
-</ul>
 <p>其中common字段下的三项是我们早先在服务器端设置的内容。<br>如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。 </p>
-<ul>
-<li>运行服务<pre><code>./frpc -c frpc.ini
+</li>
+<li><p>运行服务</p>
+<pre><code>./frpc -c frpc.ini
 </code></pre>
 </li>
-<li>后台挂起<pre><code>nohup ./frpc -c frpc.ini &amp;
+<li><p>后台挂起</p>
+<pre><code>nohup ./frpc -c frpc.ini &amp;
 </code></pre>
 <h2 id="一些解释-1"><a href="#一些解释-1" class="headerlink" title="一些解释"></a>一些解释</h2></li>
 </ul>
@@ -275,7 +275,7 @@ remote_port = 7002
 <p>RDP，即Remote Desktop 远程桌面，Windows的RDP默认端口是3389，协议为TCP，建议使用frp远程连接前，在局域网中测试好，能够成功连接后再使用frp穿透连接。</p>
 </blockquote>
 <blockquote>
-<p>SMB，即Windows文件共享所使用的协议，默认端口号445，协议TCP，本条规则可实现远程文件访问。**</p>
+<p>SMB，即Windows文件共享所使用的协议，默认端口号445，协议TCP，本条规则可实现远程文件访问。</p>
 </blockquote>
 <h1 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h1><p>Linux可以直接打开terminal，Windows可以使用ssh工具，比如putty或者MobaXterm，在命令行界面输入x.x.x.x:6000，这里的6000是你自己设置的端口，可以是任何你设置的数字，然后输入本地用户名和密码就可以成功连接。</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
