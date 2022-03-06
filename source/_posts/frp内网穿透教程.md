@@ -45,8 +45,10 @@ description: frp内网穿透教程
 里面会包含frps, frps.ini, frpc, frpc.ini 等文件
 
 这里我们是部署服务器端，所以删除客户端client的文件：
-        rm frpc
-        rm frpc.ini
+
+      rm frpc
+      rm frpc.ini
+
 - 修改服务器端文件配置，打开frps.ini
       vim frps.ini
 - 填写以下内容[1]：
