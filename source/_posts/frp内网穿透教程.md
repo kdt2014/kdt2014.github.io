@@ -44,8 +44,7 @@ description: frp内网穿透教程
       ls -a
 里面会包含frps, frps.ini, frpc, frpc.ini 等文件
 
-这里我们是部署服务器端，所以删除客户端client的文件：
-
+- 这里我们是部署服务器端，所以删除客户端client的文件：
       rm frpc
       rm frpc.ini
 
