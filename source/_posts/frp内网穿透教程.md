@@ -116,8 +116,8 @@ description: frp内网穿透教程
       local_port = 445
       remote_port = 7002
 
-其中common字段下的三项是我们早先在服务器端设置的内容。
-如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。 
+  其中common字段下的三项是我们早先在服务器端设置的内容。
+  如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。 
 
 - 运行服务
       ./frpc -c frpc.ini
@@ -131,7 +131,7 @@ description: frp内网穿透教程
 
 >RDP，即Remote Desktop 远程桌面，Windows的RDP默认端口是3389，协议为TCP，建议使用frp远程连接前，在局域网中测试好，能够成功连接后再使用frp穿透连接。
 
->SMB，即Windows文件共享所使用的协议，默认端口号445，协议TCP，本条规则可实现远程文件访问。**
+>SMB，即Windows文件共享所使用的协议，默认端口号445，协议TCP，本条规则可实现远程文件访问。
 
 
 # 远程连接
