@@ -16,7 +16,7 @@ description: frp内网穿透教程
 
 先简单看一下技术原理，参见下图[1]：
 
-![](https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png)
+![frp实现原理](https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png)
 
 图中VPS即是frps(service)，待远程连接的电脑就是frpc(client)。
 
@@ -33,7 +33,7 @@ description: frp内网穿透教程
 - 远程ssh连接上服务器
 - 下载[frp](https://github.com/fatedier/frp/releases)到vps，执行以下命令：
       wget https://github.com/fatedier/frp/releases/download/v0.39.1/frp_0.39.1_linux_amd64.tar.gz
-  ps:本教程更新时frp最新时0.39.1，请点击前方连接到官网下载最新版
+  ps:本教程更新时frp最新版本是V0.39.1，请点击前方连接到官网下载最新版
 - 解压:
        tar -zxvf frp_0.39.1.0_linux_amd64.tar.gz
 - 复制到新的frp文件夹： 
@@ -79,7 +79,7 @@ description: frp内网穿透教程
       2022/03/06 15:22:39 [I] [root.go:210] Start frps success
 
 这时访问x.x.x.x:7500 (x.x.x.x是你的VPS提供的IP) 并使用自己设置的用户名密码登录，即可看到仪表板界面。
-![](https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png)
+![控制面板](https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png)
 
 # 服务器端后台运行
 
@@ -105,6 +105,16 @@ description: frp内网穿透教程
       local_ip = 127.0.0.1           
       local_port = 22
       remote_port = 6000 
+      [ssh2]
+      type = tcp
+      local_ip = 127.0.0.1           
+      local_port = 50000
+      remote_port = 50000
+      [ssh3]
+      type = tcp
+      local_ip = 127.0.0.1           
+      local_port = 50001
+      remote_port = 50002
       [rdp]
       type = tcp
       local_ip = 127.0.0.1           
@@ -117,7 +127,8 @@ description: frp内网穿透教程
       remote_port = 7002
 
   其中common字段下的三项是我们早先在服务器端设置的内容。
-  如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。 
+  如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。
+  如果需要一个服务器给多台设备提供frp服务，可以使用以上设置多个ssh。
 
 - 运行服务
       ./frpc -c frpc.ini
@@ -128,6 +139,10 @@ description: frp内网穿透教程
 2. “type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。
 3. “local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。
 4. “remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。
+5. “[xxx]”表示一个规则名称，自己定义，便于查询即可。
+6. “type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。
+7. “local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。
+8. “remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。
 
 >RDP，即Remote Desktop 远程桌面，Windows的RDP默认端口是3389，协议为TCP，建议使用frp远程连接前，在局域网中测试好，能够成功连接后再使用frp穿透连接。
 
