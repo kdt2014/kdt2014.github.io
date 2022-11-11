@@ -28,7 +28,7 @@ description: frp内网穿透教程
 
 # VPS服务器端部署
 
-假设你VPS上装的是Debian或者CENTOS的64位系统，这里他俩并没有什么区别。
+假设你VPS上装的是Debian或者Ubuntu的64位系统，这里他俩并没有什么区别。
 
 - 远程ssh连接上服务器
 - 下载[frp](https://github.com/fatedier/frp/releases)到vps，执行以下命令：
@@ -68,6 +68,13 @@ description: frp内网穿透教程
 5. vhost_http_port”和“vhost_https_port”用于反向代理HTTP主机时使用，本文不涉及HTTP协议，因而照抄或者删除这两条均可。
 
 - 编辑完成后，保存退出。(vim的命令：先按Esc，然后英文状态下的 :  然后输入wq  (代表write和quit))。
+- 开放防火墙端口
+      sudo apt install firewalld
+      sudo firewall-cmd --permanent --add-port=7000/tcp
+      sudo firewall-cmd --permanent --add-port=7500/tcp
+      sudo firewall-cmd --permanent --add-port=7001/tcp
+      sudo firewall-cmd --reload
+
 - 运行frps服务
       ./frps -c frps.ini
 
@@ -134,6 +141,51 @@ description: frp内网穿透教程
       ./frpc -c frpc.ini
 - 后台挂起
       nohup ./frpc -c frpc.ini &
+
+- Windows客户端使用
+
+在文章开头下载frp的网址下载对应的Windos版本，这里我们需要编辑client客户端的配置，即frpc.ini
+      [common]
+      server_addr = x.x.x.x
+      server_port = 7000
+      token = mypwd
+      [ssh]
+      type = tcp
+      local_ip = 127.0.0.1           
+      local_port = 22
+      remote_port = 6000 
+      [ssh2]
+      type = tcp
+      local_ip = 127.0.0.1           
+      local_port = 50000
+      remote_port = 50000
+      [rdp]
+      type = tcp
+      local_ip = 127.0.0.1           
+      local_port = 3389
+      remote_port = 7001  
+      [smb]
+      type = tcp
+      local_ip = 127.0.0.1
+      local_port = 445
+      remote_port = 7002
+
+和linux版本设置的内容是一样的。
+
+然后再写一个脚本启动服务：
+      @echo off
+
+      if "%1" == "h" goto begin
+      mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit
+      :begin
+
+      ## 这个替换成你自己的文件路径
+      cd "D:\software\frp_0.39.1.0_windows_amd64"
+
+      frpc -c frpc.ini
+
+之后每次重启电脑，需要开启frp服务，只需要双击执行这个脚本即可。
+
 ## 一些解释
 1. “[xxx]”表示一个规则名称，自己定义，便于查询即可。
 2. “type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。
@@ -146,8 +198,15 @@ description: frp内网穿透教程
 
 
 # 远程连接
-
+- 远程连接的电脑是linux系统
 Linux可以直接打开terminal，Windows可以使用ssh工具，比如putty或者MobaXterm，在命令行界面输入x.x.x.x:6000，这里的6000是你自己设置的端口，可以是任何你设置的数字，然后输入本地用户名和密码就可以成功连接。
+
+- 远程连接的电脑是windows
+可以直接使用windows电脑自带的远程连接工具，输入vps ip:远程端口，即可输入用户名和密码登录。例如，远程主机ip是1.2.3.4，frpc.ini中设置的remote_port = 7001，可以输入1.2.3.4:7001远程连接电脑。
+
+如果待连接的电脑是笔记本电脑或者是使用wifi连接的设备，那么在你远程登录过程中，待连接电脑会自动锁屏，然后断掉wifi。。。。目前我还找到解决这个问题的办法，只能使用网线连接。
+
+连接过程中可能出现的问题参考文章 [微软远程桌面登录](https://www.gongsunqi.xyz/2022/11/11/%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/)
 
 
 # Reference
