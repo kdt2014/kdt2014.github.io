@@ -144,7 +144,8 @@ description: frp内网穿透教程
 
 - Windows客户端使用
 
-在文章开头下载frp的网址下载对应的Windos版本，这里我们需要编辑client客户端的配置，即frpc.ini
+  在文章开头下载frp的网址下载对应的Windos版本，这里我们需要编辑client客户端的配置，即frpc.ini
+
       [common]
       server_addr = x.x.x.x
       server_port = 7000
@@ -170,21 +171,20 @@ description: frp内网穿透教程
       local_port = 445
       remote_port = 7002
 
-和linux版本设置的内容是一样的。
+- 然后再写一个脚本启动服务：
 
-然后再写一个脚本启动服务：
       @echo off
 
       if "%1" == "h" goto begin
       mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit
       :begin
 
-      ## 这个替换成你自己的文件路径
+        ## 这个替换成你自己的文件路径
       cd "D:\software\frp_0.39.1.0_windows_amd64"
 
       frpc -c frpc.ini
 
-之后每次重启电脑，需要开启frp服务，只需要双击执行这个脚本即可。
+  之后每次重启电脑，需要开启frp服务，只需要双击执行这个脚本即可。
 
 ## 一些解释
 1. “[xxx]”表示一个规则名称，自己定义，便于查询即可。
