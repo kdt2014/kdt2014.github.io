@@ -59,6 +59,10 @@ description: frp内网穿透教程
       dashboard_pwd = 123456
       vhost_http_port = 10080
       vhost_https_port = 10443
+      # frp日志配置
+      log_file = /var/log/frps.log
+      log_level = info
+      log_max_days = 3
 
 ## 一些解释
 1. “bind_port”表示用于客户端和服务端连接的端口，这个端口号我们之后在配置客户端的时候要用到。
@@ -92,7 +96,7 @@ description: frp内网穿透教程
 
 # 服务器端后台运行及开机自启
 
-      nano /usr/lib/systemd/system/frps.service
+      nano /lib/systemd/system/frps.service
 
       [Unit]
       Description=frps service
@@ -227,7 +231,7 @@ description: frp内网穿透教程
 
   类似于服务器端：
 
-      nano /usr/lib/systemd/system/frpc.service
+      nano /lib/systemd/system/frpc.service
 
       [Unit]
       Description=frpc service
