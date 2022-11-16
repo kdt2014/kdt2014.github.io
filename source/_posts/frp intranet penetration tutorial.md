@@ -88,14 +88,31 @@ description: frp内网穿透教程
 这时访问x.x.x.x:7500 (x.x.x.x是你的VPS提供的IP) 并使用自己设置的用户名密码登录，即可看到仪表板界面。
 ![控制面板](https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png)
 
-# 服务器端后台运行
+如果此时我们关闭terminal，刚才运行的frps会自动结束，这时我们就需要把它挂在后台。
 
-如果此时我们关闭terminal，刚才运行的frps会自动结束，这时我们就需要把它挂在后台：
+# 服务器端后台运行及开机自启
 
-      nohup ./frps -c frps.ini &
-关于这条指令的详细讲解，请参考[这里](https://ehlxr.me/2017/01/18/Linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/)。
+      nano /usr/lib/systemd/system/frps.service
 
-这时我们关闭terminal，仍然可以通过x.x.x.x:7500访问后台面板。
+      [Unit]
+      Description=frps service
+      After=network.target syslog.target
+      Wants=network.target
+
+      [Service]
+      Type=simple
+      # frp安装目录
+      ExecStart=/root/frp_0.39.1_linux_amd64/frps -c /root/frp_0.39.1_linux_amd64/frps.ini
+
+      [Install]
+      WantedBy=multi-user.target
+
+  启动服务并设置开机启动:
+      
+      sudo systemctl enable frps
+      sudo systemctl start frps
+
+这时我们重启服务器，无需任何手动操作，仍然可以通过x.x.x.x:7500访问后台面板。
 
 # 客户端部署
 
@@ -203,8 +220,32 @@ description: frp内网穿透教程
   建议将start.bat和start.vbs都放在你的frp文件夹内。
 
   然后在windows的组策略--计算机配置--windows设置--脚本（启动/关机）--启动--添加--选择start.vbs，然后应用--确定。
-  
+
   ![](https://s2.loli.net/2022/11/16/JIh3sbaonEMH1vC.png)
+
+- linux系统开机自启
+
+  类似于服务器端：
+
+      nano /usr/lib/systemd/system/frpc.service
+
+      [Unit]
+      Description=frpc service
+      After=network.target syslog.target
+      Wants=network.target
+
+      [Service]
+      Type=simple
+      # frp安装目录
+      ExecStart=/root/frp_0.39.1_linux_amd64/frpc -c /root/frp_0.39.1_linux_amd64/frpc.ini
+
+      [Install]
+      WantedBy=multi-user.target
+
+  启动服务并设置开机启动:
+      
+      sudo systemctl enable frpc
+      sudo systemctl start frpc
 
 
 ## 一些解释
