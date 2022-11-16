@@ -218,7 +218,7 @@ description: frp内网穿透教程
 
   再写一个start.vbs脚本：
 
-      CreateObject("WScript.Shell").Run "cmd /c D:\frp_0.45.0_windows_amd64\start.bat",0
+      CreateObject("WScript.Shell").Run "cmd /c D:\frp_0.39.1_windows_amd64\start.bat",0
 
   注意把文件中start.bat所在文件夹的路径替换成你自己的。
 
