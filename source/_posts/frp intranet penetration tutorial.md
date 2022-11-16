@@ -171,7 +171,7 @@ description: frp内网穿透教程
       local_port = 445
       remote_port = 7002
 
-- 然后再写一个脚本启动服务：
+- 然后再写一个脚本启动服务start.bat：
 
       @echo off
 
@@ -180,11 +180,32 @@ description: frp内网穿透教程
       :begin
 
         ## 这个替换成你自己的文件路径
-      cd "D:\software\frp_0.39.1.0_windows_amd64"
+      cd /d "D:\software\frp_0.39.1.0_windows_amd64"
 
       frpc -c frpc.ini
 
   之后每次重启电脑，需要开启frp服务，只需要双击执行这个脚本即可。
+
+- 开机自启动
+  上面的脚本可以在开机之后双击启动frpc服务，但是如果想每次开机时自启动该服务，则需要另外一个脚本来辅助。
+  ps:笔者尝试将上文中的start.bat放入开机启动文件夹，但是会有报错。
+  首先写一个start.bat脚本：
+
+      @echo off
+      frpc -c frpc.ini
+
+  再写一个start.vbs脚本：
+
+      CreateObject("WScript.Shell").Run "cmd /c D:\frp_0.45.0_windows_amd64\start.bat",0
+
+  注意把文件中start.bat所在文件夹的路径替换成你自己的。
+
+  建议将start.bat和start.vbs都放在你的frp文件夹内。
+
+  然后在windows的组策略--计算机配置--windows设置--脚本（启动/关机）--启动--添加--选择start.vbs，然后应用--确定。
+  
+  ![](https://s2.loli.net/2022/11/16/JIh3sbaonEMH1vC.png)
+
 
 ## 一些解释
 1. “[xxx]”表示一个规则名称，自己定义，便于查询即可。
