@@ -213,6 +213,7 @@ description: frp内网穿透教程
   首先写一个start.bat脚本：
 
       @echo off
+      cd /d "D:\software\frp_0.39.1.0_windows_amd64"
       frpc -c frpc.ini
 
   再写一个start.vbs脚本：
