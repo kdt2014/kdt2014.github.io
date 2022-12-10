@@ -23,16 +23,16 @@ description: wsl2 ROS GUI
 
 - 运行
 
-打开win11自带的终端，如下图所示，选择你想要开启的 ubuntu系统版本，点击等待片刻，即可开机。
+ 打开win11自带的终端，如下图所示，选择你想要开启的 ubuntu系统版本，点击等待片刻，即可开机。
 
-![终端](https://s2.loli.net/2022/12/10/wiFdS25tg1DhAlY.png)
+ ![终端](https://s2.loli.net/2022/12/10/wiFdS25tg1DhAlY.png)
 
 运行ROS
 
-![roscore](https://s2.loli.net/2022/12/10/qcGPNrO2jmDbuQJ.png)
+ ![roscore](https://s2.loli.net/2022/12/10/qcGPNrO2jmDbuQJ.png)
 
 运行rviz
 
-![rviz](https://s2.loli.net/2022/12/10/nRP29ukhsQi4Sxb.png)
+ ![rviz](https://s2.loli.net/2022/12/10/nRP29ukhsQi4Sxb.png)
 
 这样你就可以像在Ubuntu主机上一样使用ROS了。
