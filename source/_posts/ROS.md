@@ -4,8 +4,10 @@ date: 2022-12-10 18:27:58
 update: 
 tags:
 - 系统
-- 记录
-categories: 系统
+- wsl2
+- Linux
+- ROS
+categories: Linux
 copyright: true
 description: wsl2 ROS GUI
 ---
