@@ -11,11 +11,11 @@ description: wsl2 ROS GUI
 ---
  目的：在windows系统上安装ubuntu系统、安装linux版本的ROS，并且可以使用ubuntu系统中安装软件的图形界面。
 
-- 安装WSL2
+- 安装wsl2
 
-请遵循微软官方的安装说明，[wsl2安装](https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment)。
+请遵循微软官方的安装说明，[wsl2安装](https://learn.microsoft.com/zh-cn/windows/wsl/install-manual)。
 
-请注意，默认安装的是Ubuntu最新版的，如需安装其他版本，请参照上述说明，到软件商店安装。
+请注意，第四步的内核更新包非常重要，如果缺少，将无法正常使用图形化界面。
 
 - 安装ROS
 
