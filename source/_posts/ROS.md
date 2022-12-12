@@ -19,6 +19,18 @@ description: wsl2 ROS GUI
 
 请注意，第四步的内核更新包非常重要，如果缺少，将无法正常使用图形化界面。
 
+完成上面的安装，并且设置好账户和密码之后，需要对wsl功能进行升级，以便使用GUI界面。
+
+以管理员身份打开PowerShell（不知道怎么操作，请百度），然后输入以下命令：
+
+    wsl --update
+
+然后重启wsl使之生效：
+
+    wsl --shutdown
+
+再重新打开ubuntu子系统就可以使用图形界面了。
+
 - 安装ROS
 
 [ROS](http://wiki.ros.org/melodic/Installation/Ubuntu)，请移步ROS官网安装说明，和在ubuntu主机上安装没有区别。
