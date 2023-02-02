@@ -5,6 +5,7 @@ tags:
   - 教程
 date: 2022-01-25 23:50:33
 update: 2022-01-25 23:50:33
+id: 10
 categories: 网站
 copyright: true
 description: 将HEXO博客迁移到一台新的电脑
