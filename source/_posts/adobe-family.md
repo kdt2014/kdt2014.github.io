@@ -3,11 +3,12 @@ title: Adobe family
 tags:
   - 工具
   - Adobe
+categories: 工具
+description: Adobe family
+abbrlink: 21f5392e
 date: 2021-09-11 17:24:56
 update: 2021-09-11 17:24:56
-categories: 工具
 copyright:
-description: Adobe family
 ---
  微博上有个大佬，一直在分享各种他修改过的Adobe全家桶软件，经过修改的软件直接安装，无需另行破解，就可使用，非常省心
 

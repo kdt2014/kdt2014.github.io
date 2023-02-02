@@ -3,11 +3,12 @@ title: 如何在IPV4网络环境中使用IPV6网络
 tags:
   - 网络
   - 教程
-date: 2022-02-08 21:39:43
-update: 2022-02-08 21:39:43
 categories: 网络
 copyright: true
 description: 如何在IPV4网络环境中使用IPV6网络
+abbrlink: 26532de6
+date: 2022-02-08 21:39:43
+update: 2022-02-08 21:39:43
 ---
 # 前言
 

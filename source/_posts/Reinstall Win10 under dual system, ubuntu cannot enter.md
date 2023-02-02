@@ -1,13 +1,14 @@
 ---
 title: 双系统下重装Win10，ubuntu无法进入
-date: 2021-08-05 13:11:31
-update: 
 tags:
-- 系统
-- 记录
+  - 系统
+  - 记录
 categories: 系统
 copyright: true
 description: 双系统下重装Win10，ubuntu无法进入
+abbrlink: 92a850f6
+date: 2021-08-05 13:11:31
+update:
 ---
 
 自己笔记本有两个固态硬盘，一个盘装win10，一个盘装ubuntu，都是UEFI引导，硬盘都是GPT分区。

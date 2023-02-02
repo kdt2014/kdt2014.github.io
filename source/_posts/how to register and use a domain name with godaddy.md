@@ -2,11 +2,12 @@
 title: 如何在godaddy上注册并使用一个域名
 tags:
   - 网络
-date: 2022-02-09 17:29:13
-update: 2022-02-09 17:29:13
 categories: 教程
 copyright: true
 description: 如何在godaddy上注册并使用一个域名
+abbrlink: baff2d21
+date: 2022-02-09 17:29:13
+update: 2022-02-09 17:29:13
 ---
 
 首先登录[godaddy](https://hk.godaddy.com/offers/domains/godaddy-b)网站注册一个自己的账户，然后搜索一个自己喜欢的域名，找个最便宜的付款买了。

@@ -1,15 +1,16 @@
 ---
 title: windows 11安装wsl2，ROS以及窗口可视化
-date: 2022-12-10 18:27:58
-update: 
 tags:
-- 系统
-- wsl2
-- Linux
-- ROS
+  - 系统
+  - wsl2
+  - Linux
+  - ROS
 categories: Linux
 copyright: true
 description: wsl2 ROS GUI
+abbrlink: 451c48f3
+date: 2022-12-10 18:27:58
+update:
 ---
  目的：在windows系统上安装ubuntu系统、安装linux版本的ROS，并且可以使用ubuntu系统中安装软件的图形界面。
 

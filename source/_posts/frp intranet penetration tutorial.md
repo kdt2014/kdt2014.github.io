@@ -3,11 +3,12 @@ title: frp内网穿透教程，ssh远程连接
 tags:
   - 网络
   - ssh
-date: 2022-03-06 14:32:04
-update: 2022-03-06 14:32:04
 categories: 网络
 copyright: true
 description: frp内网穿透教程
+abbrlink: 5a9e5df
+date: 2022-03-06 14:32:04
+update: 2022-03-06 14:32:04
 ---
 # 前言
 有时候我们需要从公网中远程连接自己的设备（SSH，远程桌面，远程文件等)，虽然诸如teamviewer和向日葵等可以较为方便的实现连接操作，但是网络不稳定，操作卡顿的现象却让我们十分难受。

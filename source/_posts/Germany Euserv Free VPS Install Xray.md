@@ -1,15 +1,16 @@
 ---
 title: 德国Euserv免费的VPS安装Xray
-date: 2021-08-08 19:48:57
-update: 
 tags:
-- 网络
-- vps
-- 记录
-- Xray
+  - 网络
+  - vps
+  - 记录
+  - Xray
 categories: 网络
 copyright: true
 description: 德国Euserv免费的VPS安装Xray
+abbrlink: ed328eef
+date: 2021-08-08 19:48:57
+update:
 ---
 
 # 前言 #

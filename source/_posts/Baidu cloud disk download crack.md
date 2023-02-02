@@ -3,11 +3,12 @@ title: 百度网盘下载
 tags:
   - 工具
   - 下载
+categories: 工具
+description: 百度网盘下载
+abbrlink: 5a555b60
 date: 2021-09-11 17:06:57
 update: 2021-09-11 17:06:57
-categories: 工具
 copyright:
-description: 百度网盘下载
 ---
 
 百度网盘下载是一个非高频使用场景，但是每次下载一些文件的时候只有一个百度网盘的链接。没有会员下载速度就非常难受，因此就各种谷歌百度，找到了使用IDM下载的方法。

@@ -1,14 +1,15 @@
 ---
 title: 博客搭建记录
-date: 2021-07-27 16:37:39
-update: 
 tags:
-- 网站
-- hexo
-- 记录
+  - 网站
+  - hexo
+  - 记录
 categories: 网站
 copyright: true
 description: 记录自己搭建博客的过程，方便以后查阅
+abbrlink: ee940876
+date: 2021-07-27 16:37:39
+update:
 ---
 
 # 前言
