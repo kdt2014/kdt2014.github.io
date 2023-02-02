@@ -19,20 +19,20 @@ Hexo博客默认的URL生成方式是year/:month/:day/:title/，如果我们的�
 
 在博客的根目录下，使用以下命令安装：
 
-  npm install hexo-abbrlink --save
+    npm install hexo-abbrlink --save
 
 ## 修改_config.yml文件
 
-  permalink: posts/:abbrlink/ 
-  # abbrlink config
-  abbrlink:
-  alg: crc32      #support crc16(default) and crc32
-  rep: hex        #support dec(default) and hex
+    permalink: posts/:abbrlink/ 
+    # abbrlink config
+    abbrlink:
+    alg: crc32      #support crc16(default) and crc32
+    rep: hex        #support dec(default) and hex
 
 修改完成之后，执行：
 
-  hexo clean
-  hexo g -d
+    hexo clean
+    hexo g -d
  
 这样以前和之后生成的文章就会根据文章生成的时间戳自动产生标题。
 
