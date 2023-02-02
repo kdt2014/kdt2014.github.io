@@ -60,22 +60,22 @@ update: 2022-01-25 23:50:33
 
 ## 新电脑上使用hexo
 
-- 安装git，参考上一篇教程 [安装git](https://www.gongsunqi.xyz/2021/07/27/Blog%20build%20record/#%E5%AE%89%E8%A3%85git)
+- 安装git，参考上一篇教程 [安装git](https://www.gongsunqi.xyz/posts/ee940876/#%E5%AE%89%E8%A3%85git)，对于Ubuntu等Linux系统，Git默认安装了。
 
-- 安装Node.js，参考[安装Node.js](https://www.gongsunqi.xyz/2021/07/27/Blog%20build%20record/#%E5%AE%89%E8%A3%85Node-js)
+- 安装Node.js，Windows系统参考[安装Node.js](https://www.gongsunqi.xyz/posts/ee940876/#%E5%AE%89%E8%A3%85Node-js)，Ubuntu系统参考[Ubuntu安装指定版本的Nodejs](https://www.gongsunqi.xyz/posts/7a25054b/)。
 
-- 安装Hexo，这里我们不需要初始化了，参考[安装Hexo](https://www.gongsunqi.xyz/2021/07/27/Blog%20build%20record/#%E5%AE%89%E8%A3%85Hexo)
+- 安装Hexo，这里我们**不需要初始化了**，参考[安装Hexo](https://www.gongsunqi.xyz/posts/ee940876/#%E5%AE%89%E8%A3%85Hexo)
 
 - 同步到本地
 在任意自己喜欢的文件夹下面执行：
 
-    git clone git@………………
+        git clone git@………………
 
-然后进入到同步下来的文件夹内：
+- 然后进入到同步下来的文件夹内：
 
-    cd xxx.github.io
-    npm install
-    npm install hexo-deployer-git --save
+        cd xxx.github.io
+        npm install
+        npm install hexo-deployer-git --save
 
 - 生成部署
 
@@ -90,7 +90,7 @@ update: 2022-01-25 23:50:33
 
     git add .
     git commit –m "xxxx"
-   git push 
+    git push 
 
 每次开始写新的博客之前，执行一下：
 
