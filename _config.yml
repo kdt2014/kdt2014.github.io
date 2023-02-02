@@ -103,7 +103,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/kdt2014/kdt2014.github.io.git
+  repo: git@github.com:kdt2014/kdt2014.github.io.git
   branch: master
 
   #Live2D动画
