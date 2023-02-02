@@ -58,11 +58,11 @@ description: 将HEXO博客迁移到一台新的电脑
 
 ## 新电脑上使用hexo
 
-- 安装git，参考上一篇教程 [安装git](https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85git)
+- 安装git，参考上一篇教程 [安装git](https://www.gongsunqi.xyz/2021/07/27/Blog%20build%20record/#%E5%AE%89%E8%A3%85git)
 
-- 安装Node.js，参考[安装Node.js](https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Node-js)
+- 安装Node.js，参考[安装Node.js](https://www.gongsunqi.xyz/2021/07/27/Blog%20build%20record/#%E5%AE%89%E8%A3%85Node-js)
 
-- 安装Hexo，这里我们不需要初始化了，参考[安装Hexo](https://www.gongsunqi.xyz/2021/07/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E5%AE%89%E8%A3%85Hexo)
+- 安装Hexo，这里我们不需要初始化了，参考[安装Hexo](https://www.gongsunqi.xyz/2021/07/27/Blog%20build%20record/#%E5%AE%89%E8%A3%85Hexo)
 
 - 同步到本地
 在任意自己喜欢的文件夹下面执行：
