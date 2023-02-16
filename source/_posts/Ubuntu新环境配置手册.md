@@ -26,6 +26,11 @@ update: 2023-02-06 19:51:55
 
 这个命令，上面的配置安装说明后面有写。
 
+## vscode 插件
+
+1. Copilot 基于gpt3的AI代码生成
+2. Mrakdown Preview Enhanced
+3. Markdown PDF
 
 ## 安装美化主题
 
