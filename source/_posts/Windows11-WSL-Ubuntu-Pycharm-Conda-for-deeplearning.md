@@ -11,7 +11,7 @@ date: 2023-03-22 19:56:16
 update: 2023-03-22 19:56:16
 ---
 
-# 目录
+## 目录
 - 前言
 - 安装wsl
 - wsl安装anaconda并配置环境
@@ -19,7 +19,7 @@ update: 2023-03-22 19:56:16
 
 
 
-# 前言
+## 前言
 
 通常来说在Linux系统下进行深度学习训练的效率要高于Windows系统，大家通常也是使用Linux常见的发行版本Ubuntu。但是Ubuntu对于日常使用不是很友好，于是就有了折中的方案，使用Windows Subsystem Linux (wsl)。
 
@@ -33,11 +33,11 @@ update: 2023-03-22 19:56:16
 
 ![interpreter](https://s2.loli.net/2023/03/22/oaiBn6FWzmxcbHf.png "Python Interpreter")
 
-# 安装wsl
+## 安装wsl
 
 这一部分参考之前的博客[windows 11安装wsl2，ROS以及窗口可视化](https://www.gongsunqi.xyz/posts/451c48f3/),只需要安装wsl2即可，安装ROS的部分不用理会。
 
-# wsl安装anaconda并配置环境
+## wsl安装anaconda并配置环境
 
 在Windows11自带的终端中打开上一步安装好的Ubuntu系统，之后的操作就和使用在Ubuntu主机上使用命令行完全一样。
 
@@ -67,10 +67,46 @@ update: 2023-03-22 19:56:16
 
 - conda配置环境
 
-前往pytorch官网，找到需要的环境，复制conda命令：
+1. conda创建虚拟环境
 
-![](https://s2.loli.net/2023/03/22/VWK7jPvda2rwYsg.png)
+        conda create --name cu118py310 python=3.10  #--name 后面是创建环境的名字，按自己的习惯命名，python=XX，输入自己想用的版本号
+        conda activate cu118py310 #激活刚刚创建的环境
 
-    conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+    ![conda env](https://s2.loli.net/2023/03/23/imlkrNDYjoqIObA.png "创建虚拟环境")
+
+    ![activate](https://s2.loli.net/2023/03/23/3ZOdr5pcqtUivIB.png "激活环境")
+
+    [常用的conda命令](https://blog.csdn.net/u014628771/article/details/80066624)
 
 
+2. 配置pytorch
+
+    前往[pytorch官网](https://pytorch.org/get-started/locally/)，选择需要的环境(注意这里选择linux OS），复制conda命令,在terminal中粘贴，回车，安装环境：
+
+      ![](https://s2.loli.net/2023/03/22/VWK7jPvda2rwYsg.png)
+
+        conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+      ![pytorch环境](https://s2.loli.net/2023/03/23/DSwiAanLlV98M3j.png "配置pytorch环境")
+
+wsl的环境配置到此就结束了。
+
+## Pycharm连接wsl，并使用conda生成的环境
+
+Pycharm专业版（社区版和教育版没有方便的wsl功能,软件的下载链接在下面），点击右下选择添加新的Interpreter，操作如下图所示：
+
+![wsl interpreter](https://s2.loli.net/2023/03/23/217LZ495MFT6GCu.png "add wsl interpreter")
+
+选择自己创建的Linux_distribution，然后Next:
+
+![](https://s2.loli.net/2023/03/23/VvnQa8Zr6qYkSPD.png)
+
+Virtualenv Enviroment--Existing--点击...--选择这个路径 \\wsl$\Ubuntu-22.04\home\username\anaconda3\envs\cu118py310\bin\python3，Create。
+
+![](https://s2.loli.net/2023/03/23/3r8Fdsbcv7elPZ2.png)
+
+等待片刻，新的环境就配置好了。然后就可以使用这个环境训练跑起来！
+
+软件百度网盘：链接：https://pan.baidu.com/s/1YkT8CiObO3v2Pnmmld2pqA?pwd=ci4h 
+提取码：ci4h
+Onedrive: https://1drv.ms/u/s!Arq4VGYuCz4AieNcw-nrj4XXtrugzQ?e=kmmVwH
