@@ -65,4 +65,12 @@ update: 2023-03-22 19:56:16
 
 接下来就是安装过程，只需要根据提示按回车或者输入yes即可。
 
+- conda配置环境
+
+前往pytorch官网，找到需要的环境，复制conda命令：
+
+![](https://s2.loli.net/2023/03/22/VWK7jPvda2rwYsg.png)
+
+    conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
 
