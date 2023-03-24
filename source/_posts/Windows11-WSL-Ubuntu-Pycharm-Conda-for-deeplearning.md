@@ -33,6 +33,7 @@ update: 2023-03-22 19:56:16
 
 ![interpreter](https://s2.loli.net/2023/03/22/oaiBn6FWzmxcbHf.png "Python Interpreter")
 
+视频教程链接：[Bilibili](https://www.bilibili.com/video/BV1ok4y1t7XC/)，[Youtube](https://youtu.be/buyogP-KS5w)
 ## 安装wsl
 
 这一部分参考之前的博客[windows 11安装wsl2，ROS以及窗口可视化](https://www.gongsunqi.xyz/posts/451c48f3/),只需要安装wsl2即可，安装ROS的部分不用理会。
