@@ -1,12 +1,13 @@
 ---
 title: Deeplearning on Windows with WSL2 pytorch - Using Pycharm as the IDE
 tags:
-  - null
+  - 教程
+  - 深度学习
 date: 2023-03-24 15:15:03
 update: 2023-03-24 15:15:03
-categories:
-copyright:
-description:
+categories: 教程
+copyright: True
+description: Deep learning training in Windows using Pycharm with wsl ubuntu
 ---
 ## Directory
 - Preface
@@ -32,9 +33,9 @@ Video tutorial links：[Bilibili](https://www.bilibili.com/video/BV1ok4y1t7XC/)�
 
 ## Install WSL
 
-This part refers to the previous blog Windows 11 installation of WSL2, ROS and window visualization, only need to install WSL2, install ROS part of the part do not care.
+This part refers to the previous blog [Windows 11 installation of WSL2, ROS and window visualization](https://www.gongsunqi.xyz/posts/451c48f3/), only need to install WSL2, install ROS part of the part do not care.
 
-You can also find this part in the video start part.
+You can also find this part in the video tutorial start part.
 
 ## WSL installs Anaconda and configures the environment
 
@@ -68,12 +69,12 @@ The next step is the installation process, just press enter or enter yes when pr
 
 1. Conda creates a virtual environment
 
-        conda create --name cu118py310 python=3.10  #--name 后面是创建环境的名字，按自己的习惯命名，python=XX，输入自己想用的版本号
-        conda activate cu118py310 #激活刚刚创建的环境
+        conda create --name cu118py310 python=3.10  
+        conda activate cu118py310 
 
-    ![conda env](https://s2.loli.net/2023/03/23/imlkrNDYjoqIObA.png "创建虚拟环境")
+    ![conda env](https://s2.loli.net/2023/03/23/imlkrNDYjoqIObA.png "create virtual env")
 
-    ![activate](https://s2.loli.net/2023/03/23/3ZOdr5pcqtUivIB.png "激活环境")
+    ![activate](https://s2.loli.net/2023/03/23/3ZOdr5pcqtUivIB.png "activate env")
 
     [The commonly used conda command](https://blog.csdn.net/u014628771/article/details/80066624)
 
