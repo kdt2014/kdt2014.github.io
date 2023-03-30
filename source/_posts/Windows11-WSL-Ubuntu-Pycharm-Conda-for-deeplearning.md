@@ -82,13 +82,21 @@ update: 2023-03-22 19:56:16
 
 2. 配置pytorch
 
-    前往[pytorch官网](https://pytorch.org/get-started/locally/)，选择需要的环境(注意这里选择linux OS），复制conda命令,在terminal中粘贴，回车，安装环境：
+    前往[pytorch官网](https://pytorch.org/get-started/locally/)，选择需要的环境（注意这里选择linux OS），复制conda命令,在terminal中粘贴，回车，安装环境：
 
       ![](https://s2.loli.net/2023/03/22/VWK7jPvda2rwYsg.png)
 
         conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 
       ![pytorch环境](https://s2.loli.net/2023/03/23/DSwiAanLlV98M3j.png "配置pytorch环境")
+3. 安装cudatoolkit
+
+        conda install cudnn
+
+    使用该命令，系统会自动安装cudnn和cudatoolkit需要的所有组件和环境依赖。
+
+    ![](https://s2.loli.net/2023/03/30/AHE4juWpZtgvdn3.png "install cudatoolkit and cudnn")
+
 
 wsl的环境配置到此就结束了。
 
