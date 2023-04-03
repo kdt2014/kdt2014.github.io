@@ -3,11 +3,12 @@ title: Deeplearning on Windows with WSL2 pytorch - Using Pycharm as the IDE
 tags:
   - 教程
   - 深度学习
+categories: 教程
+copyright: true
+description: Deep learning training in Windows using Pycharm with wsl ubuntu
+abbrlink: b96fcdf1
 date: 2023-03-24 15:15:03
 update: 2023-03-24 15:15:03
-categories: 教程
-copyright: True
-description: Deep learning training in Windows using Pycharm with wsl ubuntu
 ---
 ## Directory
 - Preface

@@ -3,11 +3,12 @@ title: 配置pycharm中wsl的ternimal，激活conda虚拟环境
 tags:
   - 教程
   - 深度学习
+categories: 教程
+copyright: true
+description: 配置pycharm中wsl的ternimal，激活conda虚拟环境
+abbrlink: bf803213
 date: 2023-04-01 19:03:00
 update: 2023-04-01 19:03:00
-categories: 教程
-copyright: True
-description: 配置pycharm中wsl的ternimal，激活conda虚拟环境
 ---
 
 本文的前提条件是你已经正确配置了wsl，如果不确定可以参考之前的教程[Windows11 + WSL Ubuntu + Pycharm + Conda for deeplearning](https://www.gongsunqi.xyz/posts/3c995b2a/)。

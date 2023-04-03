@@ -3,11 +3,12 @@ title: 深度学习：Windows11 VS WSL2 VS Ubuntu 性能对比，pytorch2.0性�
 tags:
   - 深度学习
   - 测试
+categories: 深度学习
+copyright: true
+description: 深度学习：Windows11 VS WSL2 VS Ubuntu 性能对比，pytorch2.0性能测试！
+abbrlink: 886ba8c3
 date: 2023-04-01 18:54:35
 update: 2023-04-01 18:54:35
-categories: 深度学习
-copyright: True
-description: 深度学习：Windows11 VS WSL2 VS Ubuntu 性能对比，pytorch2.0性能测试！
 ---
 
 ![性能对比](https://s2.loli.net/2023/04/01/1JmriBjDFceTC4s.png "Windows11 VS WSL2 VS Ubuntu 性能对比")
