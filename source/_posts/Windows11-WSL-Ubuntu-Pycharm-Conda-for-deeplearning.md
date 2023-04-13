@@ -101,7 +101,7 @@ update: 2023-03-22 19:56:16
       然后把解压得到的文件分别拷贝到对应的文件夹：
 
           #以下是安装命令     
-         sudo cp -r /lib64/* /usr/local/cuda-11.8（自己检查具体的版本修改路径）/lib64/
+         sudo cp -r /lib/* /usr/local/cuda-11.8（自己检查具体的版本修改路径）/lib64/
          sudo cp -r /include/* /usr/local/cuda-11.8（自己检查具体的版本修改路径）/include/
  
          #为更改读取权限：
@@ -110,9 +110,11 @@ update: 2023-03-22 19:56:16
 
       注意操作要在相应的文件夹下进行哦！
 
-    4. 检查cudnn是否安装成功
+   4. 检查cudnn是否安装成功
 
            cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+
+        ![](https://s2.loli.net/2023/04/13/oe8AZIixlOPXpUc.png)
       
 
 ## wsl安装anaconda并配置环境
