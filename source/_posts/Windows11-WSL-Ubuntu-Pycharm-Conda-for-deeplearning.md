@@ -112,7 +112,7 @@ update: 2023-03-22 19:56:16
 
    4. 检查cudnn是否安装成功
 
-           cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+           cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
         ![](https://s2.loli.net/2023/04/13/oe8AZIixlOPXpUc.png)
       
