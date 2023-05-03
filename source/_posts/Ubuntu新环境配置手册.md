@@ -54,13 +54,21 @@ update: 2023-02-06 19:51:55
 
 ## 录屏软件
 
-Kazam:
+simplescreenrecord0.3.6版本:
 
-      sudo apt-get install kazam
+
 
 ## 快捷截图软件
 
-[flameshot](https://flameshot.org/#download),[快捷键配置文档](https://flameshot.org/docs/guide/key-bindings/),拉到最下面是Ubuntu的相关设置，可以设置快捷键截屏。
+flameshot
+
+    sudo apt-get install flameshot
+
+安装之后，4K显示器设置150%等非整数缩放会导致截图不完整等问题，解决方法：
+
+    echo "export QT_AUTO_SCREEN_SCALE_FACTOR=1" >> ~/.profile
+
+该命令的作用是开启QT的自动缩放功能。flameshot基于QT5.9+环境，QT内置了缩放功能，只是很多软件不默认开启。
 
 ## 微信
 
