@@ -21,17 +21,13 @@ update: 2023-08-28 11:22:42
 
     uname -r
 
-
-
-
-
 2.下载安装实时内核文件
 
  我安装的是Ubuntu20.04.6 LTS，内核版本是 5.15.0.79.86。因此我需要安装最新的5.15版本的PREEMPT_RT内核，在这个[网站](https://cdn.kernel.org/pub/linux/kernel/projects/rt/5.15/)。（安装和当前默认内核最接近的RT内核，遇到问题的可能性最小）
 
  下载 patch-5.15.125-rt66.patch.gz
 
- ![](https://s2.loli.net/2023/08/27/mXT5ird1eRK9LxD.png)
+  ![](https://s2.loli.net/2023/08/27/mXT5ird1eRK9LxD.png)
 
  这个网站[linuxfoundation](https://wiki.linuxfoundation.org/realtime/start)可以查看最新的PREEMPT_RT内核。
 
