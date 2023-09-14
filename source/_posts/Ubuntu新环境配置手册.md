@@ -1,8 +1,8 @@
 ---
 title: Ubuntu新环境配置手册
 tags:
-  - Linux
-categories: Linux
+  - linux
+categories: linux
 copyright: true
 description: Ubuntu新环境配置手册
 abbrlink: 1e127ae5

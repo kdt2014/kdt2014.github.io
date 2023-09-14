@@ -3,7 +3,7 @@ title: Ubuntu18.04上安装AX210驱动
 tags:
   - linux
   - 教程
-categories: Linux
+categories: linux
 copyright: true
 description: Ubuntu18.04上安装AX210驱动
 abbrlink: 79edb564

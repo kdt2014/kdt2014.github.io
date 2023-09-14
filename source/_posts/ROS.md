@@ -3,9 +3,9 @@ title: windows 11安装wsl2，ROS以及窗口可视化
 tags:
   - 系统
   - wsl2
-  - Linux
+  - linux
   - ROS
-categories: Linux
+categories: linux
 copyright: true
 description: wsl2 ROS GUI
 abbrlink: 451c48f3
