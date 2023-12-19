@@ -2020,7 +2020,6 @@ df -kh
 <p><a href="https://www.zerotier.com/">注册网址</a></p>
 <p><img src="https://s2.loli.net/2023/12/19/csVgi7SzeAnZCXD.png"></p>
 <p>注册成功之后点击 Create A Network</p>
-<p><img src="https://s2.loli.net/2023/12/19/CIBteLaT8qEQcpz.png"></p>
 <p>可以看到我们的NETWORK ID，点击ID 可以看到我们这个网络的具体配置信息。 我们可以更改Name，Description，IPV4的网段等等信息。Access Control 那里一定要是Private，这样才能保护我们的连接隐私性。</p>
 <p><img src="/image.png" alt="Alt text"></p>
 </li>
