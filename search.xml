@@ -2004,4 +2004,60 @@ df -kh
         <tag>测试</tag>
       </tags>
   </entry>
+  <entry>
+    <title>使用zerotier实现ssh远程连接wsl2</title>
+    <url>/posts/53c7e35a/</url>
+    <content><![CDATA[<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>前言</li>
+<li>准备工作</li>
+<li>wsl2部署ssh</li>
+<li>windows本地端连接</li>
+<li>手机客户端连接</li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ssh连接wsl2可以方便我们远程管理，其方法和直接在ubuntu中设置ssh如出一辙。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><p>注册一个zerotier的账户</p>
+<p><a href="https://www.zerotier.com/">注册网址</a></p>
+<p><img src="https://s2.loli.net/2023/12/19/csVgi7SzeAnZCXD.png"></p>
+<p>注册成功之后点击 Create A Network</p>
+<p><img src="https://s2.loli.net/2023/12/19/CIBteLaT8qEQcpz.png"></p>
+<p>可以看到我们的NETWORK ID，点击ID 可以看到我们这个网络的具体配置信息。 我们可以更改Name，Description，IPV4的网段等等信息。Access Control 那里一定要是Private，这样才能保护我们的连接隐私性。</p>
+<p><img src="/image.png" alt="Alt text"></p>
+</li>
+</ol>
+<h2 id="wsl2-部署ssh"><a href="#wsl2-部署ssh" class="headerlink" title="wsl2 部署ssh"></a>wsl2 部署ssh</h2><ol>
+<li><p>在 Ubuntu 中安装 SSH 服务器:</p>
+<ul>
+<li>打开 WSL2 的 Ubuntu 终端。</li>
+<li>更新包列表：sudo apt update</li>
+<li>安装 SSH 服务器：sudo apt install openssh-server</li>
+<li>启动 SSH 服务：sudo service ssh start</li>
+</ul>
+</li>
+<li><p>安装 ZeroTier One:</p>
+<ul>
+<li>在 Ubuntu 终端中安装 ZeroTier One：curl -s <a href="https://install.zerotier.com/">https://install.zerotier.com</a> | sudo bash</li>
+<li>加入 ZeroTier 网络：sudo zerotier-cli join [network_id]（将 [network_id] 替换为您的 ZeroTier 网络 ID）。</li>
+<li>在zerotier网页Members列表勾选刚刚加入网络的设备<br> <img src="https://s2.loli.net/2023/12/19/BfvLz4AXRUVrOnb.png"></li>
+</ul>
+</li>
+<li><p>配置 Windows 防火墙:</p>
+<ul>
+<li>允许 WSL2 的 Ubuntu 通过 Windows 防火墙。可以在 Windows 防火墙设置中添加一个入站规则，允许 TCP 端口 22。<br><img src="https://s2.loli.net/2023/12/19/6eBdW89SuUyofKt.png"></li>
+</ul>
+</li>
+</ol>
+<h2 id="windows本地端连接"><a href="#windows本地端连接" class="headerlink" title="windows本地端连接"></a>windows本地端连接</h2><p>在zerotier官网下载<a href="https://www.zerotier.com/download/">windows客户端</a>安装，然后右键托盘区域的软件图标，选择加入我们刚刚创建的网络。同样的，也要在zerotier网页Members列表勾选我们刚刚加入网络的设备。</p>
+<p>使用你常用的ssh客户端，比如<a href="https://www.putty.org/">puty</a>，<a href="https://www.hostbuf.com/">finalshell</a>等。<br>然后我们在ssh客户端输入wsl2设备的ip(members列表上显示的)，端口22，即可连接。<br><img src="https://s2.loli.net/2023/12/19/dvQmcBzWrDgAH3w.png"></p>
+<p><img src="https://s2.loli.net/2023/12/19/p5ETHyaMBFqxznK.png"></p>
+<p><em>注意：</em> 你应该在另一台windows设备上安装zerotier客户端连接wsl2。如果你同时启动了wsl2和windows环境下的zerotier,那么windows环境下的zerotier将会闪退。这可能是一个Bug,我已经给官方反馈了。<br><em>注意1：</em> 如果你安装了多个wsl 系统，一个系统占用22端口后，其他系统就没法使用，开启ssh会报错。因此当你需要使用ssh时，只开启那一个系统即可。<br><em>提示：</em> 你只需要在wsl2中安装zerotier即可使用其他设备远程连接。</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
 </search>
