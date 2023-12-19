@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%8C%AB128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E7%8C%AB32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E7%8C%AB16.png">
+  <link rel="mask-icon" href="/images/%E7%8C%AB.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gongsunqi.xyz","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA">
+<meta property="og:url" content="http://gongsunqi.xyz/posts/5b4739c/index.html">
+<meta property="og:site_name" content="公孙启">
+<meta property="og:description" content="Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2023/08/28/NeqS5y7PMpujoLv.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/28/nH1v8lZyd3LcpM6.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/28/Dum7YsZi2k48SN5.png">
+<meta property="article:published_time" content="2023-08-28T03:31:45.000Z">
+<meta property="article:modified_time" content="2023-12-19T08:18:29.244Z">
+<meta property="article:author" content="公孙启">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="kernal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/08/28/NeqS5y7PMpujoLv.png">
+
+
+<link rel="canonical" href="http://gongsunqi.xyz/posts/5b4739c/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://gongsunqi.xyz/posts/5b4739c/","path":"posts/5b4739c/","title":"Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA | 公孙启</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">公孙启</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">越努力越幸运</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%A9%B1%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">下载驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5"><span class="nav-number">5.</span> <span class="nav-text">检查</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="公孙启"
+      src="/images/godfather1.png">
+  <p class="site-author-name" itemprop="name">公孙启</p>
+  <div class="site-description" itemprop="description">科技是无尽的前沿</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+    Welcome
+  </button>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/?gws_rd=ssl" title="https:&#x2F;&#x2F;www.google.com&#x2F;?gws_rd&#x3D;ssl" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://theme-next.js.org/docs/getting-started/" title="https:&#x2F;&#x2F;theme-next.js.org&#x2F;docs&#x2F;getting-started&#x2F;" rel="noopener" target="_blank">NexT</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://gongsunqi.xyz/posts/5b4739c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/godfather1.png">
+      <meta itemprop="name" content="公孙启">
+      <meta itemprop="description" content="科技是无尽的前沿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="公孙启">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-28 11:31:45" itemprop="dateCreated datePublished" datetime="2023-08-28T11:31:45+08:00">2023-08-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-12-19 16:18:29" itemprop="dateModified" datetime="2023-12-19T16:18:29+08:00">2023-12-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">Ubuntu实时内核PREEMPT_RT kernel 安装英伟达驱动和CUDA</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a target="_blank" rel="noopener" href="https://www.gongsunqi.xyz/posts/6fc37114/">上一篇文章</a>介绍了Ubuntu如何编译安装实时内核PREEMPT_RT kernel。</p>
+<p>由于英伟达官方的驱动并不支持实时内核，因此当我们用普通方式安装英伟达驱动时便会遇到错误。</p>
+<p>这里将介绍为实时内核的Ubuntu系统安装英伟达驱动和CUDA的方法。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>一个全新安装的Ubuntu系统，已经按照<a target="_blank" rel="noopener" href="https://www.gongsunqi.xyz/posts/6fc37114/">上一篇文章</a>安装了实时内核，并且没有安装任何英伟达驱动。</p>
+<p>也可以按照以下方法卸载已经安装的驱动，然后重启</p>
+<pre><code>sudo apt-get --purge remove nvidia*
+sudo apt-get --purge remove &quot;*cublas*&quot; &quot;cuda*&quot;
+sudo apt-get --purge remove libnvidia*
+reboot
+</code></pre>
+<h2 id="下载驱动"><a href="#下载驱动" class="headerlink" title="下载驱动"></a>下载驱动</h2><p>从<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-12-0-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local">CUDA Toolkit 12.0 Downloads</a>下载runfile文件到本地。</p>
+<p>下载<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN</a>,我们选择Download cuDNN v8.9.2 (June 1st, 2023), for CUDA 12.x —&gt; Local Installer for Linux x86_64 (Tar)</p>
+<p><img src="https://s2.loli.net/2023/08/28/NeqS5y7PMpujoLv.png"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.安装runfile</p>
+<pre><code># 1. Stop X-Server
+sudo service lightdm stop
+
+# 2. Blacklist Nouveau driver
+sudo nano /etc/modprobe.d/blacklist-nouveau.conf
+
+# Insert into file:
+blacklist nouveau
+options nouveau modeset=0
+
+# 3. Update kernel initramfs
+sudo update-initramfs -u
+reboot  
+
+# 4. Install driver!
+sudo IGNORE_PREEMPT_RT_PRESENCE=1 bash &lt;*&gt;.run  # Insert downloaded .run file
+
+# 5. Reboot
+sudo reboot
+</code></pre>
+<p> 安装过程中会弹出来一个对话框，让你选择安装的内容，默认安装即可。</p>
+<p> 安装结束之后执行nvcc -v，会提示没有nvcc可执行，这并不是因为我们cudatoolkit没安装好，而是因为环境变量还没配置好。</p>
+<p>2.cuda环境变量配置</p>
+<pre><code>sudo nano ~/.bashrc
+</code></pre>
+<p>  将以下内容添加进文件最后</p>
+<pre><code>export PATH=/usr/local/cuda-12.0/bin$&#123;PATH:+:$&#123;PATH&#125;&#125;
+export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;
+</code></pre>
+<p>  保存退出后（Ctrl+x），更新一下环境变量：</p>
+<pre><code>source ~/.bashrc
+</code></pre>
+<p>  这时候在执行 nvcc -V 就能够显示cuda版本了。</p>
+<p>3.安装cudnn</p>
+<p>  严格来讲cuDNN不能叫安装。它其实是对CUDA的一些补充，所以“安装”过程很简单。去英伟达官网下载对应CUDA12.0的cuDNN压缩包(这一步可能需要注册英伟达账号)。解压之后得到cuda目录，cuda目录下面有include和lib64两个子目录，将这两个目录下面的所有文件拷贝到CUDA 12.0安装路径对应的目录下面即可。</p>
+<pre><code>tar -xvf cudnn** 
+cd cudnn-linux-x86_64-8.9.3.28_cuda12-archive
+#以下是安装命令     
+sudo cp -r /lib/* /usr/local/cuda-12.0（自己检查具体的版本修改路径）/lib64/
+sudo cp -r /include/* /usr/local/cuda-12.0（自己检查具体的版本修改路径）/include/
+
+#为更改读取权限：
+sudo chmod a+r /usr/local/cuda-12.0（自己检查具体的版本修改路径）/include/cudnn*
+sudo chmod a+r /usr/local/cuda-12.0（自己检查具体的版本修改路径）/lib64/libcudnn*
+</code></pre>
+<p>  注意操作要在相应的文件夹下进行哦！</p>
+<p>4.检查cudnn是否安装成功</p>
+<p>   cat &#x2F;usr&#x2F;local&#x2F;cuda-12.0&#x2F;include&#x2F;cudnn_version.h | grep CUDNN_MAJOR -A 2</p>
+<p>  <img src="https://s2.loli.net/2023/08/28/nH1v8lZyd3LcpM6.png"></p>
+<h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>检查内核</p>
+<pre><code>uname -r
+</code></pre>
+<p>检查cuda</p>
+<pre><code>nvcc -V
+</code></pre>
+<p>检查nvidia驱动</p>
+<pre><code>nvidia-smi
+</code></pre>
+<p>最后得到 </p>
+<p><img src="https://s2.loli.net/2023/08/28/Dum7YsZi2k48SN5.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+              <a href="/tags/kernal/" rel="tag"># kernal</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/6fc37114/" rel="prev" title="Ubuntu编译安装实时内核">
+                  <i class="fa fa-chevron-left"></i> Ubuntu编译安装实时内核
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/cb1473a2/" rel="next" title="HEXO blog Error ENOENT no such file or directory">
+                  HEXO blog Error ENOENT no such file or directory <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">公孙启</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">41 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"iw53uzemrZ3htC2Q2"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

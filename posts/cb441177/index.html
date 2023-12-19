@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%8C%AB128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E7%8C%AB32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E7%8C%AB16.png">
+  <link rel="mask-icon" href="/images/%E7%8C%AB.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gongsunqi.xyz","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="使用Blender创建3D模型并添加到Gazebo环境中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gazebo添加模型">
+<meta property="og:url" content="http://gongsunqi.xyz/posts/cb441177/index.html">
+<meta property="og:site_name" content="公孙启">
+<meta property="og:description" content="使用Blender创建3D模型并添加到Gazebo环境中">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/iu4QaTjUKqd1Y8N.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/YFNK7jAGsz9gotx.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/vOZdPCIFo6A8WxL.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/qigf764hKF5TYCl.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/qE9X81DszQHKTJ3.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/WeV51lSqQJdnHE6.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/gD7FbiIGYm1wW2A.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/vGIiJyfZqFKULgp.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/07/TW5s7mbOPgLrHtd.png">
+<meta property="article:published_time" content="2023-02-08T05:57:18.000Z">
+<meta property="article:modified_time" content="2023-12-19T08:18:29.241Z">
+<meta property="article:author" content="公孙启">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="ROS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/02/07/iu4QaTjUKqd1Y8N.png">
+
+
+<link rel="canonical" href="http://gongsunqi.xyz/posts/cb441177/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://gongsunqi.xyz/posts/cb441177/","path":"posts/cb441177/","title":"Gazebo添加模型"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Gazebo添加模型 | 公孙启</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">公孙启</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">越努力越幸运</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8gazebo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%9B%BE%E7%89%87%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">在gazebo中添加模型（图片）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%8E%AF%E5%A2%83"><span class="nav-number">1.2.</span> <span class="nav-text">2.环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%B4%B4%E5%9B%BE%E6%A8%A1%E5%9E%8B%E5%88%B6%E4%BD%9C"><span class="nav-number">1.3.</span> <span class="nav-text">3.贴图模型制作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A8%A1%E5%9E%8B%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="nav-number">1.4.</span> <span class="nav-text">4.模型文件编写</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="公孙启"
+      src="/images/godfather1.png">
+  <p class="site-author-name" itemprop="name">公孙启</p>
+  <div class="site-description" itemprop="description">科技是无尽的前沿</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+    Welcome
+  </button>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/?gws_rd=ssl" title="https:&#x2F;&#x2F;www.google.com&#x2F;?gws_rd&#x3D;ssl" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://theme-next.js.org/docs/getting-started/" title="https:&#x2F;&#x2F;theme-next.js.org&#x2F;docs&#x2F;getting-started&#x2F;" rel="noopener" target="_blank">NexT</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://gongsunqi.xyz/posts/cb441177/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/godfather1.png">
+      <meta itemprop="name" content="公孙启">
+      <meta itemprop="description" content="科技是无尽的前沿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="公孙启">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Gazebo添加模型
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-08 13:57:18" itemprop="dateCreated datePublished" datetime="2023-02-08T13:57:18+08:00">2023-02-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-12-19 16:18:29" itemprop="dateModified" datetime="2023-12-19T16:18:29+08:00">2023-12-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ROS/" itemprop="url" rel="index"><span itemprop="name">ROS</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">使用Blender创建3D模型并添加到Gazebo环境中</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="在gazebo中添加模型（图片）"><a href="#在gazebo中添加模型（图片）" class="headerlink" title="在gazebo中添加模型（图片）"></a>在gazebo中添加模型（图片）</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>在使用Gazebo仿真的过程中常常需要导入用户自定义的模型，特别是一些独特的具有严格尺寸的Mark图标(Apritag, Chessboard等)。目前在Gazebo中一共支持3种模型导入方式，分别是urdf， sdf和3D model，其中最简单的是直接通过CAD绘制出相关的3D model后直接导入模型。在本文中将详细描述相关方法，并编写相应的模型描述文件。</p>
+<h2 id="2-环境"><a href="#2-环境" class="headerlink" title="2.环境"></a>2.环境</h2><ul>
+<li>Ubuntu 18.04</li>
+<li>Gazebo 9</li>
+<li>Blender 3.4.1</li>
+</ul>
+<h2 id="3-贴图模型制作"><a href="#3-贴图模型制作" class="headerlink" title="3.贴图模型制作"></a>3.贴图模型制作</h2><p>使用各平台支持良好的免费3D建模软件<a target="_blank" rel="noopener" href="https://www.blender.org/">Blender</a>制作，使用snap方式安装：</p>
+<pre><code>sudo snap install blender --classic
+</code></pre>
+<p>启动界面如下图1：<br><img src="https://s2.loli.net/2023/02/07/iu4QaTjUKqd1Y8N.png"></p>
+<p>删除初始默认立方体后选择添加 -&gt; 网格 -&gt; 立方体，如图2所示：</p>
+<p><img src="https://s2.loli.net/2023/02/07/YFNK7jAGsz9gotx.png"></p>
+<p>点击界面右上角部分，调整立方体大小，如下图3、图4所示：</p>
+<p><img src="https://s2.loli.net/2023/02/07/vOZdPCIFo6A8WxL.png"></p>
+<p><img src="https://s2.loli.net/2023/02/07/qigf764hKF5TYCl.png"></p>
+<p>设置尺寸为 x: 0.01m，y: 0.124m，z: 0.16m，设置位置z:0.08，结果如图5所示：</p>
+<p><img src="https://s2.loli.net/2023/02/07/qE9X81DszQHKTJ3.png"></p>
+<p>设置好尺寸后我们设置UV贴图，即贴图图片与3D立方体之间的映射关系，在此我们只贴立方体的一面作为标定板。选择界面上方的UV Editing进入UV编辑模式，如下图6所示：</p>
+<p><img src="https://s2.loli.net/2023/02/07/WeV51lSqQJdnHE6.png"></p>
+<p>注意，这个图左侧为立方体6个面的展开图，因此你可以看到6个正方形相连在一起的图形。右侧为立方体，通过鼠标点击此立方体周围的空白区域，可以取消选定，这时左边左边立方体的6个面展开图就会消失。通过长按鼠标左键选着立方体的一个面作为我们放置贴图的面，这时左边的立方体张开图就只有一个正方形，用鼠标左键与shift键以此点击4个定点，选中该面，结果如图7:<br><img src="https://s2.loli.net/2023/02/07/gD7FbiIGYm1wW2A.png"></p>
+<p>在右边区域上方顶栏选着UV–智能UV投射：<br><img src="https://s2.loli.net/2023/02/07/vGIiJyfZqFKULgp.png"></p>
+<p>直接确定即可，不需要更改什么。</p>
+<p>单击右侧材质选项，点击新建，为立方体新建材质，在基础色选项中选择图像纹理，在图像图像选项中选择打开，选择本地贴图图像。</p>
+<h2 id="4-模型文件编写"><a href="#4-模型文件编写" class="headerlink" title="4.模型文件编写"></a>4.模型文件编写</h2><p>新建文件夹并命名为模型名称。在该文件夹下分别新建model.config，xxx.sdf文件，meshes与materials文件夹，在meshes文件夹下放置3d模型的dae格式文件，在materials文件夹下新建textures文件夹，并将贴图图像文件放入。文件从属关系如下所示。\</p>
+<pre><code>├── cat_wall.sdf
+├── materials
+│   └── textures
+│       └── cat_wall.png
+├── meshes
+│   └── cat_wall.dae
+└── model.config
+</code></pre>
+<p>此处的cat_wall即为模型名称，同时也是上诉所有文件都放置的文件夹。</p>
+<p>model.config文件内容如下所示：</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+
+&lt;model&gt;
+&lt;name&gt;cat_wall&lt;/name&gt;
+&lt;version&gt;1.0&lt;/version&gt;
+&lt;sdf version=&#39;1.6&#39;&gt;cat_wall.sdf&lt;/sdf&gt;
+
+&lt;author&gt;
+    &lt;name&gt;kdt&lt;/name&gt;
+    &lt;email&gt;kongdt@outlook.com&lt;/email&gt;
+&lt;/author&gt;
+
+&lt;description&gt;
+    A plane with a reference texture on it depicting a cat.
+&lt;/description&gt;
+&lt;/model&gt;
+
+最重要的，一定要修改的是sdf文件的名称，其余作者信息和模型描述可不管。
+</code></pre>
+<p>sdf文件如下所示：</p>
+<pre><code>&lt;?xml version=&#39;1.0&#39;?&gt;
+&lt;sdf version=&quot;1.6&quot;&gt;
+&lt;model name=&quot;cat_wall&quot;&gt;
+&lt;static&gt;true&lt;/static&gt;
+    &lt;link name=&quot;link&quot;&gt;
+    &lt;visual name=&quot;visual&quot;&gt;
+        &lt;geometry&gt;
+        &lt;mesh&gt;
+            &lt;uri&gt;model://cat_wall/meshes/cat_wall.dae&lt;/uri&gt;
+        &lt;/mesh&gt;
+        &lt;/geometry&gt;
+    &lt;/visual&gt;
+    &lt;/link&gt;
+&lt;/model&gt;
+&lt;/sdf&gt;   
+</code></pre>
+<p>其中为模型名称，在gazebo中也将以该名称显示。在中填入dae模型文件地址。其中model:&#x2F;&#x2F;acircles_pattern为当前文件夹地址。</p>
+<p>由此模型描述文件以全部完成，可放置在.&#x2F;gazebo&#x2F;models文件夹下，在重启gazebo后便可以在插入模型选项中找到该模型。</p>
+<p>但由Blender建立的模型在gazebo中显示光泽较黯,可在文本方式下打开dae文件，找到以下选项卡，将数值由0 0 0 1改为0.5 0.5 0.5 0.5。下示为修改后内容:</p>
+<pre><code>&lt;emission&gt;
+    &lt;color sid=&quot;emission&quot;&gt;0.5 0.5 0.5 0.5&lt;/color&gt;
+&lt;/emission&gt;
+</code></pre>
+<p>有些教程中，将数值全部给1，会过曝。</p>
+<p>重新启动gazebo插入模型查看效果，结果如下图：</p>
+<p><img src="https://s2.loli.net/2023/02/07/TW5s7mbOPgLrHtd.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+              <a href="/tags/ROS/" rel="tag"># ROS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/1e127ae5/" rel="prev" title="Ubuntu新环境配置手册">
+                  <i class="fa fa-chevron-left"></i> Ubuntu新环境配置手册
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/3c995b2a/" rel="next" title="Windows11 + WSL Ubuntu + Pycharm + Conda for deeplearning">
+                  Windows11 + WSL Ubuntu + Pycharm + Conda for deeplearning <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">公孙启</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">41 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"iw53uzemrZ3htC2Q2"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

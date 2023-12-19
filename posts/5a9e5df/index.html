@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%8C%AB128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E7%8C%AB32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E7%8C%AB16.png">
+  <link rel="mask-icon" href="/images/%E7%8C%AB.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gongsunqi.xyz","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="frp内网穿透教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="frp内网穿透教程，ssh远程连接">
+<meta property="og:url" content="http://gongsunqi.xyz/posts/5a9e5df/index.html">
+<meta property="og:site_name" content="公孙启">
+<meta property="og:description" content="frp内网穿透教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png">
+<meta property="og:image" content="https://s2.loli.net/2022/11/16/JIh3sbaonEMH1vC.png">
+<meta property="article:published_time" content="2022-03-06T06:32:04.000Z">
+<meta property="article:modified_time" content="2023-12-19T08:18:29.246Z">
+<meta property="article:author" content="公孙启">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="ssh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png">
+
+
+<link rel="canonical" href="http://gongsunqi.xyz/posts/5a9e5df/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://gongsunqi.xyz/posts/5a9e5df/","path":"posts/5a9e5df/","title":"frp内网穿透教程，ssh远程连接"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>frp内网穿透教程，ssh远程连接 | 公孙启</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">公孙启</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">越努力越幸运</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VPS%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-number">3.</span> <span class="nav-text">VPS服务器端部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A7%A3%E9%87%8A"><span class="nav-number">3.1.</span> <span class="nav-text">一些解释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="nav-number">4.</span> <span class="nav-text">服务器端后台运行及开机自启</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-number">5.</span> <span class="nav-text">客户端部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A7%A3%E9%87%8A-1"><span class="nav-number">5.1.</span> <span class="nav-text">一些解释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">远程连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="公孙启"
+      src="/images/godfather1.png">
+  <p class="site-author-name" itemprop="name">公孙启</p>
+  <div class="site-description" itemprop="description">科技是无尽的前沿</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+    Welcome
+  </button>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/?gws_rd=ssl" title="https:&#x2F;&#x2F;www.google.com&#x2F;?gws_rd&#x3D;ssl" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://theme-next.js.org/docs/getting-started/" title="https:&#x2F;&#x2F;theme-next.js.org&#x2F;docs&#x2F;getting-started&#x2F;" rel="noopener" target="_blank">NexT</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://gongsunqi.xyz/posts/5a9e5df/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/godfather1.png">
+      <meta itemprop="name" content="公孙启">
+      <meta itemprop="description" content="科技是无尽的前沿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="公孙启">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          frp内网穿透教程，ssh远程连接
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-06 14:32:04" itemprop="dateCreated datePublished" datetime="2022-03-06T14:32:04+08:00">2022-03-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-12-19 16:18:29" itemprop="dateModified" datetime="2023-12-19T16:18:29+08:00">2023-12-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">frp内网穿透教程</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有时候我们需要从公网中远程连接自己的设备（SSH，远程桌面，远程文件等)，虽然诸如teamviewer和向日葵等可以较为方便的实现连接操作，但是网络不稳定，操作卡顿的现象却让我们十分难受。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/blob/master/README_zh.md">frp</a>内网穿透可以帮助我们实现自己的需求，它是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。具体介绍请点开前面的链接查看官方文档。</p>
+<p>先简单看一下技术原理，参见下图[1]：</p>
+<p><img src="https://s2.loli.net/2022/03/06/RuEgZyrfo4AjPB1.png" alt="frp实现原理"></p>
+<p>图中VPS即是frps(service)，待远程连接的电脑就是frpc(client)。</p>
+<p>我们需要借助一台VPS(虚拟主机)来完成中转任务。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>一台VPS(或者你有公网IP的实体主机)，可以参考之前的文章，<a target="_blank" rel="noopener" href="https://www.gongsunqi.xyz/2022/02/08/%E5%A6%82%E4%BD%95%E5%9C%A8IPV4%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8IPV6%E7%BD%91%E7%BB%9C/#%E6%B3%A8%E5%86%8CIPV6%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%A3%E7%90%86%E5%95%86">vultr新建虚拟主机</a></li>
+<li>待远程连接的电脑</li>
+</ul>
+<h1 id="VPS服务器端部署"><a href="#VPS服务器端部署" class="headerlink" title="VPS服务器端部署"></a>VPS服务器端部署</h1><p>假设你VPS上装的是Debian或者Ubuntu的64位系统，这里他俩并没有什么区别。</p>
+<ul>
+<li><p>远程ssh连接上服务器</p>
+</li>
+<li><p>下载<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">frp</a>到vps，执行以下命令：<br>wget <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases/download/v0.39.1/frp_0.39.1_linux_amd64.tar.gz">https://github.com/fatedier/frp/releases/download/v0.39.1/frp_0.39.1_linux_amd64.tar.gz</a><br>ps:本教程更新时frp最新版本是V0.39.1，请点击前方连接到官网下载最新版</p>
+</li>
+<li><p>解压:<br> tar -zxvf frp_0.39.1.0_linux_amd64.tar.gz</p>
+</li>
+<li><p>复制到新的frp文件夹：<br>cp -r frp_0.39.1.0_linux_amd64 frp</p>
+</li>
+<li><p>进入新目录：<br>cd frp</p>
+</li>
+<li><p>查看文件<br>ls -a<br>里面会包含frps, frps.ini, frpc, frpc.ini 等文件</p>
+</li>
+<li><p>这里我们是部署服务器端，所以删除客户端client的文件：<br>rm frpc<br>rm frpc.ini</p>
+</li>
+<li><p>修改服务器端文件配置，打开frps.ini<br>vim frps.ini</p>
+</li>
+<li><p>填写以下内容[1]：<br>[common]<br>bind_port &#x3D; 7000<br>dashboard_port &#x3D; 7500<br>token &#x3D; mypwd<br>dashboard_user &#x3D; root<br>dashboard_pwd &#x3D; 123456<br>vhost_http_port &#x3D; 10080<br>vhost_https_port &#x3D; 10443<br># frp日志配置<br>log_file &#x3D; &#x2F;var&#x2F;log&#x2F;frps.log<br>log_level &#x3D; info<br>log_max_days &#x3D; 3</p>
+</li>
+</ul>
+<h2 id="一些解释"><a href="#一些解释" class="headerlink" title="一些解释"></a>一些解释</h2><ol>
+<li>“bind_port”表示用于客户端和服务端连接的端口，这个端口号我们之后在配置客户端的时候要用到。</li>
+<li>“dashboard_port”是服务端仪表板的端口，若使用7500端口，在配置完成服务启动后可以通过浏览器访问 x.x.x.x:7500 （其中x.x.x.x为VPS的IP）查看frp服务运行信息。</li>
+<li>“token”是用于客户端和服务端连接的口令，请自行设置并记录，稍后会用到。</li>
+<li>dashboard_user”和“dashboard_pwd”表示打开仪表板页面登录的用户名和密码，自行设置即可。</li>
+<li>vhost_http_port”和“vhost_https_port”用于反向代理HTTP主机时使用，本文不涉及HTTP协议，因而照抄或者删除这两条均可。</li>
+</ol>
+<ul>
+<li><p>编辑完成后，保存退出。(vim的命令：先按Esc，然后英文状态下的 :  然后输入wq  (代表write和quit))。</p>
+</li>
+<li><p>开放防火墙端口<br>sudo apt install firewalld<br>sudo firewall-cmd –permanent –add-port&#x3D;7000&#x2F;tcp<br>sudo firewall-cmd –permanent –add-port&#x3D;7500&#x2F;tcp<br>sudo firewall-cmd –permanent –add-port&#x3D;7001&#x2F;tcp<br>sudo firewall-cmd –reload</p>
+</li>
+<li><p>运行frps服务<br>.&#x2F;frps -c frps.ini</p>
+</li>
+<li><p>如果看到类似下面的内容，说明成功了：<br>2022&#x2F;03&#x2F;06 15:22:39 [I] [service.go:130] frps tcp listen on 0.0.0.0:7000<br>2022&#x2F;03&#x2F;06 15:22:39 [I] [service.go:172] http service listen on 0.0.0.0:10080<br>2022&#x2F;03&#x2F;06 15:22:39 [I] [service.go:193] https service listen on 0.0.0.0:10443<br>2022&#x2F;03&#x2F;06 15:22:39 [I] [service.go:216] Dashboard listen on 0.0.0.0:7500<br>2022&#x2F;03&#x2F;06 15:22:39 [I] [root.go:210] Start frps success</p>
+</li>
+</ul>
+<p>这时访问x.x.x.x:7500 (x.x.x.x是你的VPS提供的IP) 并使用自己设置的用户名密码登录，即可看到仪表板界面。<br><img src="https://s2.loli.net/2022/03/06/WvsryxcB6GAi9wN.png" alt="控制面板"></p>
+<p>如果此时我们关闭terminal，刚才运行的frps会自动结束，这时我们就需要把它挂在后台。</p>
+<h1 id="服务器端后台运行及开机自启"><a href="#服务器端后台运行及开机自启" class="headerlink" title="服务器端后台运行及开机自启"></a>服务器端后台运行及开机自启</h1><pre><code>  nano /lib/systemd/system/frps.service
+
+  [Unit]
+  Description=frps service
+  After=network.target syslog.target
+  Wants=network.target
+
+  [Service]
+  Type=simple
+  # frp安装目录
+  ExecStart=/root/frp_0.39.1_linux_amd64/frps -c /root/frp_0.39.1_linux_amd64/frps.ini
+
+  [Install]
+  WantedBy=multi-user.target
+</code></pre>
+<p>  启动服务并设置开机启动:</p>
+<pre><code>  sudo systemctl enable frps
+  sudo systemctl start frps
+</code></pre>
+<p>这时我们重启服务器，无需任何手动操作，仍然可以通过x.x.x.x:7500访问后台面板。</p>
+<h1 id="客户端部署"><a href="#客户端部署" class="headerlink" title="客户端部署"></a>客户端部署</h1><ul>
+<li><p>这一步用来设置需要被远程连接的设备，我们以Linux系统的电脑为例，还是同服务器端一样下载文件，解压，复制到新文件夹，然后删除frps和frps.ini。</p>
+</li>
+<li><p>打开 frpc.ini，编辑以下内容：</p>
+<pre><code>[common]
+server_addr = x.x.x.x
+server_port = 7000
+token = mypwd
+[ssh]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 22
+remote_port = 6000 
+[ssh2]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 50000
+remote_port = 50000
+[ssh3]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 50001
+remote_port = 50002
+[rdp]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 3389
+remote_port = 7001  
+[smb]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 445
+remote_port = 7002
+</code></pre>
+<p>其中common字段下的三项是我们早先在服务器端设置的内容。<br>如果我们只需要ssh服务，下面的rdp和smb内容可以不填写。<br>如果需要一个服务器给多台设备提供frp服务，可以使用以上设置多个ssh。</p>
+</li>
+<li><p>运行服务<br>.&#x2F;frpc -c frpc.ini</p>
+</li>
+<li><p>后台挂起<br>nohup .&#x2F;frpc -c frpc.ini &amp;</p>
+</li>
+<li><p>Windows客户端使用</p>
+<p>在文章开头下载frp的网址下载对应的Windos版本，这里我们需要编辑client客户端的配置，即frpc.ini</p>
+<pre><code>[common]
+server_addr = x.x.x.x
+server_port = 7000
+token = mypwd
+[ssh]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 22
+remote_port = 6000 
+[ssh2]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 50000
+remote_port = 50000
+[rdp]
+type = tcp
+local_ip = 127.0.0.1           
+local_port = 3389
+remote_port = 7001  
+[smb]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 445
+remote_port = 7002
+</code></pre>
+</li>
+<li><p>然后再写一个脚本启动服务start.bat：</p>
+<pre><code>@echo off
+
+if &quot;%1&quot; == &quot;h&quot; goto begin
+mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;%~nx0 h&quot;,0)(window.close)&amp;&amp;exit
+:begin
+
+  ## 这个替换成你自己的文件路径
+cd /d &quot;D:\software\frp_0.39.1.0_windows_amd64&quot;
+
+frpc -c frpc.ini
+</code></pre>
+<p>之后每次重启电脑，需要开启frp服务，只需要双击执行这个脚本即可。</p>
+</li>
+<li><p>开机自启动<br>上面的脚本可以在开机之后双击启动frpc服务，但是如果想每次开机时自启动该服务，则需要另外一个脚本来辅助。<br>ps:笔者尝试将上文中的start.bat放入开机启动文件夹，但是会有报错。<br>首先写一个start.bat脚本：</p>
+<pre><code>@echo off
+cd /d &quot;D:\software\frp_0.39.1.0_windows_amd64&quot;
+frpc -c frpc.ini
+</code></pre>
+<p>再写一个start.vbs脚本：</p>
+<pre><code>CreateObject(&quot;WScript.Shell&quot;).Run &quot;cmd /c D:\frp_0.39.1_windows_amd64\start.bat&quot;,0
+</code></pre>
+<p>注意把文件中start.bat所在文件夹的路径替换成你自己的。</p>
+<p>建议将start.bat和start.vbs都放在你的frp文件夹内。</p>
+<p>然后在windows的组策略–计算机配置–windows设置–脚本（启动&#x2F;关机）–启动–添加–选择start.vbs，然后应用–确定。</p>
+<p><img src="https://s2.loli.net/2022/11/16/JIh3sbaonEMH1vC.png"></p>
+</li>
+<li><p>linux系统开机自启</p>
+<p>类似于服务器端：</p>
+<pre><code>nano /lib/systemd/system/frpc.service
+
+[Unit]
+Description=frpc service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+# frp安装目录
+ExecStart=/root/frp_0.39.1_linux_amd64/frpc -c /root/frp_0.39.1_linux_amd64/frpc.ini
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>启动服务并设置开机启动:</p>
+<pre><code>sudo systemctl enable frpc
+sudo systemctl start frpc
+</code></pre>
+</li>
+</ul>
+<h2 id="一些解释-1"><a href="#一些解释-1" class="headerlink" title="一些解释"></a>一些解释</h2><ol>
+<li>“[xxx]”表示一个规则名称，自己定义，便于查询即可。</li>
+<li>“type”表示转发的协议类型，有TCP和UDP等选项可以选择，如有需要请自行查询frp手册。</li>
+<li>“local_port”是本地应用的端口号，按照实际应用工作在本机的端口号填写即可。</li>
+<li>“remote_port”是该条规则在服务端开放的端口号，自己填写并记录即可。</li>
+</ol>
+<blockquote>
+<p>RDP，即Remote Desktop 远程桌面，Windows的RDP默认端口是3389，协议为TCP，建议使用frp远程连接前，在局域网中测试好，能够成功连接后再使用frp穿透连接。</p>
+</blockquote>
+<blockquote>
+<p>SMB，即Windows文件共享所使用的协议，默认端口号445，协议TCP，本条规则可实现远程文件访问。</p>
+</blockquote>
+<h1 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h1><ul>
+<li><p>远程连接的电脑是linux系统<br>Linux可以直接打开terminal，Windows可以使用ssh工具，比如putty或者MobaXterm，在命令行界面输入x.x.x.x:6000，这里的6000是你自己设置的端口，可以是任何你设置的数字，然后输入本地用户名和密码就可以成功连接。</p>
+</li>
+<li><p>远程连接的电脑是windows<br>可以直接使用windows电脑自带的远程连接工具，输入vps ip:远程端口，即可输入用户名和密码登录。例如，远程主机ip是1.2.3.4，frpc.ini中设置的remote_port &#x3D; 7001，可以输入1.2.3.4:7001远程连接电脑。</p>
+</li>
+</ul>
+<p>如果待连接的电脑是笔记本电脑或者是使用wifi连接的设备，那么在你远程登录过程中，待连接电脑会自动锁屏，然后断掉wifi。。。。目前我还找到解决这个问题的办法，只能使用网线连接。</p>
+<p>连接过程中可能出现的问题参考文章 <a target="_blank" rel="noopener" href="https://www.gongsunqi.xyz/2022/11/11/%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/">微软远程桌面登录</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li>[1] <a target="_blank" rel="noopener" href="https://sspai.com/post/52523/">https://sspai.com/post/52523/</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+              <a href="/tags/ssh/" rel="tag"># ssh</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2431c14c/" rel="prev" title="utorrent代理设置">
+                  <i class="fa fa-chevron-left"></i> utorrent代理设置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/87ef8cc1/" rel="next" title="无法使用微软账号登录远程桌面">
+                  无法使用微软账号登录远程桌面 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">公孙启</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">41 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"iw53uzemrZ3htC2Q2"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

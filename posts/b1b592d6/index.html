@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%8C%AB128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E7%8C%AB32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E7%8C%AB16.png">
+  <link rel="mask-icon" href="/images/%E7%8C%AB.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gongsunqi.xyz","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Youtube-dl油管下载神器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Youtube-dl油管下载神器">
+<meta property="og:url" content="http://gongsunqi.xyz/posts/b1b592d6/index.html">
+<meta property="og:site_name" content="公孙启">
+<meta property="og:description" content="Youtube-dl油管下载神器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png">
+<meta property="article:published_time" content="2021-08-02T13:08:05.000Z">
+<meta property="article:modified_time" content="2023-12-19T08:18:29.245Z">
+<meta property="article:author" content="公孙启">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="youtube-dl">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png">
+
+
+<link rel="canonical" href="http://gongsunqi.xyz/posts/b1b592d6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://gongsunqi.xyz/posts/b1b592d6/","path":"posts/b1b592d6/","title":"Youtube-dl油管下载神器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Youtube-dl油管下载神器 | 公孙启</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">公孙启</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">越努力越幸运</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85ffmpeg"><span class="nav-number">2.1.</span> <span class="nav-text">安装ffmpeg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Python"><span class="nav-number">2.2.</span> <span class="nav-text">安装Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85youtube-dl"><span class="nav-number">2.3.</span> <span class="nav-text">安装youtube-dl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.4.</span> <span class="nav-text">下载</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="公孙启"
+      src="/images/godfather1.png">
+  <p class="site-author-name" itemprop="name">公孙启</p>
+  <div class="site-description" itemprop="description">科技是无尽的前沿</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+    Welcome
+  </button>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/?gws_rd=ssl" title="https:&#x2F;&#x2F;www.google.com&#x2F;?gws_rd&#x3D;ssl" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://theme-next.js.org/docs/getting-started/" title="https:&#x2F;&#x2F;theme-next.js.org&#x2F;docs&#x2F;getting-started&#x2F;" rel="noopener" target="_blank">NexT</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://gongsunqi.xyz/posts/b1b592d6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/godfather1.png">
+      <meta itemprop="name" content="公孙启">
+      <meta itemprop="description" content="科技是无尽的前沿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="公孙启">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Youtube-dl油管下载神器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-02 21:08:05" itemprop="dateCreated datePublished" datetime="2021-08-02T21:08:05+08:00">2021-08-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-12-19 16:18:29" itemprop="dateModified" datetime="2023-12-19T16:18:29+08:00">2023-12-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">Youtube-dl油管下载神器</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我都是通过浏览器插件来下载油管上的视频，但是过段时间要么插件失效，要么需要付费。前段时间偶然发现了一个在GitHub上开源的油管视频下载神器<a target="_blank" rel="noopener" href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>, 这篇文章就用来记录使用心得（当然你也可以直接去GitHub上看官方文档，as u like)。</p>
+<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
+<li>安装ffmpeg</li>
+<li>安装Python</li>
+<li>安装youtube-dl</li>
+<li>下载</li>
+</ol>
+<h2 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h2><p>Fmpeg 是领先的多媒体框架，能够解码、编码、转码、混合、解密、流媒体、过滤和播放人类和机器创造的几乎所有东西。简单来说，我们需要这个软件来帮我们自动处理一些从youtube上下载的软件，最终实现得到一个.mp4文件（也可能是其他格式）。</p>
+<ul>
+<li>登录<a target="_blank" rel="noopener" href="https://www.gyan.dev/ffmpeg/builds/">下载网址</a>,在release处点击第一个链接下载压缩文件，如下图所示（可能随着时间的流逝版本不一样），放在你想放的位置。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/08/02/VxP2en8gp9OYQdS.png"></p>
+<ul>
+<li><p>解压刚刚下载的压缩包，然后将解压后的文件夹复制粘贴到C盘根目录，或者任何你喜欢的位置。</p>
+<p>  我的安装路径如下图所示：</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/CDdbzESapRxYngr.png"></p>
+<ul>
+<li><p>定位到\bin文件夹，然后鼠标放到窗口的地址栏，复制这个路径，如我的就是：C:\ffmpeg-4.4-full_build\bin。</p>
+</li>
+<li><p>此电脑-属性-高级系统设置-环境变量-在系统变量里选中Path-编辑-新建，然后将刚刚复制的路径黏贴进去。之后点击确定-确定-确定。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/tpHqWkV1Pam8nfR.png"><br><img src="https://i.loli.net/2021/08/02/Ovf58xrdy9oHQMa.png"><br><img src="https://i.loli.net/2021/08/02/B23R59qiQbIF7ve.png"></p>
+<h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>如果你已经安装过Python，直接跳过这一步。如果没安装过，请跟着步骤来。</p>
+<ul>
+<li><p>update 2021.9.11 我换了一个已经安装了Python的台式机，但是安装下一步的youtube-dl的时候出错了。卸载Python，然后按照下面的步骤重新安装就可以正常使用了。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/">Python官网</a>下载最新的安装包<br><img src="https://i.loli.net/2021/08/02/fDwFpOb5XdYicj8.png"></p>
+</li>
+<li><p>点击安装，<strong>记得勾选一开始界面最下面的“add to path”那个选择框</strong>，点击安装，等待安装完成，最后点击下方的解除长度限制“disable path length limit”（我因为为了写这篇博客卸载后重装的，所以截图中并没有这个选项）。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/62XJ7SapAoc4gHy.png"><br><img src="https://i.loli.net/2021/08/02/PMBIkX5bc2SrLGR.png"></p>
+<h2 id="安装youtube-dl"><a href="#安装youtube-dl" class="headerlink" title="安装youtube-dl"></a>安装youtube-dl</h2><p>如果你的可以正常访问YouTube，请按照这个步骤来，打开电脑的命令行界面，输入以下命令：</p>
+<pre><code>pip install youtube-dl
+</code></pre>
+<p>如果你在国内需要翻墙，那么我们需要先确定一些事情。</p>
+<ul>
+<li>打开自己的代理软件，运行（务必运行代理）</li>
+<li>查看http代理的地址和端口，下图所示是Qv2ray，V2rayNG在软件界面最下方可以直接看到。</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/K6qFpkN4EJjbhLM.png"></p>
+<p>然后打开电脑的cmd命令行界面，依次输入以下命令：</p>
+<pre><code>set http_proxy=http://127.0.0.1:8889 #一定记得把ip地址和端口改成自己代理软件中查到的
+pip install youtube-dl
+set http_proxy=
+pause
+</code></pre>
+<p>没有问题的话，就应该安装完成了。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载这个文件夹，链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw">https://pan.baidu.com/s/1JL2gB9E1qqPAYgY6sUBWKw</a> 提取码: pjuw。</p>
+<p><img src="https://i.loli.net/2021/08/02/PcoHBYqENDkjU5u.png"></p>
+<p>里面包含上图所示的这些东西。</p>
+<ul>
+<li>如果你需要代理环境，请用记事本打开上图被圈出来的三个文件，然后将代理部分的ip和端口改成自己软件中显示的。这一步类似安装youtube-dl时我们做的事情。<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/02/fEbBSNkqo73zH5x.png"></p>
+<ul>
+<li>如果你不需要代理，那么同样打开这三个文件，将所以和set_proxy有关的语句都注释掉即可。</li>
+</ul>
+<p>注释的方法也很简单，在语句前面加一个英文输入法状态下的:即可。再啰嗦一句，<strong>请务必，将框选出来的三个文件都打开检查一遍！</strong></p>
+<pre><code>:set http_proxy=http://127.0.0.1:8889
+:set http_proxy=
+</code></pre>
+<p>OK！ 随便打开一个油管视频，然后将地址复制到_url.txt这个文件里，然后运行_run.bat，视频就会以最高质量下载到youtube-dl-videos文件夹中。</p>
+<p>结束！！</p>
+<p>最后，感谢<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1AB4y1F7nG?from=search&seid=13837731026935348595">团叽的OO的视频团叽的OO的视频</a>，本文教程属于该视频的文字总结版本。因为担心他的视频也许有一天会找不到，故此做一个文字备份。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+              <a href="/tags/youtube-dl/" rel="tag"># youtube-dl</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/ee940876/" rel="prev" title="博客搭建记录">
+                  <i class="fa fa-chevron-left"></i> 博客搭建记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/92a850f6/" rel="next" title="双系统下重装Win10，ubuntu无法进入">
+                  双系统下重装Win10，ubuntu无法进入 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">公孙启</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">41 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"iw53uzemrZ3htC2Q2"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
