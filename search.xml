@@ -910,8 +910,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64$&#123;LD_LIBRARY_PATH:+:$&#123
 <pre><code>tar -xvf cudnn** 
 cd cudnn-linux-x86_64-8.9.3.28_cuda12-archive
 #以下是安装命令     
-sudo cp -r /lib/* /usr/local/cuda-12.0（自己检查具体的版本修改路径）/lib64/
-sudo cp -r /include/* /usr/local/cuda-12.0（自己检查具体的版本修改路径）/include/
+sudo cp -r lib/* /usr/local/cuda-12.0（自己检查具体的版本修改路径）/lib64/
+sudo cp -r include/* /usr/local/cuda-12.0（自己检查具体的版本修改路径）/include/
 
 #为更改读取权限：
 sudo chmod a+r /usr/local/cuda-12.0（自己检查具体的版本修改路径）/include/cudnn*
